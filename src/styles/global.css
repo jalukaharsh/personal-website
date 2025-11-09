@@ -3,19 +3,33 @@
 
 /* Custom Theme Configuration */
 @theme {
-  /* Brand Colors - Accessible color palette with WCAG AA contrast ratios */
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
-  --color-primary-950: #172554;
+  /* Brand Colors - Warm earthy terracotta palette with WCAG AA contrast ratios */
+  --color-primary-50: #fdf8f6;
+  --color-primary-100: #f2e8e5;
+  --color-primary-200: #eaddd7;
+  --color-primary-300: #e0cec7;
+  --color-primary-400: #d2bab0;
+  --color-primary-500: #bc9b8f;
+  --color-primary-600: #a47c6d;
+  --color-primary-700: #8b5e52;
+  --color-primary-800: #6f4e44;
+  --color-primary-900: #5c3d33;
+  --color-primary-950: #3d2822;
 
+  /* Tech Accent Colors - Modern blue palette for technical elements */
+  --color-tech-50: #f0f9ff;
+  --color-tech-100: #e0f2fe;
+  --color-tech-200: #bae6fd;
+  --color-tech-300: #7dd3fc;
+  --color-tech-400: #38bdf8;
+  --color-tech-500: #0ea5e9;
+  --color-tech-600: #0284c7;
+  --color-tech-700: #0369a1;
+  --color-tech-800: #075985;
+  --color-tech-900: #0c4a6e;
+  --color-tech-950: #082f49;
+
+  /* Secondary Colors - Warm neutrals for backgrounds and UI elements */
   --color-secondary-50: #f8fafc;
   --color-secondary-100: #f1f5f9;
   --color-secondary-200: #e2e8f0;
@@ -52,6 +66,16 @@
   --color-error-50: #fef2f2;
   --color-error-500: #ef4444;
   --color-error-700: #b91c1c;
+
+  /* Background Colors - Warm beige tones */
+  --color-background-primary: #faf7f5;
+  --color-background-secondary: #f5f1ed;
+  --color-background-elevated: #ffffff;
+
+  /* Text Colors - Warm browns and taupes */
+  --color-text-primary: #2d2520;
+  --color-text-secondary: #5a4f47;
+  --color-text-tertiary: #7d7269;
 
   /* Responsive Breakpoints */
   --breakpoint-xs: 475px;
@@ -137,8 +161,8 @@ html {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: var(--line-height-normal);
-  color: var(--color-secondary-900);
-  background-color: var(--color-secondary-50);
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
 }
 
 /* Typography Plugin Customization */
