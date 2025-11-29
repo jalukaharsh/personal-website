@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+
+const allQuotes = await getCollection('quotes');
+const randomQuote = allQuotes[Math.floor(Math.random() * allQuotes.length)];
+---
+
+<div class="quote-banner" style="padding: 2.5rem; margin-bottom: 3rem;">
+  <blockquote class="text-lg italic text-white">
+    "{randomQuote.data.text}"
+  </blockquote>
+  <div class="mt-4 text-white text-sm">
+    <span class="font-semibold">— {randomQuote.data.author}</span>
+    {randomQuote.data.source && (
+      <span class="text-gray-400">, {randomQuote.data.source}</span>
+    )}
+  </div>
+</div>

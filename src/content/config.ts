@@ -18,9 +18,20 @@ const booksSchema = z.object({
   draft: z.boolean().default(false),
 });
 
+const quotesSchema = z.object({
+  text: z.string(),
+  author: z.string(),
+  source: z.string().optional(),
+});
+
 const booksCollection = defineCollection({
   type: 'content',
   schema: booksSchema,
+});
+
+const quotesCollection = defineCollection({
+  type: 'data',
+  schema: quotesSchema,
 });
 
 const projectsCollection = defineCollection({
@@ -37,4 +48,5 @@ export const collections = {
   books: booksCollection,
   projects: projectsCollection,
   travel: travelCollection,
+  quotes: quotesCollection,
 };
