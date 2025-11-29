@@ -21,10 +21,10 @@ const sortedBooks = allBooks.sort((a, b) => {
 >
   <Header slot="header" />
   
-  <div class="space-y-8">
+  <div>
     <div class="mb-8">
       <h1 class="text-4xl font-bold mb-4">Books</h1>
-      <p class="text-gray-600 text-lg mb-6">
+      <p class="text-gray-600 text-lg mb-8">
         {sortedBooks.length} {sortedBooks.length === 1 ? 'book' : 'books'}
       </p>
       
@@ -57,9 +57,9 @@ const sortedBooks = allBooks.sort((a, b) => {
       </div>
     </div>
 
-    <ul id="books-list" class="space-y-4">
+    <ul id="books-list" class="space-y-4" style="margin-top: 3rem;">
       {sortedBooks.map(book => (
-        <li class="book-item border-l-4 border-white pl-4 py-2 hover:bg-gray-900 transition-colors" 
+        <li class="book-item py-2 hover:bg-gray-900 transition-colors" 
             data-title={book.data.title}
             data-author={book.data.author}
             data-year={book.data.publicationYear}>
