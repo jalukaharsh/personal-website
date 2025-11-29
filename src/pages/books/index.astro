@@ -29,17 +29,29 @@ const sortedBooks = allBooks.sort((a, b) => {
       </p>
       
       <!-- Sort Controls -->
-      <div class="flex gap-2 flex-wrap">
-        <span class="text-gray-600">Sort by:</span>
-        <button id="sort-title" class="sort-btn text-blue-600 hover:text-blue-800 font-medium underline">
+      <div class="flex gap-2 flex-wrap items-center">
+        <span class="text-white">Sort by:</span>
+        <button 
+          id="sort-title" 
+          class="sort-btn text-white hover:text-gray-300 font-medium"
+          style="border-bottom: 2px solid white; padding-bottom: 4px; background: transparent;"
+        >
           Title
         </button>
         <span class="text-gray-400">|</span>
-        <button id="sort-author" class="sort-btn text-blue-600 hover:text-blue-800">
+        <button 
+          id="sort-author" 
+          class="sort-btn text-white hover:text-gray-300"
+          style="border-bottom: 2px solid transparent; padding-bottom: 4px; background: transparent;"
+        >
           Author
         </button>
         <span class="text-gray-400">|</span>
-        <button id="sort-year" class="sort-btn text-blue-600 hover:text-blue-800">
+        <button 
+          id="sort-year" 
+          class="sort-btn text-white hover:text-gray-300"
+          style="border-bottom: 2px solid transparent; padding-bottom: 4px; background: transparent;"
+        >
           Year
         </button>
       </div>
@@ -73,16 +85,19 @@ const sortedBooks = allBooks.sort((a, b) => {
   <Footer slot="footer" />
 </BaseLayout>
 
-<script>
-  function sortBooks(sortBy: 'title' | 'author' | 'year') {
+<script is:inline>
+  function sortBooks(sortBy) {
     const list = document.getElementById('books-list');
-    if (!list) return;
+    if (!list) {
+      console.error('books-list not found');
+      return;
+    }
 
-    const items = Array.from(list.querySelectorAll('.book-item')) as HTMLElement[];
+    const items = Array.from(list.querySelectorAll('.book-item'));
     
     items.sort((a, b) => {
-      const aValue = a.getAttribute(`data-${sortBy}`) || '';
-      const bValue = b.getAttribute(`data-${sortBy}`) || '';
+      const aValue = a.getAttribute('data-' + sortBy) || '';
+      const bValue = b.getAttribute('data-' + sortBy) || '';
       
       if (sortBy === 'year') {
         return parseInt(aValue) - parseInt(bValue);
@@ -90,16 +105,33 @@ const sortedBooks = allBooks.sort((a, b) => {
       return aValue.localeCompare(bValue);
     });
 
+    // Clear and re-append in sorted order
     items.forEach(item => list.appendChild(item));
 
     // Update active button styling
     document.querySelectorAll('.sort-btn').forEach(btn => {
-      btn.classList.remove('font-medium', 'underline');
+      btn.style.borderBottom = '2px solid transparent';
     });
-    document.getElementById(`sort-${sortBy}`)?.classList.add('font-medium', 'underline');
+    const activeBtn = document.getElementById('sort-' + sortBy);
+    if (activeBtn) {
+      activeBtn.style.borderBottom = '2px solid white';
+    }
   }
 
-  document.getElementById('sort-title')?.addEventListener('click', () => sortBooks('title'));
-  document.getElementById('sort-author')?.addEventListener('click', () => sortBooks('author'));
-  document.getElementById('sort-year')?.addEventListener('click', () => sortBooks('year'));
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSorting);
+  } else {
+    initSorting();
+  }
+
+  function initSorting() {
+    const titleBtn = document.getElementById('sort-title');
+    const authorBtn = document.getElementById('sort-author');
+    const yearBtn = document.getElementById('sort-year');
+
+    if (titleBtn) titleBtn.addEventListener('click', () => sortBooks('title'));
+    if (authorBtn) authorBtn.addEventListener('click', () => sortBooks('author'));
+    if (yearBtn) yearBtn.addEventListener('click', () => sortBooks('year'));
+  }
 </script>
