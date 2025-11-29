@@ -1,0 +1,744 @@
+{
+  "quotes": [
+    {
+      "text": "On the road halfway between faith and criticism stands the inn of reason. Reason is faith in what can be understood without faith, but it's still a faith, since to understand presupposes that there's something understandable.",
+      "author": "Fernando Pessoa",
+      "source": "The Book of Disquiet"
+    },
+    {
+      "text": "To teach how to live without certainty, and yet without being paralysed by hesitation, is perhaps the chief thing that philosophy, in our age, can still do for those who study it.",
+      "author": "Bertrand Russell",
+      "source": ""
+    },
+    {
+      "text": "An educated man should admire any course of study no matter how arcane, if it be pursued with curiosity and devotion.",
+      "author": "Amor Towles",
+      "source": "A Gentleman in Moscow"
+    },
+    {
+      "text": "Like all misery, it began with apparent happiness.",
+      "author": "Markus Zuzak",
+      "source": "The Book Thief"
+    },
+    {
+      "text": "If you have a why to live, you can bear almost any how.",
+      "author": "Yuval Noah Harari",
+      "source": "Sapiens"
+    },
+    {
+      "text": "We all get dealt cards. Some of us get better cards than others. And while it’s easy to get hung up on our cards, and feel we got screwed over, the real game lies in the choices we make with those cards, the risks we decide to take, and the consequences we choose to live with.",
+      "author": "Mark Manson",
+      "source": ""
+    },
+    {
+      "text": "Be the supernova in the darkness of the cosmos.",
+      "author": "Neil deGrasse Tyson",
+      "source": ""
+    },
+    {
+      "text": "All those paper people living in their paper houses, burning the future to stay warm. All the paper kids drinking beer some bum bought for them at the paper convenience store. Everyone demented with the mania of owning things. All the things paper-thin and paper-frail. And all the people too. I've lived here for eighteen years and I have never once in my life come across anyone who cares about anything that matters.",
+      "author": "John Green",
+      "source": "Paper Towns"
+    },
+    {
+      "text": "The only way out of the labyrinth of suffering is to forgive.",
+      "author": "John Green",
+      "source": "Looking for Alaska"
+    },
+    {
+      "text": "Thomas Edison's last words were “it's very beautiful over there”. I don't know where there is, but I believe it's somewhere, and I hope it's beautiful.",
+      "author": "John Green",
+      "source": "Looking for Alaska"
+    },
+    {
+      "text": "I was born not knowing and have only had a little time to change that here and there.",
+      "author": "Richard Feynman",
+      "source": ""
+    },
+    {
+      "text": "Many that live deserve death. And some that die deserve life. Can you give it to them? Then do not be too eager to deal out death in judgement.",
+      "author": "J. R. R. Tolkien",
+      "source": "LOTR"
+    },
+    {
+      "text": "It's a dangerous business, Frodo, going out your door. You step onto the road, and if you don't keep your feet, there's no knowing where you might be swept off to.",
+      "author": "J.R.R. Tolkien",
+      "source": "LOTR"
+    },
+    {
+      "text": "I encourage all of us, whatever our beliefs, to question the basic narratives of our world, to connect past developments with present concerns, and not be afraid of controversial issues.",
+      "author": "Yuval Noah Harari",
+      "source": ""
+    },
+    {
+      "text": "We are like butterflies who flutter for a day and think it is forever.",
+      "author": "Carl Sagan",
+      "source": ""
+    },
+    {
+      "text": "Every one of us is, in the cosmic perspective, precious. If a human disagrees with you, let him live. In a hundred billion galaxies, you will not find another.",
+      "author": "Carl Sagan",
+      "source": ""
+    },
+    {
+      "text": "I cannot remember the books I have read any more than the meals I have eaten; even so, they have made me.",
+      "author": "Ralph Waldo Emerson",
+      "source": ""
+    },
+    {
+      "text": "Things change. And friends leave. Life doesn’t stop for anybody.",
+      "author": "Stephen Chbosky",
+      "source": "The Perks of Being A Wallflower"
+    },
+    {
+      "text": "He’s a wallflower. You see things. You keep quiet about them. And you understand.",
+      "author": "Stephen Chbosky",
+      "source": "The Perks of Being A Wallflower"
+    },
+    {
+      "text": "Books are the ultimate Dumpees: put them down and they'll wait for you forever; pay attention to them and they always love you back.",
+      "author": "John Green",
+      "source": "An Abundance of Katherines"
+    },
+    {
+      "text": "I do not want people to be very agreeable, as it saves me the trouble of liking them a great deal.",
+      "author": "Jane Austen",
+      "source": ""
+    },
+    {
+      "text": "The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.",
+      "author": "Jane Austen",
+      "source": "Northanger Abbey"
+    },
+    {
+      "text": "There is no charm equal to tenderness of heart.",
+      "author": "Jane Austen",
+      "source": "Emma"
+    },
+    {
+      "text": "The first principle is that you must not fool yourself - and you are the easiest person to fool.",
+      "author": "Richard Feynman",
+      "source": "Surely You're Joking, Mr Feynman!"
+    },
+    {
+      "text": "As our circle of knowledge expands, so does the circumference of darkness surrounding it.",
+      "author": "Albert Einstein",
+      "source": ""
+    },
+    {
+      "text": "Exploration is in our nature. We began as wanderers, and we are wanderers still. We have lingered long enough on the shores of the cosmic ocean. We are ready at last to sail for the stars.",
+      "author": "Carl Sagan",
+      "source": "Cosmos"
+    },
+    {
+      "text": "A man can do what he will, but not will as he will.",
+      "author": "Schopenhauer",
+      "source": ""
+    },
+    {
+      "text": "If we crave some cosmic purpose, let us find ourselves a worthy goal.",
+      "author": "Carl Sagan",
+      "source": ""
+    },
+    {
+      "text": "Better by far, to embrace the hard truth than the reassuring fable.",
+      "author": "Carl Sagan",
+      "source": ""
+    },
+    {
+      "text": "Science, my lad, is made up of mistakes, but they are mistakes which it is useful to make, because they lead little by little to the truth.",
+      "author": "Jules Verne",
+      "source": ""
+    },
+    {
+      "text": "Open your eyes and see what you can with them before they close forever.",
+      "author": "Anthony Doerr",
+      "source": "All the Light We Cannot See"
+    },
+    {
+      "text": "What do we call visible light? We call it colour. But the electromagnetic spectrum runs to zero in one direction and infinity in the other, so really, children, mathematically, all of light is invisible.",
+      "author": "Anthony Doerr",
+      "source": "All the Light We Cannot See"
+    },
+    {
+      "text": "“I wish it need not have happened in my time,” said Frodo. “So do I,” said Gandalf, “and so do all who live to see such times. But that is not for them to decide. All we have to decide is what to do with the time that is given to us.”",
+      "author": "J.R.R. Tolkien",
+      "source": ""
+    },
+    {
+      "text": "Make everything as simple as it can be. But no simpler.",
+      "author": "Albert Einstein",
+      "source": ""
+    },
+    {
+      "text": "One glance through a book and you hear the voice of another person, perhaps someone dead for 1000 years. To read is to voyage through time.",
+      "author": "Carl Sagan",
+      "source": ""
+    },
+    {
+      "text": "I go down to the shore in the morning and depending on the hour the waves are rolling in or moving out, and I say, oh, I am miserable, what shall- what should I do? And the sea says in its lovely voice: Excuse me, I have work to do.",
+      "author": "Mary Oliver",
+      "source": ""
+    },
+    {
+      "text": "I don’t want to end up simply having visited this world.",
+      "author": "Mary Oliver",
+      "source": ""
+    },
+    {
+      "text": "Tell me, what is it you plan to do with your one wild and precious life?",
+      "author": "Mary Oliver",
+      "source": ""
+    },
+    {
+      "text": "What you do with your attention is, in the end, what you do with your life.",
+      "author": "John Green",
+      "source": ""
+    },
+    {
+      "text": "We are all one species, sharing one profoundly interconnected world. And humans, all humans, are our people. And when the oppressed and marginalised die because they are oppressed and marginalised, the powerful are at fault.",
+      "author": "John Green",
+      "source": ""
+    },
+    {
+      "text": "Looking to the future, it's not the Mexicans or Chinese who will take the jobs from the people in Pennsylvania, it's the robots and algorithms. So, unless you plan to build a big wall on the border of California, the wall on the border with Mexico is going to be very ineffective.",
+      "author": "Yuval Noah Harari",
+      "source": "Sapiens"
+    },
+    {
+      "text": "Extraordinary claims require extraordinary evidence.",
+      "author": "Carl Sagan",
+      "source": ""
+    },
+    {
+      "text": "If you want to know what a man’s like, take a good look at how he treats his inferiors, not his equals.",
+      "author": "Sirius Black",
+      "source": "J. K. Rowling"
+    },
+    {
+      "text": "I am what I am, an' I'm not ashamed. 'Never be ashamed,' my ol' dad used ter say, 'there's some who'll hold it against you, but they're not worth botherin' with.",
+      "author": "Hagrid",
+      "source": "J. K. Rowling"
+    },
+    {
+      "text": "Words are, in my not-so-humble opinion, our most inexhaustible source of magic. Capable of both inflicting injury, and remedying it.",
+      "author": "Dumbledore (Movie)",
+      "source": ""
+    },
+    {
+      "text": "With or without religion, good people can behave well and bad people can do evil; but for good people to do evil—that takes religion.",
+      "author": "Steven Weinberg",
+      "source": ""
+    },
+    {
+      "text": "Is God willing to prevent evil but unable to do so? Then he is not omnipotent. Is God able to prevent evil but unwilling to do so? Then he is malevolent (or at least less than perfectly good). If God is both willing and able to prevent evil then why is there evil in the world?",
+      "author": "Epicurus’ Trilemma",
+      "source": ""
+    },
+    {
+      "text": "In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.",
+      "author": "Douglas Adams",
+      "source": "The Restaurant at the End of the Universe"
+    },
+    {
+      "text": "Isn't it enough to see that a garden is beautiful without having to believe that there are fairies at the bottom of it too?",
+      "author": "Douglas Adams",
+      "source": ""
+    },
+    {
+      "text": "The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But preferences do not determine what's true.",
+      "author": "Carl Sagan",
+      "source": ""
+    },
+    {
+      "text": "I declare after all there is no enjoyment like reading! How much sooner one tires of anything than of a book! When I shall have a house of my own, I shall be miserable if I have not a library of my own.",
+      "author": "Jane Austen",
+      "source": ""
+    },
+    {
+      "text": "Now, now my good man, this is no time to be making enemies.\"",
+      "author": "Voltaire (on his deathbed in response to a priest asking him that he renounce Satan.)",
+      "source": ""
+    },
+    {
+      "text": "So, now I too am an official member of the guild of whores.",
+      "author": "Albert Einstein (on accepting professorship)",
+      "source": ""
+    },
+    {
+      "text": "The question today is how one can convince humanity to consent to their own survival.",
+      "author": "Bertrand Russell (paraphrased)",
+      "source": ""
+    },
+    {
+      "text": "I’m a man who loves beautiful yet useless things. The moon. The stars. Flowers. Lakes. Jokes. Things like that.",
+      "author": "Kim Hui-seong",
+      "source": ""
+    },
+    {
+      "text": "Worrying is the correct worldview. Life is worrisome.",
+      "author": "John Green",
+      "source": ""
+    },
+    {
+      "text": "In the best conversations, you don’t even remember what you talked about, only how it felt.",
+      "author": "John Green",
+      "source": ""
+    },
+    {
+      "text": "Man will become better when you show him what he is like.",
+      "author": "Anton Chekhov",
+      "source": ""
+    },
+    {
+      "text": "It's a wonder I haven't abandoned all my ideals, they seem so absurd and impractical. Yet I cling to them because I still believe, in spite of everything, that people are truly good at heart.",
+      "author": "Anne Frank",
+      "source": ""
+    },
+    {
+      "text": "Let others praise ancient times; I am glad I was born in these.",
+      "author": "Ovid",
+      "source": ""
+    },
+    {
+      "text": "Ultimately, it doesn't matter which telescope you look up; the most complex thing we've ever seen the universe make is looking up that telescope.",
+      "author": "Exurb1a",
+      "source": ""
+    },
+    {
+      "text": "The most dangerous worldview is the worldview of those who have not viewed the world.",
+      "author": "Alexander von Humboldt",
+      "source": ""
+    },
+    {
+      "text": "Every reasonable person must strive to promote moderation and a more objective judgement.",
+      "author": "Albert Einstein",
+      "source": ""
+    },
+    {
+      "text": "As a general rule, people, even the wicked, are much more naive and simple-hearted than we suppose. And we ourselves are, too.",
+      "author": "Fyodor Dostoyevsky",
+      "source": "The Brothers Karamazov"
+    },
+    {
+      "text": "You should never underestimate human stupidity. It is one of the most powerful forces that shape history.",
+      "author": "Yuval Noah Harari",
+      "source": ""
+    },
+    {
+      "text": "We have bred docile cows that produce enormous amounts of milk but are otherwise far inferior to their wild ancestors. They are less agile, less curious, and less resourceful. We are now creating tame humans that produce enormous amounts of data and function as very efficient chips in a huge data-processing mechanism, but these data-cows hardly maximise the human potential.",
+      "author": "Yuval Noah Harari",
+      "source": ""
+    },
+    {
+      "text": "If we are not careful, we will end up with downgraded humans misusing upgraded computers to wreak havoc on themselves and the world.",
+      "author": "Yuval Noah Harari",
+      "source": ""
+    },
+    {
+      "text": "Since there is no national answer to the problem of global warming, some nationalist politicians prefer to believe the problem does not exist.",
+      "author": "Yuval Noah Harari",
+      "source": ""
+    },
+    {
+      "text": "By unrighteousness man prospers, gains what appears desirable, conquers enemies, but perishes at the root.",
+      "author": "Rabindranath Tagore",
+      "source": "Civilisation's Crisis"
+    },
+    {
+      "text": "Often, strong beliefs are needed precisely when the story isn't true.",
+      "author": "Yuval Noah Harari",
+      "source": "Sapiens"
+    },
+    {
+      "text": "I'm always inclined to believe that the best way of knowing [the divine] is to love a great deal. Love that friend, that person, that thing, whatever you like, you'll be on the right path to knowing more thoroughly, afterwards; that's what I say to myself. But you must love with a high, serious intimate sympathy, with a will, with intelligence, and you must always seek to know more thoroughly, better and more.",
+      "author": "Vincent van Gogh",
+      "source": "The Letters of Vincent van Gogh" 
+    },
+    {
+      "text": "If you cannot afford to waste time, you will never find the truth.",
+      "author": "Yuval Noah Harari",
+      "source": ""
+    },
+    {
+      "text": "The greatest food is the knowledge of the union which the mind has with the whole of nature... The more the mind knows the better it understands its forces and the order of nature; the more it understands it’s forces or strength, the better it will be able to direct itself and lay down rules for itself; and the more it understands the order of nature the more easily it will be able to liberate itself from useless things; this is the whole method.",
+      "author": "Spinoza",
+      "source": ""
+    },
+    {
+      "text": "To live is the rarest thing in the world. Most people exist, that’s all.",
+      "author": "Oscar Wilde",
+      "source": ""
+    },
+    {
+      "text": "The problem with the world is that the intelligent people are full of doubts, while the stupid ones are full of confidence.",
+      "author": "Charles Bukowski",
+      "source": ""
+    },
+    {
+      "text": "The free soul is rare, but you know it when you see it - basically because you feel good, very good, when you are near or with them.",
+      "author": "Charles Bukowski",
+      "source": ""
+    },
+    {
+      "text": "The best lack all conviction, while the worst are full of passionate intensity.",
+      "author": "William Yeats",
+      "source": ""
+    },
+    {
+      "text": "Everything that men have written about women should be viewed with suspicion, because they are both judge and party.",
+      "author": "Poulain de la Barre",
+      "source": ""
+    },
+    {
+      "text": "It’s wrong to hurt even bad people. Because they don’t know any better, and because bad people sometimes become good.",
+      "author": "Khaled Hosseini",
+      "source": ""
+    },
+    {
+      "text": "It may be unfair, but what happens in a few days, sometimes even a single day, can change the course of a whole lifetime.",
+      "author": "Khaled Hosseini",
+      "source": "The Kite Runner"
+    },
+    {
+      "text": "If a hiker gets lost in the mountains, people will coordinate a search. If a train crashes, people will line up to give blood. If an earthquake levels a city, people all over the world will send emergency supplies. This is so fundamentally human that it's found in every culture without exception. Yes, there are assholes who just don't care, but they're massively outnumbered by the people who do.",
+      "author": "Andy Weir",
+      "source": "The Martian"
+    },
+    {
+      "text": "All our science, measured against reality, is primitive and childlike - and yet it is the most precious thing we have.",
+      "author": "Albert Einstein",
+      "source": ""
+    },
+    {
+      "text": "Men think epilepsy divine, merely because they do not understand it. But if they called everything divine which they do not understand, why, there would be no end of divine.",
+      "author": "Hippocrates",
+      "source": ""
+    },
+    {
+      "text": "For what matters in life is not whether we receive a round of applause, what matters is whether we have the courage to venture forth despite the uncertainty of acclaim.",
+      "author": "Amor Towles",
+      "source": "A Gentleman in Moscow"
+    },
+    {
+      "text": "The soul in which philosophy dwells should by its health make even the body healthy. It should make its tranquility and gladness shine out from within; should form in its own mold the outward demeanour, and consequently arm it with a graceful pride, an active and joyous bearing, and a contented and good-natured countenance. The surest sign of wisdom is constant cheerfulness.",
+      "author": "Michel de Montaigne",
+      "source": ""
+    },
+    {
+      "text": "When one is travelling abroad for the first time, one does not wish to look back on laborsome instructions, weighty advice, or tearful sentiments. Like the memory of the simple soup, when one is homesick what one will find most comforting to recall are those lighthearted little stories that have been told a thousand times before.",
+      "author": "Amor Towles",
+      "source": ""
+    },
+    {
+      "text": "Why wasn't friendship as good as a relationship? Why wasn't it even better? It was two people who remained together, day after day, bound not by sex or physical attraction or money or children or property, but only by the shared agreement to keep going, the mutual dedication to a union that could never be codified.",
+      "author": "Hanya Yanagihara",
+      "source": "A Little Life"
+    },
+    {
+      "text": "He was pleasantly exhausted, but then he was always exhausted those days: it was as if the daily effort it took to appear normal was so great that it left energy for little else.",
+      "author": "Hanya Yanagihara",
+      "source": "A Little Life"
+    },
+    {
+      "text": "Prudence necessarily leads to mediocrity.",
+      "author": "Simone de Beauvoir",
+      "source": ""
+    },
+    {
+      "text": "What he knew, he knew from books, and books lied, they made things prettier.",
+      "author": "Hanya Yanagihara",
+      "source": "A Little Life"
+    },
+    {
+      "text": "And although our life, in this manifestation of it, is often worthless, yet it is life and not simply extracting square roots.",
+      "author": "Fyodor Dostoyevsky",
+      "source": ""
+    },
+    {
+      "text": "I have a longing for life, and I go on living in spite of logic. Though I may not believe in the order of the universe, yet I love the sticky little leaves as they open in spring. I love the blue sky, I love some people, whom one loves you know sometimes without knowing why. I love some great deeds done by men, though I’ve long ceased perhaps to have faith in them, yet from old habit one’s heart prized them.",
+      "author": "Fyodor Dostoevsky",
+      "source": "The Brothers Karamazov"
+    },
+    {
+      "text": "No one should ever be bored. One can be horrified, or disgusted, but one can’t be bored.",
+      "author": "G.H. Hardy",
+      "source": ""
+    },
+    {
+      "text": "Don’t aim at success - the more you aim at it and make it a target, the more you are going to miss it. For success, like happiness, cannot be pursued; it must ensue, and it only does so as the unintended side-effect of one’s dedication to a cause greater than oneself or as the by-product of one’s surrender to a person other than oneself. Happiness must happen, and the same holds for success: you have to let it happen by not caring about it.",
+      "author": "Viktor Frankl",
+      "source": ""
+    },
+    {
+      "text": "No man should judge unless he asks himself in absolute honesty whether in a similar situation he might not have done the same.",
+      "author": "Viktor Frankl",
+      "source": ""
+    },
+    {
+      "text": "One should not search for an abstract meaning of life. Everyone has his own vocation or mission in life to carry out a concrete assignment which demands fulfilment. Therein he cannot be replaced, nor can his life be repeated. Thus, everyone’s task is as unique as is his specific opportunity to implement it.",
+      "author": "Viktor Frankl",
+      "source": ""
+    },
+    {
+      "text": "To understand just one life, you have to swallow the world.",
+      "author": "Salman Rushdie",
+      "source": ""
+    },
+    {
+      "text": "I never approve, or disapprove, of anything now. It is an absurd attitude to take towards life. We are not sent into the world to air our moral prejudices. I never take any notice of what common people say, and I never interfere with what charming people do. If a personality fascinates me, whatever mode of expression that personality selects is absolutely delightful to me.",
+      "author": "Oscar Wilde",
+      "source": ""
+    },
+    {
+      "text": "To be good is to be in harmony with one’s self. Discord is to be forced to be in harmony with others. One’s own life - that is the important thing. As for the lives of one’s neighbours, if one wishes to be a prig or a Puritan, one can flaunt one’s moral views about them, but they are not one’s concern. Besides, Individualism has really the higher aim. Modern morality consists in accepting the standard of one’s age. I consider that for any man of culture to accept the standard of his age is a form of the grossest immorality.",
+      "author": "Oscar Wilde",
+      "source": ""
+    },
+    {
+      "text": "There are only two kinds of people, who are really fascinating - people who know absolutely everything, and people who know absolutely nothing.",
+      "author": "Oscar Wilde",
+      "source": ""
+    },
+    {
+      "text": "Above all, don’t lie to yourself. The man who lies to himself and listens to his own lie comes to a point that he cannot distinguish the truth within him, or around him, and so loses all respect for himself and for others. And having no respect he ceases to love.",
+      "author": "Fyodor Dostoevsky",
+      "source": "The Brothers Karamazov"
+    },
+    {
+      "text": "The mystery of human existence lies not in just staying alive, but in finding something to live for.",
+      "author": "Fyodor Dostoevsky",
+      "source": ""
+    },
+    {
+      "text": "How can a man of consciousness have the slightest of respect for himself?",
+      "author": "Dostoevsky",
+      "source": ""
+    },
+    {
+      "text": "Perhaps one never seems so much at one’s ease as when one has to play a part.",
+      "author": "Oscar Wilde",
+      "source": ""
+    },
+    {
+      "text": "I was a hidden treasure and desired to be known; therefore I created the creation in order to be known.",
+      "author": "Sufi creation myth",
+      "source": ""
+    },
+    {
+      "text": "Man will desire oblivion rather than not desire at all.",
+      "author": "Friedrich Nietzsche",
+      "source": ""
+    },
+    {
+      "text": "Man is sometimes extraordinarily, passionately, in love with suffering: that is a fact.",
+      "author": "Fyodor Dostoevsky",
+      "source": ""
+    },
+    {
+      "text": "I know my life's meaningful because\" - and here he stopped, and looked shy, and was silent for a moment before he continued - \" because I'm a good friend. I love my friends, and I care about them, and I think I make them happy.",
+      "author": "Hanya Yanagihara",
+      "source": "A Little Life"
+    },
+    {
+      "text": "Of course you are right, my dear friend, there would be less suffering among men if they did not—God knows why they are so constituted—expend so much zeal and imagination in recalling the memory of past ills, instead of enduring an indifferent present.",
+      "author": "Goethe",
+      "source": ""
+    },
+    {
+      "text": "'I told you the truth,' I say yet again, 'Memory's truth, because memory has its own special kind. It selects, eliminates, alters, exaggerates, minimizes, glorifies, and vilifies also; but in the end it creates its own reality, its heterogenous but usually coherent version of events; and no sane human being ever trusts someone else's version more than his own.'",
+      "author": "Salman Rushdie",
+      "source": "Midnight's Children"
+    },
+    {
+      "text": "Who what am I? My answer: I am the sum total of everything that went before me, of all I have been seen done, of everything done-to-me. I am everyone everything whose being-in-the-world affected was affected by mine. I am anything that happens after I've gone which would not have happened if I had not done. Nor am I particularly exceptional in this matter; each 'I', every one of the now six-hundred million-plus of us, contains a similar multitude. I repeat for the last time: to understand me, you'll have to swallow a world.",
+      "author": "Salman Rushdie",
+      "source": "Midnight's Children"
+    },
+    {
+      "text": "Don't be overwise; fling yourself straight into life, without deliberation; don't be afraid - the flood will bear you to the bank and set you safe again.",
+      "author": "Fyodor Dostoevsky",
+      "source": "Crime and Punishment"
+    },
+    {
+      "text": "Many people seem to think it foolish, even superstitious, to believe that the world could still change for the better. And it is true that in winter it is sometimes so bitingly cold that one is tempted to say, 'What do I care if there is a summer; its warmth is no help to me now.' Yes, evil often seems to surpass good. But then, in spite of us, and without our permission, there comes at last an end to the bitter frosts. One morning the wind turns, and there is a thaw. And so I must still have hope.",
+      "author": "Vincent van Gogh",
+      "source": ""
+    },
+    {
+      "text": "Don’t take my devils away, because my angels may flee too.",
+      "author": "Rainer Maria Milke",
+      "source": ""
+    },
+    {
+      "text": "Just because she likes the same bizarro crap you do doesn’t mean she’s your soulmate.",
+      "author": "500 Days of Summer",
+      "source": ""
+    },
+    {
+      "text": "While the astronauts, heroes forever, spent mere hours on the moon, I have remained in this new world for nearly thirty years. I know that my achievement is quite ordinary. I am not the only man to seek his fortune far from home, and certainly I am not the first. Still, there are times I am bewildered by each mile I have travelled, each meal I have eaten, each person I have known, each room in which I have slept. As ordinary as it all appears, there are times when it is beyond my imagination.",
+      "author": "Jhumpa Lahiri",
+      "source": "Interpreter of Maladies"
+    },
+    {
+      "text": "I am tired of myself, I should like to be someone else tonight.",
+      "author": "Oscar Wilde",
+      "source": ""
+    },
+    {
+      "text": "So, if you are too tired to speak, sit next to me for I, too, am fluent in silence. You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.",
+      "author": "Albert Camus",
+      "source": ""
+    },
+    {
+      "text": "Man is the only creature who refuses to be what he is.",
+      "author": "Albert Camus",
+      "source": ""
+    },
+    {
+      "text": "I opened myself to the gentle indifference of the world.",
+      "author": "Albert Camus",
+      "source": ""
+    },
+    {
+      "text": "Stand in the trench, Achilles, flame-capped, and shout for me.",
+      "author": "Patrick Shaw Stewart",
+      "source": ""
+    },
+    {
+      "text": "For what is a writer, if not an interpreter of maladies.",
+      "author": "Jhumpa Lahiri (?)",
+      "source": ""
+    },
+    {
+      "text": "Most people are other people. Their thoughts are someone else’s opinions, their lives a mimicry, their passions a quotation.",
+      "author": "Oscar Wilde",
+      "source": ""
+    },
+    {
+      "text": "Children begin by loving their parents; as they grow older they judge them; sometimes they forgive them.",
+      "author": "Oscar Wilde",
+      "source": ""
+    },
+    {
+      "text": "The amount of eccentricity in a society has generally been proportional to the amount of genius, mental vigour, and moral courage which it contained. That so few now dare to be eccentric, marks the chief danger of the time.",
+      "author": "John Stuart Mill",
+      "source": ""
+    },
+    {
+      "text": "If people never did silly things nothing intelligent would ever get done.",
+      "author": "Ludwig Wittgenstein",
+      "source": ""
+    },
+    {
+      "text": "A serious and good philosophical work could be written consisting entirely of jokes.",
+      "author": "Ludwig Wittgenstein",
+      "source": ""
+    },
+    {
+      "text": "To go from the phantoms of faith to the ghosts of reason is merely to change cells.",
+      "author": "Bernardo Soares (Fernando Pessoa)",
+      "source": ""
+    },
+    {
+      "text": "That is part of the beauty of all literature. You discover that your longings are universal longings, that you're not lonely and isolated from anyone. You belong.",
+      "author": "Fitzgerald",
+      "source": ""
+    },
+    {
+      "text": "In her head there could be a great deal of acting and many strange things could happen in there, but her emotions were sincere and they revolted, they prevented her from getting lost down in the deep corridors of her inventions. Through them she knew. They were her eyes, her divining rod, they were her truth.",
+      "author": "Anais Nin",
+      "source": ""
+    },
+    {
+      "text": "Laughter I declare to be blessed; you who aspire to greatness, learn how to laugh!",
+      "author": "Nietzsche",
+      "source": ""
+    },
+    {
+      "text": "It's the central error of the literary imagination: to suppose that others are like us and must feel as we do.",
+      "author": "Fernando Pessoa",
+      "source": "The Book of Disquiet"
+    },
+    {
+      "text": "Beyond the vast sorrows and all the vexations that weigh upon our lives and obscure our vision, happy is he who can with his vigourous wing soar up towards those fields luminous and serene, he whose thoughts, like skylarks, toward the morning sky take flight — who hovers over life and understands with ease the language of flowers and silent things!",
+      "author": "Charles Baudelaire",
+      "source": "The Flowers of Evil"
+    },
+    {
+      "text": "The staircase wall on which I saw the rising glimmer of his candle has long since ceased to exist. In me, too, many things have been destroyed that I thiught were bound to last forever and new ones have formed that have given birth to new sorrows and joys which I could not have foreseen then, just as the old ones have become difficult for me to understand.",
+      "author": "Marcel Proust",
+      "source": "Swann's Way"
+    },
+    {
+      "text": "Look for light and freedom and do not ponder too deeply over the evil in life.",
+      "author": "Vincent van Gogh",
+      "source": ""
+    },
+    {
+      "text": "For the sake of one wish yet unfulfilled he thought but little of everything else that heaven had granted him. That is how humans are made!",
+      "author": "Nizami",
+      "source": ""
+    },
+    {
+      "text": "It was as if his name had been torn out of the Book of Life, and he had fallen into nothing-ness; as if he were no longer one of the living, and not yet one of the dead.",
+      "author": "Nizami",
+      "source": ""
+    },
+    {
+      "text": "Love, if not true, is but a plaything of the senses, fading like youth. Time perishes, but not true love. All may be imagination and delusion, but not love. The charcoal brazier on which it burns is eternity itself, without beginning or end.",
+      "author": "Nizami",
+      "source": ""
+    },
+    {
+      "text": "He who remains a stranger in this world and wanders, restless as the moon at night, will find peace. Man is as lightning, born to die, not to seek permanence in the house of suffering. Do not settle down to rest here, where everything perishes; you will only regret it later. But if you die your own death in this life, tearing yourself away from the world which is a demon with the face of an angel, you will share eternal life. You are your fate, your death, your life. Good will be joined to good, evil to evil. The echo shouts your secret from the mountain-tops, revealing only what you confided yourself.",
+      "author": "Nizami",
+      "source": ""
+    },
+    {
+      "text": "What we are and possess is but a loan—and that not for long! Do not clutch what had been given to you, for joy and desire to possess are but nailed fastening you to the perishable world. To obtain your jewel you have to burst open the casket and take wing like the dove from the tower on which you are standing…",
+      "author": "Nizami",
+      "source": ""
+    },
+    {
+      "text": "If it is humanly possible, consider it to be within your reach.",
+      "author": "Marcus Aurelius",
+      "source": "Meditations"
+    },
+    {
+      "text": "For she had but a single weapon against the world of crudity surrounding her: the books she took out of the municipal library, and above all, the novels. She had read any number of them, from Fielding to Thomas Mann. They not only offered the possibility of an imaginary escape from a life she found unsatisfying; they also had a meaning for her as physical objects: she loved to walk down the street with a book under her arm. It had the same significance for her as an elegant cane for the dandy a century ago. It differentiated her from the others.",
+      "author": "Milan Kundera",
+      "source": "The Unbearable Lightness of Being"
+    },
+    {
+      "text": "Indeed, the only truly serious questions are ones that even a child can formulate. Only the most naive of questions are truly serious. They are the questions with no answers. A question with no answer is a barrier that cannot be breached. In other words, it is questions with no answers that set the limits of human possibilities, describe the boundaries of human existence.",
+      "author": "Milan Kundera",
+      "source": "The Unbearable Lightness of Being"
+    },
+    {
+      "text": "He said very quietly, as if talking to himself, 'When I was a boy I used to sit at this window and look at the hills and the lake. Nothing has changed. I can still see a man's profile in the shape of that peak over there; the same noises come up from the bazaar below; the same human ants move about. The toy yachts becalmed on the lake have not finished the race which started when I was a boy. The house has not changed, the garden hasn't changed, the gardener hasn't changed. These hill people grow no older. They treat me like a little boy. The coolies are the same, in the same rags, with the same smiles and smells. I feel I have never been away. Then I talk to father and mother and their friends and I know I have been away for more than ten years. We talk without knowing what has happened to each other in the course of these years, not even external things. How much greater is the ignorance of the changes within that cannot be described but only felt! At least, when people are near each other they have some slight indication … Yet I am expected to think and behave as if I had never been away, as if the patterns of my thoughts should be familiar to those who have stayed behind.",
+      "author": "Attia Hosain",
+      "source": "Sunlight on a Broken Column"
+    },
+    {
+      "text": "The distance--physical and mental--that had been traversed in the last decade nearly stopped my breath, and I wondered if perhaps I had changed _too_ much. All my studying, reading, thinking, traveling, had it transformed me into someone who no longer belonged anywhere?",
+      "author": "Tara Westover",
+      "source": "Educated"
+    },
+    {
+      "text": "It is a mistake to think you can solve any major problems just with potatoes.",
+      "author": "Douglas Adams",
+      "source": "Life, the Universe and Everything"
+    },
+    {
+      "text": "Two billion years ago our ancestors were microbes; a half billion years ago, fish; a hundred million years ago, something like mice; ten million years ago, arboreal apes; and a million years ago, proto-humans puzzling out the taming of fire. Our evolutionary lineage is marked by mastery of change. In our time, the pace is quickening.",
+      "author": "Carl Sagan",
+      "source": "Pale Blue Dot"
+    },
+    {
+      "text": "The molten rock, or magma, rises through fissures in the surrounding heavier solid rocks. We can image vast subterranean caverns filled with glowing, red, bubbling, viscous liquids that shoot up toward the surface if a suitable channel is by chance provided. The magma, called lava as it pours out of the summit caldera, does indeed arise from the underworld. The souls of the damned have so far eluded detection.",
+      "author": "Carl Sagan", 
+      "source": "Pale Blue Dot"
+    }
+  ]
+}
