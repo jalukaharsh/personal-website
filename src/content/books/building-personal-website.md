@@ -2,6 +2,8 @@
 title: "Building a Personal Website in 2024"
 description: "A comprehensive guide to creating your own personal website with modern tools and best practices for developers."
 pubDate: 2024-10-15T14:30:00Z
+author: "John Developer"
+publicationYear: 2024
 tags: ["web-development", "personal-branding", "tutorial"]
 draft: false
 ---

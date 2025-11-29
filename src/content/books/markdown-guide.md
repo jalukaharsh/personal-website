@@ -2,6 +2,8 @@
 title: "The Complete Markdown Guide for Developers"
 description: "Master Markdown syntax with this comprehensive guide covering everything from basics to advanced formatting techniques."
 pubDate: 2024-08-10T16:45:00Z
+author: "Sarah Writer"
+publicationYear: 2024
 tags: ["markdown", "documentation", "writing"]
 draft: false
 ---

@@ -3,16 +3,15 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import BlogPostCard from '../../components/BlogPostCard.astro';
 
-// Fetch all published books posts (draft: false)
-const allPosts = await getCollection('books', ({ data }) => {
+// Fetch all published books (draft: false)
+const allBooks = await getCollection('books', ({ data }) => {
   return data.draft === false;
 });
 
-// Sort posts in reverse chronological order
-const sortedPosts = allPosts.sort((a, b) => {
-  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+// Sort books alphabetically by title by default
+const sortedBooks = allBooks.sort((a, b) => {
+  return a.data.title.localeCompare(b.data.title);
 });
 ---
 
@@ -23,26 +22,48 @@ const sortedPosts = allPosts.sort((a, b) => {
   <Header slot="header" />
   
   <div class="space-y-8">
-    <div class="text-center mb-12">
+    <div class="mb-8">
       <h1 class="text-4xl font-bold mb-4">Books</h1>
-      <p class="text-gray-600 text-lg">
-        {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
+      <p class="text-gray-600 text-lg mb-6">
+        {sortedBooks.length} {sortedBooks.length === 1 ? 'book' : 'books'}
       </p>
+      
+      <!-- Sort Controls -->
+      <div class="flex gap-2 flex-wrap">
+        <span class="text-gray-600">Sort by:</span>
+        <button id="sort-title" class="sort-btn text-blue-600 hover:text-blue-800 font-medium underline">
+          Title
+        </button>
+        <span class="text-gray-400">|</span>
+        <button id="sort-author" class="sort-btn text-blue-600 hover:text-blue-800">
+          Author
+        </button>
+        <span class="text-gray-400">|</span>
+        <button id="sort-year" class="sort-btn text-blue-600 hover:text-blue-800">
+          Year
+        </button>
+      </div>
     </div>
 
-    <div class="space-y-6">
-      {sortedPosts.map(post => (
-        <BlogPostCard
-          title={post.data.title}
-          description={post.data.description}
-          pubDate={post.data.pubDate}
-          slug={post.slug}
-          tags={post.data.tags}
-        />
+    <ul id="books-list" class="space-y-4">
+      {sortedBooks.map(book => (
+        <li class="book-item border-l-4 border-blue-500 pl-4 py-2 hover:bg-gray-50 transition-colors" 
+            data-title={book.data.title}
+            data-author={book.data.author}
+            data-year={book.data.publicationYear}>
+          <a href={`/books/${book.slug}`} class="block group">
+            <h2 class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+              {book.data.title}
+            </h2>
+            <p class="text-gray-600 text-sm mt-1">
+              by {book.data.author} ({book.data.publicationYear})
+            </p>
+          </a>
+        </li>
       ))}
-    </div>
+    </ul>
 
-    {sortedPosts.length === 0 && (
+    {sortedBooks.length === 0 && (
       <div class="text-center py-12">
         <p class="text-gray-500 text-lg">No books yet. Check back soon!</p>
       </div>
@@ -51,3 +72,34 @@ const sortedPosts = allPosts.sort((a, b) => {
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script>
+  function sortBooks(sortBy: 'title' | 'author' | 'year') {
+    const list = document.getElementById('books-list');
+    if (!list) return;
+
+    const items = Array.from(list.querySelectorAll('.book-item')) as HTMLElement[];
+    
+    items.sort((a, b) => {
+      const aValue = a.getAttribute(`data-${sortBy}`) || '';
+      const bValue = b.getAttribute(`data-${sortBy}`) || '';
+      
+      if (sortBy === 'year') {
+        return parseInt(aValue) - parseInt(bValue);
+      }
+      return aValue.localeCompare(bValue);
+    });
+
+    items.forEach(item => list.appendChild(item));
+
+    // Update active button styling
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+      btn.classList.remove('font-medium', 'underline');
+    });
+    document.getElementById(`sort-${sortBy}`)?.classList.add('font-medium', 'underline');
+  }
+
+  document.getElementById('sort-title')?.addEventListener('click', () => sortBooks('title'));
+  document.getElementById('sort-author')?.addEventListener('click', () => sortBooks('author'));
+  document.getElementById('sort-year')?.addEventListener('click', () => sortBooks('year'));
+</script>

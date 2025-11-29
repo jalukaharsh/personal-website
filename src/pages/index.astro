@@ -45,15 +45,20 @@ const recentPosts = publishedPosts.slice(0, 5);
 
       {recentPosts.length > 0 ? (
         <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-          {recentPosts.map(post => (
-            <BlogPostCard
-              title={post.data.title}
-              description={post.data.description}
-              pubDate={post.data.pubDate}
-              slug={post.slug}
-              tags={post.data.tags}
-            />
-          ))}
+          {recentPosts.map(post => {
+            // Determine collection from the post
+            const collection = post.collection;
+            return (
+              <BlogPostCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                slug={post.slug}
+                tags={post.data.tags}
+                collection={collection}
+              />
+            );
+          })}
         </div>
       ) : (
         <div class="text-center py-12 bg-gray-50 rounded-lg">

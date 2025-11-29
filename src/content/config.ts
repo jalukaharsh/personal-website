@@ -8,9 +8,19 @@ const contentSchema = z.object({
   draft: z.boolean().default(false),
 });
 
+const booksSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  pubDate: z.coerce.date(),
+  author: z.string(),
+  publicationYear: z.number(),
+  tags: z.array(z.string()).optional(),
+  draft: z.boolean().default(false),
+});
+
 const booksCollection = defineCollection({
   type: 'content',
-  schema: contentSchema,
+  schema: booksSchema,
 });
 
 const projectsCollection = defineCollection({
