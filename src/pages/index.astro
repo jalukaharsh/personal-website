@@ -5,43 +5,42 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
 
-// Fetch all blog posts
-const allPosts = await getCollection('blog');
+// Fetch all posts from all three collections
+const booksEntries = await getCollection('books');
+const projectsEntries = await getCollection('projects');
+const travelEntries = await getCollection('travel');
+
+// Combine all posts
+const allPosts = [...booksEntries, ...projectsEntries, ...travelEntries];
 
 // Filter out draft posts and sort by pubDate in reverse chronological order
 const publishedPosts = allPosts
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
-// Display 5-10 most recent posts (let's use 10)
-const recentPosts = publishedPosts.slice(0, 10);
+// Display 5 most recent posts
+const recentPosts = publishedPosts.slice(0, 5);
 ---
 
 <BaseLayout 
-  title="My Blog - Home" 
-  description="Welcome to my personal blog where I share thoughts on web development, technology, and more."
+  title="Harsh Jaluka - Home" 
+  description="Welcome to my personal website where I share books, projects, and travel experiences."
 >
   <Header slot="header" />
   
   <div class="space-y-8">
     <section class="text-center mb-12">
       <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-        Welcome to My Blog
+        Welcome to My Website
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Exploring web development, technology, and creative ideas
+        Exploring books, projects, and travel adventures
       </p>
     </section>
 
     <section>
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-3xl font-bold text-gray-900">Recent Posts</h2>
-        <a 
-          href="/blog" 
-          class="text-blue-600 hover:text-blue-800 font-semibold transition-colors"
-        >
-          View all posts →
-        </a>
       </div>
 
       {recentPosts.length > 0 ? (
@@ -58,7 +57,7 @@ const recentPosts = publishedPosts.slice(0, 10);
         </div>
       ) : (
         <div class="text-center py-12 bg-gray-50 rounded-lg">
-          <p class="text-gray-600 text-lg">No blog posts yet. Check back soon!</p>
+          <p class="text-gray-600 text-lg">No posts yet. Check back soon!</p>
         </div>
       )}
     </section>
