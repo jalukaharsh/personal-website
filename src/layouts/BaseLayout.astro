@@ -19,8 +19,10 @@ const { title, description } = Astro.props;
   </head>
   <body class="min-h-screen flex flex-col bg-[var(--color-background-primary)] text-[var(--color-text-primary)]">
     <slot name="header" />
-    <main class="flex-grow container mx-auto px-6 py-12 max-w-3xl">
-      <slot />
+    <main class="flex-grow w-full flex justify-center">
+      <div class="w-full max-w-4xl" style="padding: 2.0rem;">
+        <slot />
+      </div>
     </main>
     <slot name="footer" />
   </body>
