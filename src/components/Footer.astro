@@ -2,10 +2,36 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-primary-900 text-primary-50 mt-auto border-t-2 border-primary-700">
-  <div class="container mx-auto px-4 py-8 max-w-4xl">
-    <div class="text-center text-primary-300">
+<footer class="footer-elegant mt-auto w-full flex justify-center">
+  <div class="w-full max-w-4xl px-4 py-8">
+    <div class="text-center footer-text">
       <p>&copy; {currentYear} My Blog. All rights reserved.</p>
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-elegant {
+    background-color: var(--color-bg-primary);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-text {
+    color: var(--color-text-primary);
+  }
+
+  footer a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  footer a:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+</style>

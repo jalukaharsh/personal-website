@@ -2,17 +2,17 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-primary-900 text-primary-50 shadow-md">
-  <nav class="container mx-auto px-4 py-6 max-w-4xl">
+<header class="header-elegant w-full flex justify-center">
+  <nav class="w-full max-w-4xl px-4 py-6">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-      <a href="/" class="text-2xl font-bold hover:text-primary-400 transition-colors">
+      <a href="/" class="nav-link-logo text-2xl font-bold">
         My Blog
       </a>
       <ul class="flex gap-6 text-lg">
         <li>
           <a 
             href="/" 
-            class={`hover:text-primary-400 transition-colors ${currentPath === '/' ? 'text-tech-400 font-semibold' : ''}`}
+            class={`nav-link ${currentPath === '/' ? 'nav-link-active' : ''}`}
           >
             Home
           </a>
@@ -20,7 +20,7 @@ const currentPath = Astro.url.pathname;
         <li>
           <a 
             href="/blog" 
-            class={`hover:text-primary-400 transition-colors ${currentPath.startsWith('/blog') ? 'text-tech-400 font-semibold' : ''}`}
+            class={`nav-link ${currentPath.startsWith('/blog') ? 'nav-link-active' : ''}`}
           >
             Blog
           </a>
@@ -29,3 +29,43 @@ const currentPath = Astro.url.pathname;
     </div>
   </nav>
 </header>
+
+<style>
+  .header-elegant {
+    background-color: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-link-logo {
+    color: var(--color-text-primary);
+  }
+
+  .nav-link-logo:hover {
+    text-decoration: underline;
+  }
+
+  .nav-link-logo:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-link {
+    color: var(--color-text-primary);
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  .nav-link:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-link-active {
+    text-decoration: underline;
+    font-weight: var(--font-weight-semibold);
+  }
+</style>
