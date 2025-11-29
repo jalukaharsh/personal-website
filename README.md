@@ -9,7 +9,7 @@ A modern, fast, and extensible personal blog built with Astro and Tailwind CSS. 
 - 🎨 Responsive design with Tailwind CSS
 - ⚡ Lightning-fast static site generation
 - 🔍 Built-in link validation
-- 🚀 Deploy anywhere (Netlify, Vercel, GitHub Pages, etc.)
+- 🚀 Deploy anywhere
 - 🔧 Fully extensible architecture for future enhancements
 
 ## Prerequisites
@@ -166,110 +166,6 @@ Draft posts will appear in development mode but will be filtered out in producti
 
 This site generates static HTML, CSS, and JavaScript files that can be deployed to any static hosting provider.
 
-### Netlify
-
-1. Push your code to a Git repository (GitHub, GitLab, Bitbucket)
-
-2. Log in to [Netlify](https://netlify.com) and click "Add new site"
-
-3. Connect your repository
-
-4. Configure build settings:
-   - **Build command**: `npm run build`
-   - **Publish directory**: `dist`
-
-5. Click "Deploy site"
-
-Netlify will automatically rebuild and deploy your site whenever you push changes to your repository.
-
-### Vercel
-
-1. Push your code to a Git repository
-
-2. Log in to [Vercel](https://vercel.com) and click "Add New Project"
-
-3. Import your repository
-
-4. Configure project:
-   - **Framework Preset**: Astro
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-
-5. Click "Deploy"
-
-Vercel will automatically deploy updates when you push to your repository.
-
-### GitHub Pages
-
-1. Install the GitHub Pages adapter:
-```sh
-npx astro add @astrojs/github-pages
-```
-
-2. Update `astro.config.mjs` with your site URL:
-```js
-export default defineConfig({
-  site: 'https://yourusername.github.io',
-  base: '/your-repo-name',
-});
-```
-
-3. Create `.github/workflows/deploy.yml`:
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install dependencies
-        run: npm ci
-      - name: Build
-        run: npm run build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-4. Enable GitHub Pages in your repository settings (Settings → Pages → Source: GitHub Actions)
-
-### Other Static Hosts
-
-The `dist/` folder can be deployed to any static hosting service:
-
-- **AWS S3 + CloudFront**: Upload `dist/` contents to S3 bucket
-- **Cloudflare Pages**: Connect repository or upload `dist/` folder
-- **DigitalOcean App Platform**: Connect repository with build command
-- **Any web server**: Upload `dist/` contents via FTP/SFTP
-
 ## Customization
 
 ### Styling
@@ -306,24 +202,6 @@ This website is designed to be easily extensible with a modular architecture tha
 - **[Navigation Extensibility](./docs/NAVIGATION_EXTENSIBILITY.md)**: How to add new sections to the navigation
 - **[Layout Reusability](./docs/LAYOUT_REUSABILITY.md)**: How to create and reuse layouts for different content types
 
-### Example: Portfolio Section
-
-This project includes a complete portfolio section as an example of extensibility:
-- Portfolio content collection with schema validation
-- Portfolio listing page (`/portfolio`)
-- Individual project pages (`/portfolio/[slug]`)
-- Reusable PortfolioCard component
-- Specialized PortfolioProject layout
-- Three sample portfolio projects
-
-### Quick Start: Adding New Content Types
-
-1. Define a new collection in `src/content/config.ts`
-2. Create content directory: `src/content/[collection-name]/`
-3. Add pages in `src/pages/[collection-name]/`
-4. Update navigation in `src/components/Header.astro`
-
-See the portfolio implementation for a complete working example.
 
 ### Adding Interactive Components
 
