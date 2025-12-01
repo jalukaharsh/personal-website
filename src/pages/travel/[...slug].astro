@@ -1,9 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+import ContentPost from '../../layouts/ContentPost.astro';
 
 export async function getStaticPaths() {
   const travels = await getCollection('travel');
@@ -21,59 +19,12 @@ const { travel } = Astro.props;
 const { Content } = await travel.render();
 ---
 
-<BaseLayout 
-  title={`${travel.data.title} - Travel`}
+<ContentPost
+  title={travel.data.title}
   description={travel.data.description}
+  pubDate={travel.data.pubDate}
+  tags={travel.data.tags}
+  collection="travel"
 >
-  <Header slot="header" />
-  
-  <article class="prose prose-lg max-w-none">
-    <div class="mb-8">
-      <h1 class="text-4xl font-bold mb-2">{travel.data.title}</h1>
-      <p class="travel-date">
-        Published on {travel.data.pubDate.toLocaleDateString('en-US', { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
-        })}
-      </p>
-      {travel.data.tags && travel.data.tags.length > 0 && (
-        <div class="flex gap-2 mt-4">
-          {travel.data.tags.map(tag => (
-            <span class="travel-tag">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
-    </div>
-    
-    <Content />
-  </article>
-
-  <Footer slot="footer" />
-</BaseLayout>
-
-<style>
-  /* Modern Tech Theme - Travel Detail Page Styling */
-  
-  .travel-date {
-    color: var(--color-text-muted); /* Muted gray for metadata */
-  }
-
-  .travel-tag {
-    padding: 0.25rem 0.75rem;
-    background-color: var(--color-electric-blue-20); /* Light Electric Blue background */
-    color: var(--color-interactive-primary); /* Electric Blue text */
-    border: 1px solid var(--color-interactive-primary);
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-sm);
-    transition: var(--transition-colors);
-    transition-delay: var(--transition-delay-none);
-  }
-
-  .travel-tag:hover {
-    background-color: var(--color-interactive-primary); /* Electric Blue background */
-    color: var(--color-text-on-dark); /* White text */
-  }
-</style>
+  <Content />
+</ContentPost>

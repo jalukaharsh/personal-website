@@ -1,9 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+import ContentPost from '../../layouts/ContentPost.astro';
 
 export async function getStaticPaths() {
   const books = await getCollection('books');
@@ -21,68 +19,14 @@ const { book } = Astro.props;
 const { Content } = await book.render();
 ---
 
-<BaseLayout 
-  title={`${book.data.title} - Books`}
+<ContentPost
+  title={book.data.title}
   description={book.data.description}
+  pubDate={book.data.pubDate}
+  tags={book.data.tags}
+  collection="books"
+  author={book.data.author}
+  publicationYear={book.data.publicationYear}
 >
-  <Header slot="header" />
-  
-  <article class="prose prose-lg max-w-none">
-    <div class="mb-8">
-      <h1 class="text-4xl font-bold mb-2">{book.data.title}</h1>
-      <p class="book-author-info">
-        by {book.data.author} ({book.data.publicationYear})
-      </p>
-      <p class="book-date">
-        Published on {book.data.pubDate.toLocaleDateString('en-US', { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
-        })}
-      </p>
-      {book.data.tags && book.data.tags.length > 0 && (
-        <div class="flex gap-2 mt-4">
-          {book.data.tags.map(tag => (
-            <span class="book-tag">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
-    </div>
-    
-    <Content />
-  </article>
-
-  <Footer slot="footer" />
-</BaseLayout>
-
-<style>
-  /* Modern Tech Theme - Book Detail Page Styling */
-  
-  .book-author-info {
-    color: var(--color-text-on-light); /* Charcoal on light background */
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-4);
-  }
-
-  .book-date {
-    color: var(--color-text-muted); /* Muted gray for metadata */
-  }
-
-  .book-tag {
-    padding: 0.25rem 0.75rem;
-    background-color: var(--color-electric-blue-20); /* Light Electric Blue background */
-    color: var(--color-interactive-primary); /* Electric Blue text */
-    border: 1px solid var(--color-interactive-primary);
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-sm);
-    transition: var(--transition-colors);
-    transition-delay: var(--transition-delay-none);
-  }
-
-  .book-tag:hover {
-    background-color: var(--color-interactive-primary); /* Electric Blue background */
-    color: var(--color-text-on-dark); /* White text */
-  }
-</style>
+  <Content />
+</ContentPost>
