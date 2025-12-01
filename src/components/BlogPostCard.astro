@@ -33,7 +33,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
   </p>
   
   {tags && tags.length > 0 && (
-    <div class="flex flex-wrap gap-2 mb-6">
+    <div class="flex flex-wrap gap-2">
       {tags.map(tag => (
         <a 
           href={`/${collection}/tag/${tag}`}
@@ -44,13 +44,6 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
       ))}
     </div>
   )}
-  
-  <a 
-    href={`/${collection}/${slug}`}
-    class="inline-block card-read-more font-semibold"
-  >
-    Read more →
-  </a>
 </article>
 
 <style>
@@ -105,22 +98,9 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
     text-decoration: none;
   }
 
-  /* Read more link - Electric Blue */
-  .card-read-more {
-    color: var(--color-interactive-primary); /* Electric Blue */
-    transition: var(--transition-colors);
-    transition-delay: var(--transition-delay-none);
-  }
-
-  .card-read-more:hover {
-    color: var(--color-interactive-hover); /* Darker blue on hover */
-    text-decoration: none;
-  }
-
   /* Focus states for accessibility */
   .card-link:focus-visible,
-  .card-tag:focus-visible,
-  .card-read-more:focus-visible {
+  .card-tag:focus-visible {
     outline: 2px solid var(--color-interactive-primary);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
