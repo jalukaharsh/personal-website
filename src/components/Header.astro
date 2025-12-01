@@ -49,39 +49,47 @@ const currentPath = Astro.url.pathname;
 <style>
   .header-elegant {
     background-color: var(--color-bg-primary);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border-subtle);
   }
 
   .nav-link-logo {
-    color: var(--color-text-primary);
+    color: var(--color-text-on-dark);
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
   }
 
   .nav-link-logo:hover {
-    text-decoration: underline;
+    color: var(--color-interactive-primary);
+    text-decoration: none;
   }
 
   .nav-link-logo:focus-visible {
-    outline: 2px solid var(--color-text-primary);
+    outline: 2px solid var(--color-interactive-primary);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
+    transition-delay: var(--transition-delay-none);
   }
 
   .nav-link {
-    color: var(--color-text-primary);
+    color: var(--color-text-on-dark);
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
   }
 
   .nav-link:hover {
-    text-decoration: underline;
+    color: var(--color-interactive-primary);
+    text-decoration: none;
   }
 
   .nav-link:focus-visible {
-    outline: 2px solid var(--color-text-primary);
+    outline: 2px solid var(--color-interactive-primary);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
+    transition-delay: var(--transition-delay-none);
   }
 
   .nav-link-active {
-    text-decoration: underline;
+    color: var(--color-interactive-primary);
     font-weight: var(--font-weight-semibold);
   }
 </style>

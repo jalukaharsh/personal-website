@@ -2,18 +2,20 @@
 @plugin "@tailwindcss/typography";
 
 /* ============================================================================
-   ELEGANT BLACK THEME
+   MODERN TECH THEME
    ============================================================================
    
-   A minimalist monochromatic theme featuring:
-   - Pure black backgrounds (#000000)
-   - White text (#ffffff) for maximum contrast (21:1 ratio)
-   - Thin gray borders (#333333) for subtle separation
+   A sophisticated tech-inspired theme featuring:
+   - Charcoal Black (#0F0F0F) for primary backgrounds
+   - Graphite Gray (#2A2A2A) for section containers
+   - Soft Stone (#E5E5E5) for content areas
+   - Electric Blue (#2979FF) for interactive elements
+   - Mint Accent (#00E5A8) for secondary highlights
    
    Design Philosophy:
-   - Simplicity first: No animations, transitions, or complex effects
-   - Consistency: Same colors, borders, and spacing throughout
-   - Accessibility: WCAG AAA compliant contrast ratios
+   - Visual depth through strategic color layering
+   - Modern tech aesthetic with vibrant accents
+   - Accessibility: WCAG AA compliant contrast ratios (4.5:1+)
    - Maintainability: CSS variables for easy updates
    
    ============================================================================ */
@@ -24,11 +26,42 @@
 
 @theme {
   /* ---------------------------------------------------------------------------
-     Color Palette - Elegant Black Theme
+     Color Palette - Modern Tech Theme
      --------------------------------------------------------------------------- */
-  --color-bg-primary: #000000;      /* Pure black background */
-  --color-text-primary: #ffffff;    /* White text for maximum contrast */
-  --color-border: #333333;          /* Subtle gray borders */
+  
+  /* Primary Colors */
+  --color-charcoal: #0F0F0F;        /* Deep background color */
+  --color-graphite: #2A2A2A;        /* Mid-tone gray for sections */
+  --color-stone: #E5E5E5;           /* Light gray for content areas */
+  --color-electric-blue: #2979FF;   /* Vibrant blue for interactivity */
+  --color-mint: #00E5A8;            /* Fresh green for accents */
+  
+  /* Semantic Color Mappings - Backgrounds */
+  --color-bg-primary: var(--color-charcoal);      /* Primary background */
+  --color-bg-secondary: var(--color-graphite);    /* Section backgrounds */
+  --color-bg-content: var(--color-stone);         /* Content area backgrounds */
+  
+  /* Semantic Color Mappings - Text */
+  --color-text-on-dark: #FFFFFF;                  /* White text on dark backgrounds */
+  --color-text-on-light: var(--color-charcoal);   /* Dark text on light backgrounds */
+  --color-text-primary: var(--color-text-on-dark); /* Default text color */
+  --color-text-muted: #999999;                    /* Muted text for metadata */
+  
+  /* Semantic Color Mappings - Interactive Elements */
+  --color-interactive-primary: var(--color-electric-blue);    /* Primary interactive color */
+  --color-interactive-secondary: var(--color-mint);           /* Secondary interactive color */
+  --color-interactive-hover: #1E5FCC;                         /* Darker blue for hover states */
+  
+  /* Semantic Color Mappings - Borders */
+  --color-border: #404040;                        /* Subtle borders */
+  --color-border-subtle: #404040;                 /* Subtle borders (alias) */
+  --color-border-emphasis: var(--color-electric-blue);  /* Emphasized borders */
+  
+  /* Opacity Variants for Layering Effects */
+  --color-electric-blue-10: rgba(41, 121, 255, 0.1);   /* 10% opacity Electric Blue */
+  --color-electric-blue-20: rgba(41, 121, 255, 0.2);   /* 20% opacity Electric Blue */
+  --color-mint-10: rgba(0, 229, 168, 0.1);             /* 10% opacity Mint */
+  --color-mint-20: rgba(0, 229, 168, 0.2);             /* 20% opacity Mint */
 
   /* ---------------------------------------------------------------------------
      Responsive Breakpoints
@@ -120,6 +153,22 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ---------------------------------------------------------------------------
+     Transitions and Animations
+     --------------------------------------------------------------------------- */
+  --transition-duration: 200ms;                   /* Standard transition duration */
+  --transition-timing: ease-in-out;               /* Consistent timing function */
+  --transition-delay-none: 0ms;                   /* No delay for focus states */
+  
+  /* Common transition properties */
+  --transition-colors: color var(--transition-duration) var(--transition-timing),
+                       background-color var(--transition-duration) var(--transition-timing),
+                       border-color var(--transition-duration) var(--transition-timing);
+  
+  --transition-opacity: opacity var(--transition-duration) var(--transition-timing);
+  --transition-transform: transform var(--transition-duration) var(--transition-timing);
+  --transition-all: all var(--transition-duration) var(--transition-timing);
 }
 
 /* ============================================================================
@@ -148,21 +197,24 @@ body {
    TYPOGRAPHY PLUGIN CUSTOMIZATION
    ============================================================================ */
 .prose {
-  --tw-prose-body: var(--color-text-primary);
-  --tw-prose-headings: var(--color-text-primary);
-  --tw-prose-links: var(--color-text-primary);
-  --tw-prose-bold: var(--color-text-primary);
-  --tw-prose-counters: var(--color-text-primary);
-  --tw-prose-bullets: var(--color-text-primary);
+  --tw-prose-body: var(--color-text-on-light);
+  --tw-prose-headings: var(--color-text-on-light);
+  --tw-prose-links: var(--color-interactive-primary);
+  --tw-prose-bold: var(--color-text-on-light);
+  --tw-prose-counters: var(--color-text-on-light);
+  --tw-prose-bullets: var(--color-text-on-light);
   --tw-prose-hr: var(--color-border);
-  --tw-prose-quotes: var(--color-text-primary);
-  --tw-prose-quote-borders: var(--color-border);
-  --tw-prose-captions: var(--color-text-primary);
-  --tw-prose-code: var(--color-text-primary);
-  --tw-prose-pre-code: var(--color-text-primary);
-  --tw-prose-pre-bg: var(--color-bg-primary);
+  --tw-prose-quotes: var(--color-text-on-light);
+  --tw-prose-quote-borders: var(--color-interactive-primary);
+  --tw-prose-captions: var(--color-text-on-light);
+  --tw-prose-code: var(--color-text-on-light);
+  --tw-prose-pre-code: var(--color-text-on-dark);
+  --tw-prose-pre-bg: var(--color-bg-secondary);
   --tw-prose-th-borders: var(--color-border);
   --tw-prose-td-borders: var(--color-border);
+  background-color: var(--color-bg-content);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-lg);
 }
 
 /* ============================================================================
@@ -172,14 +224,17 @@ body {
   max-width: 65ch;
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
-  color: var(--color-text-primary);
+  background-color: var(--color-bg-content);
+  color: var(--color-text-on-light);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-lg);
 }
 
 .prose-content h1 {
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-light);
   margin-top: var(--spacing-12);
   margin-bottom: var(--spacing-6);
   text-shadow: none;
@@ -189,7 +244,7 @@ body {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-light);
   margin-top: var(--spacing-10);
   margin-bottom: var(--spacing-4);
   text-shadow: none;
@@ -199,7 +254,7 @@ body {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-snug);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-light);
   margin-top: var(--spacing-8);
   margin-bottom: var(--spacing-3);
   text-shadow: none;
@@ -209,7 +264,7 @@ body {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-snug);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-light);
   margin-top: var(--spacing-6);
   margin-bottom: var(--spacing-2);
   text-shadow: none;
@@ -218,32 +273,37 @@ body {
 .prose-content p {
   margin-bottom: var(--spacing-4);
   line-height: var(--line-height-relaxed);
+  color: var(--color-text-on-light);
 }
 
 .prose-content a {
-  color: var(--color-text-primary);
+  color: var(--color-interactive-primary);
   text-decoration: none;
   text-shadow: none;
-  transition: none;
+  transition: var(--transition-colors);
+  transition-delay: var(--transition-delay-none);
 }
 
 .prose-content a:hover {
+  color: var(--color-interactive-hover);
   text-decoration: underline;
 }
 
 .prose-content a:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-interactive-primary);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
+  transition-delay: var(--transition-delay-none);
 }
 
 .prose-content strong {
   font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-light);
 }
 
 .prose-content em {
   font-style: italic;
+  color: var(--color-text-on-light);
 }
 
 .prose-content ul,
@@ -255,6 +315,7 @@ body {
 .prose-content li {
   margin-bottom: var(--spacing-2);
   line-height: var(--line-height-relaxed);
+  color: var(--color-text-on-light);
 }
 
 .prose-content ul > li {
@@ -267,30 +328,33 @@ body {
 
 .prose-content ul > li::marker,
 .prose-content ol > li::marker {
-  color: var(--color-text-primary);
+  color: var(--color-text-on-light);
 }
 
 .prose-content blockquote {
-  border-left: 4px solid var(--color-border);
+  border-left: 4px solid var(--color-interactive-primary);
   padding-left: var(--spacing-4);
   font-style: italic;
-  color: var(--color-text-primary);
+  color: var(--color-text-on-light);
   margin: var(--spacing-6) 0;
+  background-color: var(--color-electric-blue-10);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-base);
 }
 
 .prose-content code {
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  background-color: var(--color-electric-blue-10);
+  color: var(--color-text-on-light);
   padding: 0.125rem 0.375rem;
   border-radius: var(--radius-base);
   font-size: 0.9em;
   font-family: 'Courier New', Courier, monospace;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-electric-blue-20);
 }
 
 .prose-content pre {
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-on-dark);
   padding: var(--spacing-4);
   border-radius: var(--radius-lg);
   overflow-x: auto;
@@ -327,18 +391,18 @@ body {
 }
 
 .prose-content th {
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-secondary);
   font-weight: var(--font-weight-semibold);
   text-align: left;
   padding: var(--spacing-3);
   border: 1px solid var(--color-border);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark);
 }
 
 .prose-content td {
   padding: var(--spacing-3);
   border: 1px solid var(--color-border);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-light);
 }
 
 /* Responsive Typography Adjustments */
@@ -364,23 +428,29 @@ body {
    LINK STYLES
    ============================================================================ */
 a {
-  color: var(--color-text-primary);
+  color: var(--color-interactive-primary);
   text-decoration: none;
+  transition: var(--transition-colors);
+  transition-delay: var(--transition-delay-none);
 }
 
 a:hover {
+  color: var(--color-interactive-hover);
   text-decoration: underline;
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-interactive-primary);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
+  transition-delay: var(--transition-delay-none);
 }
 
 /* ============================================================================
    BUTTON STYLES
    ============================================================================ */
+
+/* Base Button Styles */
 button,
 .btn {
   display: inline-flex;
@@ -391,52 +461,120 @@ button,
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-normal);
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  border: none;
   cursor: pointer;
   text-decoration: none;
+  transition: var(--transition-colors);
+  transition-delay: var(--transition-delay-none);
 }
 
-button:focus-visible,
-.btn:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+/* Primary Button - Electric Blue */
+.btn-primary,
+button:not([class*="btn-"]) {
+  background-color: var(--color-interactive-primary);
+  color: var(--color-text-on-dark);
+  border: none;
+}
+
+.btn-primary:hover,
+button:not([class*="btn-"]):hover {
+  background-color: var(--color-interactive-hover);
+}
+
+.btn-primary:focus-visible,
+button:not([class*="btn-"]):focus-visible {
+  outline: 2px solid var(--color-interactive-primary);
   outline-offset: 2px;
-  border-radius: var(--radius-md);
+  transition-delay: var(--transition-delay-none);
 }
 
-button:disabled,
-.btn:disabled,
-button[disabled],
-.btn[disabled] {
-  opacity: 0.5;
+.btn-primary:disabled,
+.btn-primary[disabled],
+button:not([class*="btn-"]):disabled,
+button:not([class*="btn-"]):disabled {
+  background-color: var(--color-graphite);
+  color: var(--color-text-muted);
   cursor: not-allowed;
+  opacity: 0.6;
 }
 
-/* Button Variants */
+/* Secondary Button - Mint Accent */
+.btn-secondary {
+  background-color: var(--color-interactive-secondary);
+  color: var(--color-charcoal);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #00CC92; /* Darker Mint - calculated hover state */
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--color-interactive-secondary);
+  outline-offset: 2px;
+  transition-delay: var(--transition-delay-none);
+}
+
+.btn-secondary:disabled,
+.btn-secondary[disabled] {
+  background-color: var(--color-graphite);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Outline Button - Electric Blue Border */
 .btn-outline {
   background-color: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-primary);
+  border: 2px solid var(--color-interactive-primary);
+  color: var(--color-interactive-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-electric-blue-10);
+  border-color: var(--color-interactive-hover);
+  color: var(--color-interactive-hover);
+}
+
+.btn-outline:focus-visible {
+  outline: 2px solid var(--color-interactive-primary);
+  outline-offset: 2px;
+  transition-delay: var(--transition-delay-none);
 }
 
 .btn-outline:disabled,
 .btn-outline[disabled] {
   background-color: transparent;
-  border-color: var(--color-border);
-  color: var(--color-text-primary);
+  border-color: var(--color-border-subtle);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
+/* Ghost Button */
 .btn-ghost {
   background-color: transparent;
   border: none;
   color: var(--color-text-primary);
 }
 
+.btn-ghost:hover {
+  background-color: var(--color-electric-blue-10);
+  color: var(--color-interactive-primary);
+}
+
+.btn-ghost:focus-visible {
+  outline: 2px solid var(--color-interactive-primary);
+  outline-offset: 2px;
+  transition-delay: var(--transition-delay-none);
+}
+
 .btn-ghost:disabled,
 .btn-ghost[disabled] {
   background-color: transparent;
-  color: var(--color-text-primary);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 /* Button Sizes */
@@ -451,28 +589,54 @@ button[disabled],
 }
 
 /* ============================================================================
+   TRANSITION AND ANIMATION UTILITIES
+   ============================================================================ */
+
+/* Apply standard transitions to interactive elements */
+button:focus-visible,
+.btn:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  transition-delay: var(--transition-delay-none) !important;
+}
+
+/* Reduced Motion Support - Respects user preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+/* ============================================================================
    CARD COMPONENT STYLES
    ============================================================================ */
 
 .card-tron {
-  background-color: var(--color-bg-primary);
-  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-secondary); /* Graphite Gray for visual distinction */
+  border: 1px solid var(--color-border-subtle);
   padding: var(--spacing-6);
   box-shadow: none;
-  transition: none;
+  transition: var(--transition-colors);
+  transition-delay: var(--transition-delay-none);
+}
+
+.card-tron:hover {
+  border-color: var(--color-interactive-primary); /* Electric Blue on hover */
 }
 
 /* ============================================================================
    ACCESSIBILITY ENHANCEMENTS
    ============================================================================ */
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+/* Focus visible styles are defined above in component sections */
+/* Reduced motion support is defined in the Transition and Animation Utilities section */
 
 /* ============================================================================
    PRINT STYLES

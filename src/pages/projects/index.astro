@@ -25,7 +25,7 @@ const sortedPosts = allPosts.sort((a, b) => {
   <div class="space-y-8">
     <div class="text-center mb-12">
       <h1 class="text-4xl font-bold mb-4">Projects</h1>
-      <p class="text-gray-600 text-lg">
+      <p class="projects-count">
         {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
       </p>
     </div>
@@ -45,10 +45,24 @@ const sortedPosts = allPosts.sort((a, b) => {
 
     {sortedPosts.length === 0 && (
       <div class="text-center py-12">
-        <p class="text-gray-500 text-lg">No projects yet. Check back soon!</p>
+        <p class="empty-message">No projects yet. Check back soon!</p>
       </div>
     )}
   </div>
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<style>
+  /* Modern Tech Theme - Projects Index Page Styling */
+  
+  .projects-count {
+    color: var(--color-text-on-dark); /* White text on dark background */
+    font-size: var(--font-size-lg);
+  }
+
+  .empty-message {
+    color: var(--color-text-muted); /* Muted gray */
+    font-size: var(--font-size-lg);
+  }
+</style>

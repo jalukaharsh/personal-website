@@ -26,7 +26,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
     <div class="mb-8">
       <a 
         href="/blog"
-        class="text-primary-600 hover:text-primary-800 text-sm font-semibold no-underline"
+        class="blog-back-link"
       >
         ← Back to Blog
       </a>
@@ -35,8 +35,8 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
     <header class="mb-8">
       <h1 class="text-4xl font-bold mb-4">{title}</h1>
       
-      <div class="flex items-center gap-4 text-secondary-600 mb-4">
-        <time datetime={pubDate.toISOString()} class="text-sm">
+      <div class="flex items-center gap-4 mb-4">
+        <time datetime={pubDate.toISOString()} class="blog-post-date">
           {formattedDate}
         </time>
       </div>
@@ -46,7 +46,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
           {tags.map(tag => (
             <a 
               href={`/blog/tag/${tag}`}
-              class="text-xs bg-primary-100 text-primary-800 px-3 py-1 rounded-full hover:bg-primary-200 transition-colors no-underline"
+              class="blog-post-tag"
             >
               {tag}
             </a>
@@ -62,3 +62,58 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<style>
+  /* Modern Tech Theme - BlogPost Layout Styling */
+  
+  .blog-back-link {
+    color: var(--color-interactive-primary); /* Electric Blue */
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .blog-back-link:hover {
+    color: var(--color-interactive-hover); /* Darker blue on hover */
+    text-decoration: none;
+  }
+
+  .blog-back-link:focus-visible {
+    outline: 2px solid var(--color-interactive-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .blog-post-date {
+    color: var(--color-text-muted); /* Muted gray for metadata */
+    font-size: var(--font-size-sm);
+  }
+
+  .blog-post-tag {
+    font-size: var(--font-size-xs);
+    background-color: var(--color-electric-blue-20); /* Light Electric Blue background */
+    color: var(--color-interactive-primary); /* Electric Blue text */
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-interactive-primary);
+    text-decoration: none;
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .blog-post-tag:hover {
+    background-color: var(--color-interactive-primary); /* Electric Blue background */
+    color: var(--color-text-on-dark); /* White text */
+    text-decoration: none;
+  }
+
+  .blog-post-tag:focus-visible {
+    outline: 2px solid var(--color-interactive-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+    transition-delay: var(--transition-delay-none);
+  }
+</style>

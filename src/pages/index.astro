@@ -61,8 +61,8 @@ const recentPosts = publishedPosts.slice(0, 5);
           })}
         </div>
       ) : (
-        <div class="text-center py-12 bg-gray-50 rounded-lg">
-          <p class="text-gray-600 text-lg">No posts yet. Check back soon!</p>
+        <div class="empty-state">
+          <p class="empty-message">No posts yet. Check back soon!</p>
         </div>
       )}
     </section>
@@ -70,3 +70,19 @@ const recentPosts = publishedPosts.slice(0, 5);
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<style>
+  /* Modern Tech Theme - Home Page Styling */
+  
+  .empty-state {
+    text-align: center;
+    padding: var(--spacing-12) 0;
+    background-color: var(--color-bg-content); /* Soft Stone background */
+    border-radius: var(--radius-lg);
+  }
+
+  .empty-message {
+    color: var(--color-text-on-light); /* Charcoal on light background */
+    font-size: var(--font-size-lg);
+  }
+</style>

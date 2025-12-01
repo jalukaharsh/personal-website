@@ -29,33 +29,30 @@ const sortedBooks = allBooks.sort((a, b) => {
     
     <div class="mb-8">
       <div class="flex justify-between items-center mb-8">
-        <p class="text-white text-lg">
+        <p class="books-count">
           {sortedBooks.length} {sortedBooks.length === 1 ? 'review' : 'reviews'}
         </p>
         
         <!-- Sort Controls -->
         <div class="flex gap-2 flex-wrap items-center">
-        <span class="text-white">Sort by:</span>
+        <span class="sort-label">Sort by:</span>
         <button 
           id="sort-title" 
-          class="sort-btn text-white hover:text-gray-300 font-medium"
-          style="border-bottom: 2px solid white; padding-bottom: 4px; background: transparent;"
+          class="sort-btn sort-btn-active"
         >
           Title
         </button>
-        <span class="text-gray-400">|</span>
+        <span class="sort-separator">|</span>
         <button 
           id="sort-author" 
-          class="sort-btn text-white hover:text-gray-300"
-          style="border-bottom: 2px solid transparent; padding-bottom: 4px; background: transparent;"
+          class="sort-btn"
         >
           Author
         </button>
-        <span class="text-gray-400">|</span>
+        <span class="sort-separator">|</span>
         <button 
           id="sort-year" 
-          class="sort-btn text-white hover:text-gray-300"
-          style="border-bottom: 2px solid transparent; padding-bottom: 4px; background: transparent;"
+          class="sort-btn"
         >
           Year
         </button>
@@ -65,15 +62,15 @@ const sortedBooks = allBooks.sort((a, b) => {
 
     <ul id="books-list" class="space-y-4" style="margin-top: 3rem;">
       {sortedBooks.map(book => (
-        <li class="book-item py-2 hover:bg-gray-900 transition-colors" 
+        <li class="book-item" 
             data-title={book.data.title}
             data-author={book.data.author}
             data-year={book.data.publicationYear}>
           <a href={`/books/${book.slug}`} class="block group">
-            <h2 class="text-xl font-semibold text-white group-hover:text-gray-300 transition-colors">
+            <h2 class="book-title">
               {book.data.title}
             </h2>
-            <p class="text-white text-sm mt-1">
+            <p class="book-meta">
               by {book.data.author} ({book.data.publicationYear})
             </p>
           </a>
@@ -83,13 +80,82 @@ const sortedBooks = allBooks.sort((a, b) => {
 
     {sortedBooks.length === 0 && (
       <div class="text-center py-12">
-        <p class="text-gray-500 text-lg">No books yet. Check back soon!</p>
+        <p class="empty-message">No books yet. Check back soon!</p>
       </div>
     )}
   </div>
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<style>
+  /* Modern Tech Theme - Books Index Page Styling */
+  
+  .books-count {
+    color: var(--color-text-on-dark); /* White text */
+    font-size: var(--font-size-lg);
+  }
+
+  .sort-label {
+    color: var(--color-text-on-dark); /* White text */
+  }
+
+  .sort-btn {
+    color: var(--color-text-on-dark); /* White text */
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .sort-btn:hover {
+    color: var(--color-interactive-primary); /* Electric Blue on hover */
+  }
+
+  .sort-btn-active {
+    border-bottom-color: var(--color-text-on-dark); /* White underline for active */
+    font-weight: var(--font-weight-medium);
+  }
+
+  .sort-separator {
+    color: var(--color-text-muted); /* Muted gray */
+  }
+
+  .book-item {
+    padding: var(--spacing-2) 0;
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .book-item:hover {
+    background-color: var(--color-bg-secondary); /* Graphite Gray on hover */
+  }
+
+  .book-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-on-dark); /* White text */
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .book-item:hover .book-title {
+    color: var(--color-interactive-primary); /* Electric Blue on hover */
+  }
+
+  .book-meta {
+    color: var(--color-text-on-dark); /* White text */
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-1);
+  }
+
+  .empty-message {
+    color: var(--color-text-muted); /* Muted gray */
+    font-size: var(--font-size-lg);
+  }
+</style>
 
 <script is:inline>
   function sortBooks(sortBy) {
@@ -116,11 +182,11 @@ const sortedBooks = allBooks.sort((a, b) => {
 
     // Update active button styling
     document.querySelectorAll('.sort-btn').forEach(btn => {
-      btn.style.borderBottom = '2px solid transparent';
+      btn.classList.remove('sort-btn-active');
     });
     const activeBtn = document.getElementById('sort-' + sortBy);
     if (activeBtn) {
-      activeBtn.style.borderBottom = '2px solid white';
+      activeBtn.classList.add('sort-btn-active');
     }
   }
 

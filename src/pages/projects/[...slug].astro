@@ -30,7 +30,7 @@ const { Content } = await project.render();
   <article class="prose prose-lg max-w-none">
     <div class="mb-8">
       <h1 class="text-4xl font-bold mb-2">{project.data.title}</h1>
-      <p class="text-gray-500">
+      <p class="project-date">
         Published on {project.data.pubDate.toLocaleDateString('en-US', { 
           year: 'numeric', 
           month: 'long', 
@@ -40,7 +40,7 @@ const { Content } = await project.render();
       {project.data.tags && project.data.tags.length > 0 && (
         <div class="flex gap-2 mt-4">
           {project.data.tags.map(tag => (
-            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+            <span class="project-tag">
               {tag}
             </span>
           ))}
@@ -53,3 +53,27 @@ const { Content } = await project.render();
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<style>
+  /* Modern Tech Theme - Project Detail Page Styling */
+  
+  .project-date {
+    color: var(--color-text-muted); /* Muted gray for metadata */
+  }
+
+  .project-tag {
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-electric-blue-20); /* Light Electric Blue background */
+    color: var(--color-interactive-primary); /* Electric Blue text */
+    border: 1px solid var(--color-interactive-primary);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .project-tag:hover {
+    background-color: var(--color-interactive-primary); /* Electric Blue background */
+    color: var(--color-text-on-dark); /* White text */
+  }
+</style>

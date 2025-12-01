@@ -54,37 +54,76 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 </article>
 
 <style>
+  /* Modern Tech Theme - BlogPostCard Styling */
+  
+  /* Card container with Graphite Gray background */
+  article.card-tron {
+    background-color: var(--color-bg-secondary); /* Graphite Gray */
+    border: 1px solid var(--color-border-subtle);
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  article.card-tron:hover {
+    border-color: var(--color-interactive-primary); /* Electric Blue on hover */
+  }
+
+  /* Title link - white text on dark background */
   .card-link {
-    color: var(--color-text-primary);
+    color: var(--color-text-on-dark); /* White text */
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
   }
 
   .card-link:hover {
-    text-decoration: underline;
+    color: var(--color-interactive-primary); /* Electric Blue on hover */
+    text-decoration: none;
   }
 
+  /* Date - muted text color */
   .card-date {
-    color: var(--color-text-primary);
+    color: var(--color-text-muted); /* Muted gray for metadata */
   }
 
+  /* Description - white text on dark background */
   .card-description {
-    color: var(--color-text-primary);
+    color: var(--color-text-on-dark); /* White text */
   }
 
+  /* Tags - Electric Blue accent with light background */
   .card-tag {
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-border);
+    background-color: var(--color-electric-blue-20); /* Light Electric Blue background */
+    color: var(--color-interactive-primary); /* Electric Blue text */
+    border: 1px solid var(--color-interactive-primary);
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
   }
 
   .card-tag:hover {
-    text-decoration: underline;
+    background-color: var(--color-interactive-primary); /* Electric Blue background */
+    color: var(--color-text-on-dark); /* White text */
+    text-decoration: none;
   }
 
+  /* Read more link - Electric Blue */
   .card-read-more {
-    color: var(--color-text-primary);
+    color: var(--color-interactive-primary); /* Electric Blue */
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
   }
 
   .card-read-more:hover {
-    text-decoration: underline;
+    color: var(--color-interactive-hover); /* Darker blue on hover */
+    text-decoration: none;
+  }
+
+  /* Focus states for accessibility */
+  .card-link:focus-visible,
+  .card-tag:focus-visible,
+  .card-read-more:focus-visible {
+    outline: 2px solid var(--color-interactive-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+    transition-delay: var(--transition-delay-none);
   }
 </style>
