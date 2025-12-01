@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import QuoteBanner from '../../components/QuoteBanner.astro';
+import ContentListItem from '../../components/ContentListItem.astro';
 
 // Fetch all published books (draft: false)
 const allBooks = await getCollection('books', ({ data }) => {
@@ -62,19 +63,17 @@ const sortedBooks = allBooks.sort((a, b) => {
 
     <ul id="books-list" class="space-y-4" style="margin-top: 3rem;">
       {sortedBooks.map(book => (
-        <li class="book-item" 
-            data-title={book.data.title}
-            data-author={book.data.author}
-            data-year={book.data.publicationYear}>
-          <a href={`/books/${book.slug}`} class="block group">
-            <h2 class="book-title">
-              {book.data.title}
-            </h2>
-            <p class="book-meta">
-              by {book.data.author} ({book.data.publicationYear})
-            </p>
-          </a>
-        </li>
+        <ContentListItem
+          title={book.data.title}
+          slug={book.slug}
+          collection="books"
+          metadata={`by ${book.data.author} (${book.data.publicationYear})`}
+          sortData={{
+            title: book.data.title,
+            author: book.data.author,
+            year: book.data.publicationYear
+          }}
+        />
       ))}
     </ul>
 
@@ -123,34 +122,6 @@ const sortedBooks = allBooks.sort((a, b) => {
     color: var(--color-text-muted); /* Muted gray */
   }
 
-  .book-item {
-    padding: var(--spacing-4) var(--spacing-6);
-    transition: var(--transition-colors);
-    transition-delay: var(--transition-delay-none);
-  }
-
-  .book-item:hover {
-    background-color: var(--color-bg-secondary); /* Graphite Gray on hover */
-  }
-
-  .book-title {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text-on-dark); /* White text */
-    transition: var(--transition-colors);
-    transition-delay: var(--transition-delay-none);
-  }
-
-  .book-item:hover .book-title {
-    color: var(--color-interactive-primary); /* Electric Blue on hover */
-  }
-
-  .book-meta {
-    color: var(--color-text-on-dark); /* White text */
-    font-size: var(--font-size-sm);
-    margin-top: var(--spacing-1);
-  }
-
   .empty-message {
     color: var(--color-text-muted); /* Muted gray */
     font-size: var(--font-size-lg);
@@ -165,7 +136,7 @@ const sortedBooks = allBooks.sort((a, b) => {
       return;
     }
 
-    const items = Array.from(list.querySelectorAll('.book-item'));
+    const items = Array.from(list.querySelectorAll('.content-item'));
     
     items.sort((a, b) => {
       const aValue = a.getAttribute('data-' + sortBy) || '';

@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  collection: string;
+  metadata?: string;
+  sortData?: Record<string, string | number>;
+}
+
+const { title, slug, collection, metadata, sortData } = Astro.props;
+---
+
+<li class="content-item" {...sortData && Object.entries(sortData).reduce((acc, [key, value]) => {
+  acc[`data-${key}`] = String(value);
+  return acc;
+}, {} as Record<string, string>)}>
+  <a href={`/${collection}/${slug}`} class="block group">
+    <h2 class="content-title">
+      {title}
+    </h2>
+    {metadata && (
+      <p class="content-meta">
+        {metadata}
+      </p>
+    )}
+  </a>
+</li>
+
+<style>
+  /* Modern Tech Theme - ContentListItem Styling */
+  
+  .content-item {
+    padding: var(--spacing-4) var(--spacing-6);
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .content-item:hover {
+    background-color: var(--color-bg-secondary);
+  }
+
+  .content-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-on-dark);
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .content-item:hover .content-title {
+    color: var(--color-interactive-primary);
+  }
+
+  .content-meta {
+    color: var(--color-text-on-dark);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-1);
+  }
+</style>
