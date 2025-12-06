@@ -23,8 +23,11 @@ const sortedPosts = allPosts.sort((a, b) => {
   <Header slot="header" />
   
   <div class="space-y-8">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold mb-4">Travel</h1>
+    <div class="page-intro" style="margin-bottom: 4rem;">
+      <p>Join me on my journeys around the world. From hidden gems to iconic destinations, I share stories, insights, and practical tips from my travels across different cultures and landscapes.</p>
+    </div>
+    
+    <div class="mb-8">
       <p class="travel-count">
         {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
       </p>
@@ -66,5 +69,11 @@ const sortedPosts = allPosts.sort((a, b) => {
   .empty-message {
     color: var(--color-text-muted); /* Muted gray */
     font-size: var(--font-size-lg);
+  }
+
+  .page-intro {
+    color: var(--color-text-on-dark);
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
   }
 </style>

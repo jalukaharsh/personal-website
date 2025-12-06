@@ -28,12 +28,12 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
     {formattedDate}
   </time>
   
-  <p class="card-description mb-6 leading-relaxed">
+  <p class="card-description leading-relaxed">
     {description}
   </p>
   
   {tags && tags.length > 0 && (
-    <div class="flex flex-wrap gap-2">
+    <div class="card-tags-container">
       {tags.map(tag => (
         <a 
           href={`/${collection}/tag/${tag}`}
@@ -82,6 +82,14 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
   /* Description - white text on dark background */
   .card-description {
     color: var(--color-text-on-dark); /* White text */
+  }
+
+  /* Tags container */
+  .card-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+    margin-top: var(--spacing-6);
   }
 
   /* Tags - Electric Blue accent with light background */

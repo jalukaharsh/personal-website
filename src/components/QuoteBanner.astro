@@ -1,7 +1,8 @@
 ---
-import quotesData from '../content/books/all-quotes.json';
+import { getEntry } from 'astro:content';
 
-const quotes = quotesData.quotes;
+const quotesData = await getEntry('quotes', 'all-quotes');
+const quotes = quotesData.data.quotes;
 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 ---
 

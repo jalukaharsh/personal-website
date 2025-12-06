@@ -33,8 +33,22 @@ const travelCollection = defineCollection({
   schema: contentSchema,
 });
 
+const quotesCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    quotes: z.array(
+      z.object({
+        text: z.string(),
+        author: z.string(),
+        source: z.string().optional(),
+      })
+    ),
+  }),
+});
+
 export const collections = {
   books: booksCollection,
   projects: projectsCollection,
   travel: travelCollection,
+  quotes: quotesCollection,
 };

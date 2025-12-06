@@ -28,11 +28,11 @@
   /* ---------------------------------------------------------------------------
      Color Palette - Modern Tech Theme
      --------------------------------------------------------------------------- */
-  
+  /* 005A71 */
   /* Primary Colors */
-  --color-charcoal: #0F0F0F;        /* Deep background color */
-  --color-graphite: #2A2A2A;        /* Mid-tone gray for sections */
-  --color-mint: #00E5A8;            /* Fresh green for accents */
+  --color-charcoal: #000c15;        /* Deep background color */
+  --color-graphite: #2f383f;        /* Mid-tone gray for sections */
+  --color-mint: #82d2e7;            /* Fresh green for accents */
   
   /* Semantic Color Mappings - Backgrounds */
   --color-bg-primary: var(--color-charcoal);      /* Primary background */

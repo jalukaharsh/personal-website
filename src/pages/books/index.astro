@@ -28,6 +28,16 @@ const sortedBooks = allBooks.sort((a, b) => {
     
     <hr style="border: none; border-top: 0.5px solid rgba(255, 255, 255, 0.2); margin-bottom: 3rem;" />
     
+    <div class="page-intro" style="margin-bottom: 4rem;">
+      <p>
+        I enjoy reading a lot. I maintain a record of books I've read <a href="https://docs.google.com/spreadsheets/d/1KBcC6kPlFMojaJ0qsyxlT6AmEO_JHay75Rf9d5mzLcY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">here</a> or on my <a href="https://www.goodreads.com/user/show/94888357-harsh" target="_blank" rel="noopener noreferrer">Goodreads</a> account (feel free to add me!). This page in particular is a place for me to publish my reviews for the select books that I've written one for.
+      </p>
+
+      <p> 
+        The quotes above are all compiled from my own reading over many years. I've tried to make the sources as accurate as possible but, unfortunately, I am a sloppy note-taker. The cool thing, though, is that you can refresh the page and it'll show a new one!
+      </p>
+    </div>
+    
     <div class="mb-8">
       <div class="flex justify-between items-center mb-8">
         <p class="books-count">
@@ -61,7 +71,7 @@ const sortedBooks = allBooks.sort((a, b) => {
       </div>
     </div>
 
-    <ul id="books-list" class="space-y-4" style="margin-top: 3rem;">
+    <ul id="books-list" class="space-y-4" style="margin-top: 3rem; margin-bottom: 8rem;">
       {sortedBooks.map(book => (
         <ContentListItem
           title={book.data.title}
@@ -125,6 +135,23 @@ const sortedBooks = allBooks.sort((a, b) => {
   .empty-message {
     color: var(--color-text-muted); /* Muted gray */
     font-size: var(--font-size-lg);
+  }
+
+  .page-intro {
+    color: var(--color-text-on-dark);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+
+  .page-intro a {
+    color: var(--color-interactive-primary);
+    text-decoration: none;
+    transition: var(--transition-colors);
+  }
+
+  .page-intro a:hover {
+    color: var(--color-interactive-secondary);
+    text-decoration: underline;
   }
 </style>
 
