@@ -1,7 +1,7 @@
 ---
-title: "Switzerland"
+title: "Hungary"
 pubDate: 2025-11-30T01:28:00Z
-tags: ["travel", "europe"]
+tags: ["travel", "europe", "eurasia"]
 draft: false
 daysSpent: 10
 ---

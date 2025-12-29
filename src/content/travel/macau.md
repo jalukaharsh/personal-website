@@ -1,7 +1,7 @@
 ---
-title: "Switzerland"
+title: "Macau"
 pubDate: 2025-11-30T01:28:00Z
-tags: ["travel", "europe"]
+tags: ["travel", "asia"]
 draft: false
 daysSpent: 10
 ---
