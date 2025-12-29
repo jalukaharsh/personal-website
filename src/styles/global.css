@@ -46,7 +46,7 @@
   --color-text-muted: #999999;                    /* Muted text for metadata */
   
   /* Semantic Color Mappings - Interactive Elements */
-  --color-interactive-primary: var(--color-mint);    /* Primary interactive color */
+  --colour-electric-blue-on-hover: var(--color-mint);    /* Primary interactive color */
   --color-interactive-secondary: var(--color-mint);           /* Secondary interactive color */
   --color-interactive-hover: #00CC92;                         /* Darker mint for hover states */
   
@@ -197,13 +197,13 @@ body {
 .prose {
   --tw-prose-body: var(--color-text-on-dark);
   --tw-prose-headings: var(--color-text-on-dark);
-  --tw-prose-links: var(--color-interactive-primary);
+  --tw-prose-links: var(--colour-electric-blue-on-hover);
   --tw-prose-bold: var(--color-text-on-dark);
   --tw-prose-counters: var(--color-text-on-dark);
   --tw-prose-bullets: var(--color-text-on-dark);
   --tw-prose-hr: var(--color-border);
   --tw-prose-quotes: var(--color-text-on-dark);
-  --tw-prose-quote-borders: var(--color-interactive-primary);
+  --tw-prose-quote-borders: var(--colour-electric-blue-on-hover);
   --tw-prose-captions: var(--color-text-on-dark);
   --tw-prose-code: var(--color-text-on-dark);
   --tw-prose-pre-code: var(--color-text-on-dark);
@@ -278,7 +278,7 @@ body {
 }
 
 .prose-content a {
-  color: var(--color-interactive-primary);
+  color: var(--colour-electric-blue-on-hover);
   text-decoration: none;
   text-shadow: none;
   transition: var(--transition-colors);
@@ -290,7 +290,7 @@ body {
 }
 
 .prose-content a:focus-visible {
-  outline: 2px solid var(--color-interactive-primary);
+  outline: 2px solid var(--colour-electric-blue-on-hover);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
   transition-delay: var(--transition-delay-none);
@@ -332,7 +332,7 @@ body {
 }
 
 .prose-content blockquote {
-  border-left: 4px solid var(--color-interactive-primary);
+  border-left: 4px solid var(--colour-electric-blue-on-hover);
   padding-left: var(--spacing-4);
   font-style: italic;
   color: var(--color-text-on-dark);
@@ -428,7 +428,7 @@ body {
    LINK STYLES
    ============================================================================ */
 a {
-  color: var(--color-interactive-primary);
+  color: var(--colour-electric-blue-on-hover);
   text-decoration: none;
   transition: var(--transition-colors);
   transition-delay: var(--transition-delay-none);
@@ -439,7 +439,7 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-interactive-primary);
+  outline: 2px solid var(--colour-electric-blue-on-hover);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
   transition-delay: var(--transition-delay-none);
@@ -470,7 +470,7 @@ button,
 /* Primary Button - Electric Blue */
 .btn-primary,
 button:not([class*="btn-"]) {
-  background-color: var(--color-interactive-primary);
+  background-color: var(--colour-electric-blue-on-hover);
   color: var(--color-text-on-dark);
   border: none;
 }
@@ -482,7 +482,7 @@ button:not([class*="btn-"]):hover {
 
 .btn-primary:focus-visible,
 button:not([class*="btn-"]):focus-visible {
-  outline: 2px solid var(--color-interactive-primary);
+  outline: 2px solid var(--colour-electric-blue-on-hover);
   outline-offset: 2px;
   transition-delay: var(--transition-delay-none);
 }
@@ -525,8 +525,8 @@ button:not([class*="btn-"]):disabled {
 /* Outline Button - Electric Blue Border */
 .btn-outline {
   background-color: transparent;
-  border: 2px solid var(--color-interactive-primary);
-  color: var(--color-interactive-primary);
+  border: 2px solid var(--colour-electric-blue-on-hover);
+  color: var(--colour-electric-blue-on-hover);
 }
 
 .btn-outline:hover {
@@ -536,7 +536,7 @@ button:not([class*="btn-"]):disabled {
 }
 
 .btn-outline:focus-visible {
-  outline: 2px solid var(--color-interactive-primary);
+  outline: 2px solid var(--colour-electric-blue-on-hover);
   outline-offset: 2px;
   transition-delay: var(--transition-delay-none);
 }
@@ -559,11 +559,11 @@ button:not([class*="btn-"]):disabled {
 
 .btn-ghost:hover {
   background-color: var(--color-mint-10);
-  color: var(--color-interactive-primary);
+  color: var(--colour-electric-blue-on-hover);
 }
 
 .btn-ghost:focus-visible {
-  outline: 2px solid var(--color-interactive-primary);
+  outline: 2px solid var(--colour-electric-blue-on-hover);
   outline-offset: 2px;
   transition-delay: var(--transition-delay-none);
 }
@@ -627,7 +627,7 @@ select:focus-visible {
 }
 
 .card-tron:hover {
-  border-color: var(--color-interactive-primary); /* Electric Blue on hover */
+  border-color: var(--colour-electric-blue-on-hover); /* Electric Blue on hover */
 }
 
 /* ============================================================================
