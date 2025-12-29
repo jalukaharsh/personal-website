@@ -1,16 +1,26 @@
 import { z, defineCollection } from 'astro:content';
 
-const contentSchema = z.object({
+const projectsSchema = z.object({
   title: z.string(),
-  description: z.string(),
+  // description: z.string(),
   pubDate: z.coerce.date(),
   tags: z.array(z.string()).optional(),
   draft: z.boolean().default(false),
 });
 
+const travelSchema = z.object({
+  title: z.string(),
+  // description: z.string(),
+  pubDate: z.coerce.date(),
+  tags: z.array(z.string()).optional(),
+  draft: z.boolean().default(false),
+  daysSpent: z.number()
+});
+
+
 const booksSchema = z.object({
   title: z.string(),
-  description: z.string(),
+  // description: z.string(),
   pubDate: z.coerce.date(),
   author: z.string(),
   publicationYear: z.number(),
@@ -25,12 +35,12 @@ const booksCollection = defineCollection({
 
 const projectsCollection = defineCollection({
   type: 'content',
-  schema: contentSchema,
+  schema: projectsSchema,
 });
 
 const travelCollection = defineCollection({
   type: 'content',
-  schema: contentSchema,
+  schema: travelSchema,
 });
 
 const quotesCollection = defineCollection({
