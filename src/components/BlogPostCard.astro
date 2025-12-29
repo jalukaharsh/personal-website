@@ -1,14 +1,13 @@
 ---
 interface Props {
   title: string;
-  description: string;
   pubDate: Date;
   slug: string;
   tags?: string[];
   collection?: string;
 }
 
-const { title, description, pubDate, slug, tags, collection = 'blog' } = Astro.props;
+const { title, pubDate, slug, tags, collection = 'blog' } = Astro.props;
 
 const formattedDate = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -27,10 +26,6 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
   <time datetime={pubDate.toISOString()} class="text-sm card-date block mb-4">
     {formattedDate}
   </time>
-  
-  <p class="card-description leading-relaxed">
-    {description}
-  </p>
   
   {tags && tags.length > 0 && (
     <div class="card-tags-container">
@@ -77,11 +72,6 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
   /* Date - muted text color */
   .card-date {
     color: var(--color-text-muted); /* Muted gray for metadata */
-  }
-
-  /* Description - white text on dark background */
-  .card-description {
-    color: var(--color-text-on-dark); /* White text */
   }
 
   /* Tags container */
