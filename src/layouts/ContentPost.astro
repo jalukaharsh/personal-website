@@ -32,7 +32,7 @@ const collectionLabels = {
   <Header slot="header" />
   
   <article class="prose prose-lg max-w-none">
-    <div class="mb-8">
+    <div class="back-link-container">
       <a 
         href={`/${collection}`}
         class="back-link"
@@ -41,7 +41,7 @@ const collectionLabels = {
       </a>
     </div>
 
-    <header class="mb-8">
+    <header class="header-container">
       <h1 class="text-4xl font-bold mb-4">{title}</h1>
       
       {author && publicationYear && (
@@ -50,7 +50,7 @@ const collectionLabels = {
         </p>
       )}
       
-      <div class="flex items-center gap-4 mb-4">
+      <div class="flex items-center gap-4 date-container">
         <time datetime={pubDate.toISOString()} class="post-date">
           {formattedDate}
         </time>
@@ -81,6 +81,27 @@ const collectionLabels = {
 <style>
   /* Modern Tech Theme - ContentPost Layout Styling */
   
+  .back-link-container {
+    max-width: 800px;
+    margin: 0 auto 0 auto;
+    background-color: var(--color-bg-content);
+    padding: var(--spacing-6);
+    border-radius: var(--radius-lg);
+  }
+
+  .header-container {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-1) auto;
+    background-color: var(--color-bg-content);
+    color: var(--color-text-on-dark);
+    padding: var(--spacing-6);
+    border-radius: var(--radius-lg);
+  }
+
+  .header-container h1 {
+    margin-bottom: var(--spacing-2);
+  }
+
   .back-link {
     color: var(--color-interactive-primary);
     font-size: var(--font-size-sm);
@@ -103,14 +124,18 @@ const collectionLabels = {
   }
 
   .author-info {
-    color: var(--color-text-on-light);
+    color: var(--color-text-primary);
     font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-4);
+    margin-bottom: var(--spacing-1);
   }
 
   .post-date {
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
+  }
+
+  .date-container {
+    margin-bottom: var(--spacing-3);
   }
 
   .post-tag {

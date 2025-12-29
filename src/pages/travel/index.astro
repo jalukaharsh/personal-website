@@ -22,7 +22,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 >
   <Header slot="header" />
   
-  <div class="space-y-8">
+  <div class="travel-container space-y-8">
     <div class="page-intro" style="margin-bottom: 4rem;">
       <p>Join me on my journeys around the world. From hidden gems to iconic destinations, I share stories, insights, and practical tips from my travels across different cultures and landscapes.</p>
     </div>
@@ -60,7 +60,12 @@ const sortedPosts = allPosts.sort((a, b) => {
 
 <style>
   /* Modern Tech Theme - Travel Index Page Styling */
-  
+
+  .travel-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
   .travel-count {
     color: var(--color-text-on-dark); /* White text on dark background */
     font-size: var(--font-size-lg);
@@ -72,6 +77,7 @@ const sortedPosts = allPosts.sort((a, b) => {
   }
 
   .page-intro {
+    margin-top: var(--spacing-12);
     color: var(--color-text-on-dark);
     font-size: var(--font-size-lg);
     line-height: 1.6;

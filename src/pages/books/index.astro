@@ -23,7 +23,7 @@ const sortedBooks = allBooks.sort((a, b) => {
 >
   <Header slot="header" />
   
-  <div>
+  <div class="books-container">
     <QuoteBanner />
     
     <hr style="border: none; border-top: 0.5px solid rgba(255, 255, 255, 0.2); margin-bottom: 3rem;" />
@@ -99,6 +99,11 @@ const sortedBooks = allBooks.sort((a, b) => {
 
 <style>
   /* Modern Tech Theme - Books Index Page Styling */
+  
+  .books-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
   
   .books-count {
     color: var(--color-text-on-dark); /* White text */
