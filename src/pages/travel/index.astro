@@ -17,8 +17,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 ---
 
 <BaseLayout 
-  title="Travel - My Personal Website"
-  description="Follow my travel adventures and experiences around the world."
+  title="Travel - Harsh Jaluka"
 >
   <Header slot="header" />
   
@@ -28,9 +27,36 @@ const sortedPosts = allPosts.sort((a, b) => {
     </div>
     
     <div class="mb-8">
-      <p class="travel-count">
-        {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
-      </p>
+      <div class="flex justify-between items-center mb-8">
+        <p class="travel-count">
+          {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
+        </p>
+
+        <!-- Sort Controls -->
+        <div class="flex gap-2 flex-wrap items-center">
+        <span class="sort-label">Sort by:</span>
+        <button 
+          id="sort-title" 
+          class="sort-btn sort-btn-active"
+        >
+          Name
+        </button>
+        <span class="sort-separator">|</span>
+        <button 
+          id="sort-author" 
+          class="sort-btn"
+        >
+          Length of Stay
+        </button>
+        <span class="sort-separator">|</span>
+        <button 
+          id="sort-year" 
+          class="sort-btn"
+        >
+          Last Updated
+        </button>
+        </div>
+      </div>
     </div>
 
     <ul class="space-y-4">
@@ -83,4 +109,34 @@ const sortedPosts = allPosts.sort((a, b) => {
     font-size: var(--font-size-lg);
     line-height: 1.6;
   }
+
+  .sort-label {
+    color: var(--color-text-on-dark); /* White text */
+  }
+
+  .sort-separator {
+    color: var(--color-text-muted); /* Muted gray */
+  }
+
+  .sort-btn {
+    color: var(--color-text-on-dark); /* White text */
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .sort-btn:hover {
+    color: var(--color-interactive-primary); 
+    background: transparent;
+  }
+
+  .sort-btn-active {
+    border-bottom-color: var(--color-text-on-dark); /* White underline for active */
+    font-weight: var(--font-weight-medium);
+  }
+
+
 </style>
