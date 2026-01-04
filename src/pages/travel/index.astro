@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
+import WorldMapWithCities from '../../components/WorldMapWithCities.astro';
 
 // Fetch all published travel posts (draft: false)
 const allPosts = await getCollection('travel', ({ data }) => {
@@ -21,9 +22,9 @@ const sortedPosts = allPosts.sort((a, b) => {
 >
   <Header slot="header" />
   
-  <!-- World Map SVG - Full Width -->
+  <!-- World Map SVG with City Markers - Full Width -->
   <div class="world-map-container-full" style="margin-bottom: 3rem;">
-    <img src="/world-eckert-iv.svg" alt="World Map - Eckert IV Projection" class="world-map" />
+    <WorldMapWithCities />
   </div>
   
   <div class="travel-container space-y-8">
@@ -126,12 +127,6 @@ const sortedPosts = allPosts.sort((a, b) => {
     justify-content: center;
     align-items: center;
     margin-top: var(--spacing-8);
-  }
-
-  .world-map {
-    width: 100%;
-    height: auto;
-    border-radius: 0;
   }
 
   .sort-label {

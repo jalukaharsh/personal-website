@@ -1,0 +1,166 @@
+---
+// Component for displaying world map with city markers
+// Uses the existing world-eckert-iv.svg as base and overlays city markers
+
+import { getVisitedCities } from '../data/cities';
+
+const visitedCities = getVisitedCities();
+---
+
+<div class="world-map-container">
+  <svg 
+    viewBox="0 0 2752.77 1537.63" 
+    class="world-map-svg"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <!-- Include the base world map -->
+    <image 
+      href="/world-eckert-iv.svg" 
+      width="2752.77" 
+      height="1537.63"
+      class="base-map"
+    />
+    
+    <!-- City markers overlay -->
+    <g class="city-markers">
+      {visitedCities.map(city => (
+        <g class="city-marker" data-city={city.name} data-country={city.country}>
+          <!-- Outer glow circle -->
+          <circle 
+            cx={city.x} 
+            cy={city.y} 
+            r="8" 
+            class="city-glow"
+          />
+          <!-- Main city dot -->
+          <circle 
+            cx={city.x} 
+            cy={city.y} 
+            r="4" 
+            class="city-dot"
+          />
+          <!-- City label (hidden by default, shown on hover) -->
+          <text 
+            x={city.x} 
+            y={city.y - 15} 
+            class="city-label"
+            text-anchor="middle"
+          >
+            {city.name}
+          </text>
+        </g>
+      ))}
+    </g>
+  </svg>
+</div>
+
+<style>
+  .world-map-container {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .world-map-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .base-map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .city-markers {
+    pointer-events: all;
+  }
+
+  .city-marker {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .city-glow {
+    fill: rgba(59, 130, 246, 0.3); /* Blue glow */
+    stroke: none;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  .city-dot {
+    fill: #3b82f6; /* Blue dot */
+    stroke: #ffffff;
+    stroke-width: 1.5;
+    transition: all 0.3s ease;
+  }
+
+  .city-label {
+    fill: var(--color-text-on-dark, #ffffff);
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Hover effects */
+  .city-marker:hover .city-glow {
+    r: 12;
+    opacity: 0.8;
+    fill: rgba(59, 130, 246, 0.5);
+  }
+
+  .city-marker:hover .city-dot {
+    r: 6;
+    fill: #60a5fa;
+  }
+
+  .city-marker:hover .city-label {
+    opacity: 1;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .city-glow {
+      r: 6;
+    }
+    
+    .city-dot {
+      r: 3;
+    }
+    
+    .city-label {
+      font-size: 10px;
+    }
+    
+    .city-marker:hover .city-glow {
+      r: 9;
+    }
+    
+    .city-marker:hover .city-dot {
+      r: 4.5;
+    }
+  }
+</style>
+
+<script>
+  // Add click handlers for future interactivity
+  document.addEventListener('DOMContentLoaded', () => {
+    const cityMarkers = document.querySelectorAll('.city-marker');
+    
+    cityMarkers.forEach(marker => {
+      marker.addEventListener('click', (e) => {
+        const cityName = marker.getAttribute('data-city');
+        const countryName = marker.getAttribute('data-country');
+        
+        // For now, just log the click - you can extend this later
+        console.log(`Clicked on ${cityName}, ${countryName}`);
+        
+        // Future: Could open a modal, navigate to travel post, etc.
+        // Example: window.location.href = `/travel/${countryName.toLowerCase()}`;
+      });
+    });
+  });
+</script>
