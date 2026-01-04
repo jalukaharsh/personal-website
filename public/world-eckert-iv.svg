@@ -52,9 +52,9 @@
  */
 .landxx
 {
-   fill: #b9b9b9;
-   stroke:#fff;
-   stroke-width:0.5;
+   fill: #000c15;
+   stroke: #FFFFFF;
+   stroke-width: 1.5;
 }
 
 /*
@@ -62,7 +62,8 @@
  */
 .coastxx
 {
-   stroke-width: 0.3;
+   stroke: #FFFFFF;
+   stroke-width: 1.5;
 }
 
 /*
@@ -92,7 +93,7 @@
  */
 .aq
 {
-   fill:#e6e6e6;
+   fill:#000c15;
 }
 
 /*
@@ -102,15 +103,15 @@
 {
    opacity: 1;
    color: #000;
-   fill:#fff;
-   stroke:#000;
-   stroke-width:0.5;
-   stroke-miterlimit:1;
+   fill: #000c15;
+   stroke: #FFFFFF;
+   stroke-width: 0.2;
+   stroke-miterlimit: 1;
 }
 
 .lake
 {
-   fill:white;
+   fill:#000c15;
    fill-opacity:1;
    stroke:none;
 }
