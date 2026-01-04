@@ -22,6 +22,11 @@ const sortedPosts = allPosts.sort((a, b) => {
   <Header slot="header" />
   
   <div class="travel-container space-y-8">
+    <!-- World Map SVG -->
+    <div class="world-map-container" style="margin-bottom: 3rem;">
+      <img src="/world-eckert-iv.svg" alt="World Map - Eckert IV Projection" class="world-map" />
+    </div>
+    
     <div class="page-intro" style="margin-bottom: 4rem;">
       <p>I like sharing stories, insights, and practical tips from my travels across different cultures and landscapes.</p>
     </div>
@@ -108,6 +113,20 @@ const sortedPosts = allPosts.sort((a, b) => {
     color: var(--color-text-on-dark);
     font-size: var(--font-size-lg);
     line-height: 1.6;
+  }
+
+  .world-map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: var(--spacing-8);
+  }
+
+  .world-map {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
 
   .sort-label {
