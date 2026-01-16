@@ -22,7 +22,6 @@ const sortedPosts = allPosts.sort((a, b) => {
 >
   <Header slot="header" />
   
-  <!-- World Map SVG with City Markers - Full Width -->
   <div class="world-map-container-full" style="margin-bottom: 3rem;">
     <WorldMapWithCities />
   </div>
@@ -91,7 +90,6 @@ const sortedPosts = allPosts.sort((a, b) => {
 </BaseLayout>
 
 <style>
-  /* Modern Tech Theme - Travel Index Page Styling */
 
   .travel-container {
     max-width: 800px;
@@ -117,16 +115,11 @@ const sortedPosts = allPosts.sort((a, b) => {
   }
 
   .world-map-container-full {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    width: 100%;
+    margin: var(--spacing-8) auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: var(--spacing-8);
   }
 
   .sort-label {
