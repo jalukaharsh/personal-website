@@ -1,33 +1,7 @@
 @import "tailwindcss" source("../");
 @plugin "@tailwindcss/typography";
 
-/* ============================================================================
-   MODERN TECH THEME
-   ============================================================================
-   
-   A sophisticated tech-inspired theme featuring:
-   - Charcoal Black (#0F0F0F) for primary backgrounds
-   - Graphite Gray (#2A2A2A) for section containers
-   - Soft Stone (#E5E5E5) for content areas
-   - Electric Blue (#2979FF) for interactive elements
-   - Mint Accent (#00E5A8) for secondary highlights
-   
-   Design Philosophy:
-   - Visual depth through strategic color layering
-   - Modern tech aesthetic with vibrant accents
-   - Accessibility: WCAG AA compliant contrast ratios (4.5:1+)
-   - Maintainability: CSS variables for easy updates
-   
-   ============================================================================ */
-
-/* ============================================================================
-   CSS CUSTOM PROPERTIES (VARIABLES)
-   ============================================================================ */
-
 @theme {
-  /* ---------------------------------------------------------------------------
-     Color Palette - Modern Tech Theme
-     --------------------------------------------------------------------------- */
   /* 005A71 */
   /* Primary Colors */
   --color-charcoal: #000c15;        /* Deep background color */
