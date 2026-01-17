@@ -1,6 +1,4 @@
 ---
-// Component for displaying world map with city markers
-// Uses the existing world-eckert-iv.svg as base and overlays city markers
 
 import { getVisitedCities } from '../data/cities';
 
@@ -13,7 +11,6 @@ const visitedCities = getVisitedCities();
     class="world-map-svg"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <!-- Include the base world map -->
     <image 
       href="/world-eckert-iv.svg" 
       width="2752.77" 
@@ -21,25 +18,24 @@ const visitedCities = getVisitedCities();
       class="base-map"
     />
     
-    <!-- City markers overlay -->
     <g class="city-markers">
       {visitedCities.map(city => (
         <g class="city-marker" data-city={city.name} data-country={city.country}>
-          <!-- Outer glow circle -->
+
           <circle 
             cx={city.x} 
             cy={city.y} 
             r="8" 
             class="city-glow"
           />
-          <!-- Main city dot -->
+
           <circle 
             cx={city.x} 
             cy={city.y} 
-            r="4" 
+            r="8" 
             class="city-dot"
           />
-          <!-- City label (hidden by default, shown on hover) -->
+
           <text 
             x={city.x} 
             y={city.y - 15} 
@@ -96,8 +92,8 @@ const visitedCities = getVisitedCities();
   }
 
   .city-label {
-    fill: var(--color-text-on-dark, #ffffff);
-    font-size: 12px;
+    fill: var(--color-text-on-dark);
+    font-size: 40px;
     font-weight: 500;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -105,7 +101,6 @@ const visitedCities = getVisitedCities();
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
 
-  /* Hover effects */
   .city-marker:hover .city-glow {
     r: 12;
     opacity: 0.8;
