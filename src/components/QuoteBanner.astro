@@ -11,9 +11,9 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     "{randomQuote.text}"
   </blockquote>
   <div class="quote-attribution">
-    <span class="quote-author">— {randomQuote.author}</span>
+    <span class="quote-author">— {randomQuote.author}, </span>
     {randomQuote.source && (
-      <span class="quote-source">, {randomQuote.source}</span>
+      <span class="quote-source">{randomQuote.source}</span>
     )}
   </div>
 </div>
