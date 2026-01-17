@@ -17,9 +17,7 @@
   --color-text-primary: var(--color-white);
   --color-text-muted: var(--color-light-grey);
   
-  --colour-electric-blue-on-hover: var(--color-electric-blue);
-  --color-interactive: var(--color-electric-blue); 
-  
+  --color-interactive: var(--color-electric-blue);  
   --color-border: var(--color-light-grey);
   
   /* Opacity Variants for Layering Effects */
@@ -145,13 +143,13 @@ body {
 .prose {
   --tw-prose-body: var(--color-text-on-dark);
   --tw-prose-headings: var(--color-text-on-dark);
-  --tw-prose-links: var(--colour-electric-blue-on-hover);
+  --tw-prose-links: var(--color-interactive);
   --tw-prose-bold: var(--color-text-on-dark);
   --tw-prose-counters: var(--color-text-on-dark);
   --tw-prose-bullets: var(--color-text-on-dark);
   --tw-prose-hr: var(--color-border);
   --tw-prose-quotes: var(--color-text-on-dark);
-  --tw-prose-quote-borders: var(--colour-electric-blue-on-hover);
+  --tw-prose-quote-borders: var(--color-interactive);
   --tw-prose-captions: var(--color-text-on-dark);
   --tw-prose-code: var(--color-text-on-dark);
   --tw-prose-pre-code: var(--color-text-on-dark);
@@ -226,7 +224,7 @@ body {
 }
 
 .prose-content a {
-  color: var(--colour-electric-blue-on-hover);
+  color: var(--color-interactive);
   text-decoration: none;
   text-shadow: none;
   transition: var(--transition-colors);
@@ -234,7 +232,7 @@ body {
 }
 
 .prose-content a:focus-visible {
-  outline: 2px solid var(--colour-electric-blue-on-hover);
+  outline: 2px solid var(--color-interactive);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
   transition-delay: var(--transition-delay-none);
@@ -276,7 +274,7 @@ body {
 }
 
 .prose-content blockquote {
-  border-left: 4px solid var(--colour-electric-blue-on-hover);
+  border-left: 4px solid var(--color-interactive);
   padding-left: var(--spacing-4);
   font-style: italic;
   color: var(--color-text-on-dark);
@@ -372,14 +370,14 @@ body {
    LINK STYLES
    ============================================================================ */
 a {
-  color: var(--colour-electric-blue-on-hover);
+  color: var(--color-interactive);
   text-decoration: none;
   transition: var(--transition-colors);
   transition-delay: var(--transition-delay-none);
 }
 
 a:focus-visible {
-  outline: 2px solid var(--colour-electric-blue-on-hover);
+  outline: 2px solid var(--color-interactive);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
   transition-delay: var(--transition-delay-none);
@@ -410,14 +408,14 @@ button,
 /* Primary Button - Electric Blue */
 .btn-primary,
 button:not([class*="btn-"]) {
-  background-color: var(--colour-electric-blue-on-hover);
+  background-color: var(--color-interactive);
   color: var(--color-text-on-dark);
   border: none;
 }
 
 .btn-primary:focus-visible,
 button:not([class*="btn-"]):focus-visible {
-  outline: 2px solid var(--colour-electric-blue-on-hover);
+  outline: 2px solid var(--color-interactive);
   outline-offset: 2px;
   transition-delay: var(--transition-delay-none);
 }
@@ -460,12 +458,12 @@ button:not([class*="btn-"]):disabled {
 /* Outline Button - Electric Blue Border */
 .btn-outline {
   background-color: transparent;
-  border: 2px solid var(--colour-electric-blue-on-hover);
-  color: var(--colour-electric-blue-on-hover);
+  border: 2px solid var(--color-interactive);
+  color: var(--color-interactive);
 }
 
 .btn-outline:focus-visible {
-  outline: 2px solid var(--colour-electric-blue-on-hover);
+  outline: 2px solid var(--color-interactive);
   outline-offset: 2px;
   transition-delay: var(--transition-delay-none);
 }
@@ -488,11 +486,11 @@ button:not([class*="btn-"]):disabled {
 
 .btn-ghost:hover {
   background-color: var(--color-mint-10);
-  color: var(--colour-electric-blue-on-hover);
+  color: var(--color-interactive);
 }
 
 .btn-ghost:focus-visible {
-  outline: 2px solid var(--colour-electric-blue-on-hover);
+  outline: 2px solid var(--color-interactive);
   outline-offset: 2px;
   transition-delay: var(--transition-delay-none);
 }
@@ -556,7 +554,7 @@ select:focus-visible {
 }
 
 .card-tron:hover {
-  border-color: var(--colour-electric-blue-on-hover); /* Electric Blue on hover */
+  border-color: var(--color-interactive); /* Electric Blue on hover */
 }
 
 /* ============================================================================
