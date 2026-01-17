@@ -14,7 +14,6 @@
   
   --color-text-on-dark: var(--color-white);
   --color-text-on-light: var(--color-charcoal);
-  --color-text-primary: var(--color-white);
   --color-text-muted: var(--color-light-grey);
   
   --color-interactive: var(--color-electric-blue);  
@@ -133,7 +132,7 @@ html {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: var(--line-height-normal);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark);
   background-color: var(--color-bg-primary);
 }
 
@@ -481,7 +480,7 @@ button:not([class*="btn-"]):disabled {
 .btn-ghost {
   background-color: transparent;
   border: none;
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark);
 }
 
 .btn-ghost:hover {
