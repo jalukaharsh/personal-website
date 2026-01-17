@@ -18,7 +18,7 @@
   --color-text-muted: var(--color-light-grey);
   
   --colour-electric-blue-on-hover: var(--color-electric-blue);
-  --color-interactive-secondary: var(--color-electric-blue); 
+  --color-interactive: var(--color-electric-blue); 
   
   --color-border: #404040;                        /* Subtle borders */
   --color-border-subtle: #404040;                 /* Subtle borders (alias) */
@@ -455,7 +455,7 @@ button:not([class*="btn-"]):disabled {
 
 /* Secondary Button - Mint Accent */
 .btn-secondary {
-  background-color: var(--color-interactive-secondary);
+  background-color: var(--color-interactive);
   color: var(--color-charcoal);
   border: none;
 }
@@ -465,7 +465,7 @@ button:not([class*="btn-"]):disabled {
 }
 
 .btn-secondary:focus-visible {
-  outline: 2px solid var(--color-interactive-secondary);
+  outline: 2px solid var(--color-interactive);
   outline-offset: 2px;
   transition-delay: var(--transition-delay-none);
 }

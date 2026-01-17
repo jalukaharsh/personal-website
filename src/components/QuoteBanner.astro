@@ -19,11 +19,10 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 </div>
 
 <style>
-  /* Modern Tech Theme - QuoteBanner Styling */
   
   .quote-banner {
-    background-color: var(--color-bg-secondary); /* Graphite Gray background */
-    border-left: 4px solid var(--color-interactive-secondary); /* Mint Accent border */
+    background-color: var(--color-bg-secondary);
+    border-left: 4px solid var(--color-text-on-dark);
     padding: var(--spacing-6);
     margin-bottom: var(--spacing-8);
     border-radius: var(--radius-lg);
@@ -32,13 +31,13 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   }
 
   .quote-banner:hover {
-    border-left-color: var(--colour-electric-blue-on-hover); /* Electric Blue on hover */
+    border-left-color: var(--color-interactive);
   }
 
   .quote-text {
     font-size: var(--font-size-lg);
     font-style: italic;
-    color: var(--color-text-on-dark); /* White text on dark background */
+    color: var(--color-text-on-dark);
     line-height: var(--line-height-relaxed);
     margin-bottom: var(--spacing-4);
   }
@@ -46,7 +45,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   .quote-attribution {
     margin-top: var(--spacing-4);
     font-size: var(--font-size-sm);
-    color: var(--color-text-on-dark); /* White text */
+    color: var(--color-text-on-dark);
   }
 
   .quote-author {
