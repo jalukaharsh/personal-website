@@ -1,48 +1,48 @@
-// City data for world map markers
-// Coordinates are based on Eckert IV projection SVG viewBox="0 0 2752.77 1537.63"
-
 export interface City {
   name: string;
   country: string;
-  x: number; // SVG coordinate
-  y: number; // SVG coordinate
+  x: number;
+  y: number;
   visited: boolean;
-  visitDate?: string; // Optional visit date
 }
 
 export const cities: City[] = [
-  // North America
   { 
-    name: "New York", 
-    country: "USA", 
-    x: 850, 
-    y: 380, 
+    name: "Niagara", 
+    country: "Canada", 
+    x: 770, 
+    y: 360, 
     visited: true,
   },
   { 
-    name: "Los Angeles", 
+    name: "San Francisco", 
     country: "USA", 
-    x: 650, 
+    x: 400, 
     y: 420, 
     visited: true,
   },
   { 
     name: "Toronto", 
     country: "Canada", 
-    x: 820, 
+    x: 780, 
     y: 350, 
     visited: true,
   },
   { 
     name: "Vancouver", 
     country: "Canada", 
-    x: 650, 
-    y: 320, 
+    x: 450, 
+    y: 340, 
     visited: true,
   },
-  
-  // Europe
   { 
+    name: "Miami", 
+    country: "USA", 
+    x: 670, 
+    y: 540, 
+    visited: true,
+  },
+  {
     name: "Paris", 
     country: "France", 
     x: 1280, 
@@ -50,7 +50,7 @@ export const cities: City[] = [
     visited: true,
   },
   { 
-    name: "Berlin", 
+    name: "Munich", 
     country: "Germany", 
     x: 1350, 
     y: 310, 
@@ -78,7 +78,7 @@ export const cities: City[] = [
     visited: true,
   },
   { 
-    name: "Warsaw", 
+    name: "Krakow", 
     country: "Poland", 
     x: 1420, 
     y: 310, 
@@ -87,7 +87,42 @@ export const cities: City[] = [
   { 
     name: "Rome", 
     country: "Italy", 
-    x: 1340, 
+    x: 1380, 
+    y: 400, 
+    visited: true,
+  },
+  { 
+    name: "Venice", 
+    country: "Italy", 
+    x: 1365, 
+    y: 370, 
+    visited: true,
+  },
+  { 
+    name: "Milan", 
+    country: "Italy", 
+    x: 1350, 
+    y: 370, 
+    visited: true,
+  },
+  { 
+    name: "Lake Como", 
+    country: "Italy", 
+    x: 1345, 
+    y: 365, 
+    visited: true,
+  },
+  { 
+    name: "Cinque Terre", 
+    country: "Italy", 
+    x: 1350, 
+    y: 385, 
+    visited: true,
+  },
+  { 
+    name: "Florence", 
+    country: "Italy", 
+    x: 1365, 
     y: 390, 
     visited: true,
   },
@@ -101,8 +136,15 @@ export const cities: City[] = [
   { 
     name: "Zurich", 
     country: "Switzerland", 
-    x: 1310, 
+    x: 1330, 
     y: 350, 
+    visited: true,
+  },
+  { 
+    name: "Geneva", 
+    country: "Switzerland", 
+    x: 1315, 
+    y: 360, 
     visited: true,
   },
   { 
@@ -122,7 +164,7 @@ export const cities: City[] = [
   { 
     name: "Vaduz", 
     country: "Liechtenstein", 
-    x: 1315, 
+    x: 1340, 
     y: 345, 
     visited: true,
   },
@@ -133,87 +175,165 @@ export const cities: City[] = [
     y: 375, 
     visited: true,
   },
-  
-  // Asia
   { 
     name: "Shanghai", 
     country: "China", 
-    x: 2100, 
-    y: 430, 
+    x: 2170, 
+    y: 500, 
+    visited: true,
+  },
+  { 
+    name: "Zhuhai", 
+    country: "China", 
+    x: 2140, 
+    y: 555, 
+    visited: true,
+  },
+  { 
+    name: "Shenzhen", 
+    country: "China", 
+    x: 2145, 
+    y: 545, 
     visited: true,
   },
   { 
     name: "Hong Kong", 
     country: "Hong Kong", 
-    x: 2080, 
-    y: 480, 
+    x: 2150, 
+    y: 550, 
     visited: true,
   },
   { 
     name: "Macau", 
     country: "Macau", 
-    x: 2075, 
-    y: 485, 
+    x: 2145, 
+    y: 560, 
     visited: true,
   },
   { 
     name: "Seoul", 
     country: "South Korea", 
-    x: 2150, 
-    y: 410, 
+    x: 2190, 
+    y: 445, 
     visited: true,
   },
   { 
     name: "New Delhi", 
     country: "India", 
     x: 1850, 
-    y: 500, 
+    y: 535, 
+    visited: true,
+  },
+  { 
+    name: "Ladakh", 
+    country: "India", 
+    x: 1840, 
+    y: 510, 
+    visited: true,
+  },
+  { 
+    name: "Jaipur", 
+    country: "India", 
+    x: 1830, 
+    y: 550, 
+    visited: true,
+  },
+  { 
+    name: "Jaisalmer", 
+    country: "India", 
+    x: 1810, 
+    y: 535, 
     visited: true,
   },
   { 
     name: "Mumbai", 
     country: "India", 
     x: 1820, 
-    y: 540, 
+    y: 600, 
+    visited: true,
+  },
+  { 
+    name: "Kochi", 
+    country: "India", 
+    x: 1840, 
+    y: 650, 
+    visited: true,
+  },
+  { 
+    name: "Kutch", 
+    country: "India", 
+    x: 1800, 
+    y: 580, 
+    visited: true,
+  },
+  { 
+    name: "Darjeeling", 
+    country: "India", 
+    x: 1920, 
+    y: 510, 
+    visited: true,
+  },
+  { 
+    name: "Shillong", 
+    country: "India", 
+    x: 1940, 
+    y: 530, 
     visited: true,
   },
   { 
     name: "Singapore", 
     country: "Singapore", 
-    x: 2000, 
-    y: 650, 
+    x: 2075, 
+    y: 810, 
     visited: true,
   },
   { 
-    name: "Kuala Lumpur", 
+    name: "Langkawi", 
     country: "Malaysia", 
     x: 1980, 
     y: 630, 
     visited: true,
   },
-  
-  // Africa & Middle East
   { 
     name: "Cairo", 
     country: "Egypt", 
-    x: 1450, 
+    x: 1500, 
     y: 500, 
     visited: true,
   },
-  
-  // Oceania
+  { 
+    name: "Luxor", 
+    country: "Egypt", 
+    x: 1500, 
+    y: 550, 
+    visited: true,
+  },
+  { 
+    name: "Hurghada", 
+    country: "Egypt", 
+    x: 1540, 
+    y: 550, 
+    visited: true,
+  },
+  { 
+    name: "Suez", 
+    country: "Egypt", 
+    x: 1525, 
+    y: 520, 
+    visited: true,
+  },
   { 
     name: "Sydney", 
     country: "Australia", 
-    x: 2350, 
-    y: 850, 
+    x: 2370, 
+    y: 1050, 
     visited: true,
   },
   { 
     name: "Melbourne", 
     country: "Australia", 
-    x: 2320, 
-    y: 880, 
+    x: 2300, 
+    y: 1090, 
     visited: true,
   },
 ];
