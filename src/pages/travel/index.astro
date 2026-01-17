@@ -21,16 +21,25 @@ const sortedPosts = allPosts.sort((a, b) => {
   title="Travel - Harsh Jaluka"
 >
   <Header slot="header" />
+
+  <div class="travel-container space-y-8">
+    <div class="page-intro" style="margin-bottom: 4rem;">
+      <p>I've been lucky to have had lots of opportunity to travel in my life, and I've plotted out the cities I've been to in 
+      map below. I prefer tracking cities over countries because the number of countries one has been to is an objectively bad 
+      metric. For example, travelling through Europe will give you a boost by 30 countries while travelling through India just 
+      one despite India arguably being just as culturally diverse a region (I will argue). </p>
+      <br>
+      <p> I've also written articles, listed below, where I share stories, insights, and practical tips from my travels. One 
+      day, clicking on the city dots will take you to the articles directly, but not today. </p>
+    </div>
+  </div>
   
   <div class="world-map-container-full" style="margin-bottom: 3rem;">
     <WorldMapWithCities />
   </div>
-  
+
   <div class="travel-container space-y-8">
-    <div class="page-intro" style="margin-bottom: 4rem;">
-      <p>I like sharing stories, insights, and practical tips from my travels across different cultures and landscapes.</p>
-    </div>
-    
+      
     <div class="mb-8">
       <div class="flex justify-between items-center mb-8">
         <p class="travel-count">
@@ -110,7 +119,7 @@ const sortedPosts = allPosts.sort((a, b) => {
   .page-intro {
     margin-top: var(--spacing-12);
     color: var(--color-text-on-dark);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     line-height: 1.6;
   }
 
