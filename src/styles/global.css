@@ -2,29 +2,24 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* 005A71 */
-  /* Primary Colors */
-  --color-charcoal: #000c15;        /* Deep background color */
-  --color-graphite: #2f383f;        /* Mid-tone gray for sections */
-  --color-electric-blue: #82d2e7;            /* Fresh green for accents */
+  --color-charcoal: #000c15;
+  --color-graphite: #2f383f;
+  --color-electric-blue: #82d2e7;
   --color-white: #FFFFFF;
+  --color-light-grey: #999999;
   
-  /* Semantic Color Mappings - Backgrounds */
-  --color-bg-primary: var(--color-charcoal);      /* Primary background */
-  --color-bg-secondary: var(--color-graphite);    /* Section backgrounds */
-  --color-bg-content: var(--color-graphite);      /* Content area backgrounds */
+  --color-bg-primary: var(--color-charcoal);
+  --color-bg-secondary: var(--color-graphite);
+  --color-bg-content: var(--color-graphite);
   
-  /* Semantic Color Mappings - Text */
-  --color-text-on-dark: var(--color-white);                  /* White text on dark backgrounds */
-  --color-text-on-light: var(--color-charcoal);   /* Dark text on light backgrounds */
-  --color-text-primary: var(--color-white); /* Default text color */
-  --color-text-muted: #999999;                    /* Muted text for metadata */
+  --color-text-on-dark: var(--color-white);
+  --color-text-on-light: var(--color-charcoal);
+  --color-text-primary: var(--color-white);
+  --color-text-muted: var(--color-light-grey);
   
-  /* Semantic Color Mappings - Interactive Elements */
-  --colour-electric-blue-on-hover: var(--color-electric-blue);    /* Primary interactive color */
-  --color-interactive-secondary: var(--color-electric-blue);           /* Secondary interactive color */
+  --colour-electric-blue-on-hover: var(--color-electric-blue);
+  --color-interactive-secondary: var(--color-electric-blue); 
   
-  /* Semantic Color Mappings - Borders */
   --color-border: #404040;                        /* Subtle borders */
   --color-border-subtle: #404040;                 /* Subtle borders (alias) */
   --color-border-emphasis: var(--color-electric-blue);  /* Emphasized borders */
