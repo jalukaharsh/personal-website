@@ -4,7 +4,9 @@ import type { CollectionEntry } from 'astro:content';
 import ContentPost from '../../layouts/ContentPost.astro';
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects');
+  const projects = await getCollection('projects', ({ data }) => {
+    return data.draft !== true;
+  });
   return projects.map(project => ({
     params: { slug: project.slug },
     props: { project },
