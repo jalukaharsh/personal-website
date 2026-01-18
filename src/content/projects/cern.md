@@ -3,7 +3,7 @@ title: "CERN"
 description: "Sharing my work and experience at CERN"
 pubDate: 2026-01-17T12:00:00Z
 tags: ["university", "europe", "science"]
-draft: false
+draft: true
 ---
 
 I had the amazing opportunity in university to work at the ATLAS experiment at CERN with some professors at the University of Toronto. CERN, for those who might not be aware, is the world's largest particle accelerator! It's a 27km circular tunnel under France and Switzerland (straddling the border around Geneva) where atoms are accelerated and smashed into each other at almost light speed (that's 3 million m/s). The idea is that smashing things together often 'breaks' the particles into their smaller fundamental constituents, which we really want to study. The accelerator was completed in 2008 (?) and in 2012, it proved its worth by finally discovering the Higgs boson, the newest particle in our 16-particle 'Standard Model', which is our best physical theory of the world we live in.  
