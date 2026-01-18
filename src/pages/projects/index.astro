@@ -5,12 +5,10 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
 
-// Fetch all published projects posts (draft: false)
 const allPosts = await getCollection('projects', ({ data }) => {
   return data.draft === false;
 });
 
-// Sort posts in reverse chronological order
 const sortedPosts = allPosts.sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
@@ -24,7 +22,7 @@ const sortedPosts = allPosts.sort((a, b) => {
   
   <div class="projects-container space-y-8">
     <div class="page-intro" style="margin-bottom: 4rem;">
-      <p>These are some projects I've spent a lot of my time on, spanning scientific research, software development, and writing. </p>
+      <p>These are some projects I've spent a lot of my time on, spanning scientific research, software development, writing and more. </p>
     </div>
     
     <div class="mb-8">
@@ -80,7 +78,7 @@ const sortedPosts = allPosts.sort((a, b) => {
   .page-intro {
     margin-top: var(--spacing-12);
     color: var(--color-text-on-dark);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     line-height: 1.6;
   }
 </style>

@@ -35,7 +35,7 @@ const sortedBooks = allBooks.sort((a, b) => {
       <br>
 
       <p> 
-        The quotes above are all hand-compiled from my own years of reading. I've tried to make the sources as accurate as possible but if you spot any errors, let me know. The cool thing is that you can refresh the page and it'll show a new quote!
+        The quotes above are all hand-compiled from my own years of reading. I've tried to make the sources as accurate as possible but if you spot any errors, let me know. The cool thing is that you can refresh the page and it'll show a new quote.
       </p>
     </div>
     
@@ -99,7 +99,6 @@ const sortedBooks = allBooks.sort((a, b) => {
 </BaseLayout>
 
 <style>
-  /* Modern Tech Theme - Books Index Page Styling */
   
   .books-container {
     max-width: 800px;
@@ -107,16 +106,16 @@ const sortedBooks = allBooks.sort((a, b) => {
   }
   
   .books-count {
-    color: var(--color-text-on-dark); /* White text */
+    color: var(--color-text-on-dark);
     font-size: var(--font-size-lg);
   }
 
   .sort-label {
-    color: var(--color-text-on-dark); /* White text */
+    color: var(--color-text-on-dark);
   }
 
   .sort-btn {
-    color: var(--color-text-on-dark); /* White text */
+    color: var(--color-text-on-dark);
     border-bottom: 2px solid transparent;
     padding-bottom: 4px;
     background: transparent;
@@ -126,21 +125,21 @@ const sortedBooks = allBooks.sort((a, b) => {
   }
 
   .sort-btn:hover {
-    color: var(--color-interactive); /* Electric Blue on hover */
+    color: var(--color-interactive);
     background: transparent;
   }
 
   .sort-btn-active {
-    border-bottom-color: var(--color-text-on-dark); /* White underline for active */
+    border-bottom-color: var(--color-text-on-dark);
     font-weight: var(--font-weight-medium);
   }
 
   .sort-separator {
-    color: var(--color-text-muted); /* Muted gray */
+    color: var(--color-text-muted);
   }
 
   .empty-message {
-    color: var(--color-text-muted); /* Muted gray */
+    color: var(--color-text-muted);
     font-size: var(--font-size-lg);
   }
 
@@ -182,10 +181,8 @@ const sortedBooks = allBooks.sort((a, b) => {
       return aValue.localeCompare(bValue);
     });
 
-    // Clear and re-append in sorted order
     items.forEach(item => list.appendChild(item));
 
-    // Update active button styling
     document.querySelectorAll('.sort-btn').forEach(btn => {
       btn.classList.remove('sort-btn-active');
     });
@@ -195,7 +192,6 @@ const sortedBooks = allBooks.sort((a, b) => {
     }
   }
 
-  // Wait for DOM to be ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initSorting);
   } else {
