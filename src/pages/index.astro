@@ -5,20 +5,16 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
 
-// Fetch all posts from all three collections
 const booksEntries = await getCollection('books');
 const projectsEntries = await getCollection('projects');
 const travelEntries = await getCollection('travel');
 
-// Combine all posts
 const allPosts = [...booksEntries, ...projectsEntries, ...travelEntries];
 
-// Filter out draft posts and sort by pubDate in reverse chronological order
 const publishedPosts = allPosts
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
-// Display 5 most recent posts
 const recentPosts = publishedPosts.slice(0, 5);
 ---
 
@@ -29,7 +25,7 @@ const recentPosts = publishedPosts.slice(0, 5);
   <Header slot="header" />
   
   <div class="home-container">
-    <section class="intro-section">
+    <section class="section">
       <p class="intro-paragraph">
         Hi, I'm Harsh. This is my corner of the internet where I share thoughts on books I'm reading, 
         projects I'm building and places I've traveled to. 
@@ -53,13 +49,12 @@ const recentPosts = publishedPosts.slice(0, 5);
 
     </section>
 
-    <section class="recent-updates-section">
+    <section class="section">
       <h2 class="section-title">Recent Updates</h2>
 
       {recentPosts.length > 0 ? (
         <div class="posts-list">
           {recentPosts.map(post => {
-            // Determine collection from the post
             const collection = post.collection;
             return (
               <BlogPostCard
@@ -84,14 +79,13 @@ const recentPosts = publishedPosts.slice(0, 5);
 </BaseLayout>
 
 <style>
-  /* Modern Tech Theme - Home Page Styling */
   
   .home-container {
     max-width: 800px;
     margin: 0 auto;
   }
 
-  .intro-section {
+  .section {
     margin-top: var(--spacing-12);
     margin-bottom: var(--spacing-24);
   }
@@ -103,12 +97,15 @@ const recentPosts = publishedPosts.slice(0, 5);
     margin-bottom: var(--spacing-6);
   }
 
-  .intro-paragraph:last-child {
-    margin-bottom: 0;
+  .intro-paragraph a {
+    color: var(--color-interactive);
+    text-decoration: none;
+    transition: var(--transition-colors);
   }
 
-  .recent-updates-section {
-    margin-top: var(--spacing-20);
+  .intro-paragraph a:hover {
+    color: var(--color-interactive);
+    text-decoration: underline;
   }
 
   .section-title {
