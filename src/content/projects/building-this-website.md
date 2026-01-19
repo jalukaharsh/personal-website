@@ -1,7 +1,7 @@
 ---
 title: "Vibe-coding (this website)"
 pubDate: 2026-01-18T07:15:00Z
-tags: ["announcements", "roadmap", "features"]
+tags: ["vibecoding", "AI", "software", "projects"]
 draft: false
 ---
 
