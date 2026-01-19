@@ -1,6 +1,5 @@
 ---
 title: "Fahrenheit 451"
-description: "A description for the book"
 pubDate: 2026-01-18T06:02:00Z
 author: "Ray Bradbury"
 publicationYear: 1953

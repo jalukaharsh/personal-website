@@ -2,7 +2,6 @@ import { z, defineCollection } from 'astro:content';
 
 const projectsSchema = z.object({
   title: z.string(),
-  // description: z.string(),
   pubDate: z.coerce.date(),
   tags: z.array(z.string()).optional(),
   draft: z.boolean().default(false),
@@ -10,7 +9,6 @@ const projectsSchema = z.object({
 
 const travelSchema = z.object({
   title: z.string(),
-  // description: z.string(),
   pubDate: z.coerce.date(),
   tags: z.array(z.string()).optional(),
   draft: z.boolean().default(false),
@@ -20,7 +18,6 @@ const travelSchema = z.object({
 
 const booksSchema = z.object({
   title: z.string(),
-  // description: z.string(),
   pubDate: z.coerce.date(),
   author: z.string(),
   publicationYear: z.number(),

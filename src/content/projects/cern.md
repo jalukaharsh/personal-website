@@ -1,6 +1,5 @@
 ---
 title: "CERN"
-description: "Sharing my work and experience at CERN"
 pubDate: 2026-01-17T12:00:00Z
 tags: ["university", "europe", "science"]
 draft: true

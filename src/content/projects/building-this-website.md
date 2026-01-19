@@ -1,6 +1,5 @@
 ---
 title: "Vibe-coding (this website)"
-description: "A sneak peek at exciting new features coming soon to this blog, including dark mode, search functionality, and more."
 pubDate: 2026-01-18T07:15:00Z
 tags: ["announcements", "roadmap", "features"]
 draft: false

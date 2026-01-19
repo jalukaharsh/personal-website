@@ -1,6 +1,5 @@
 ---
 title: "Notes from Underground"
-description: "A review for Notes from Underground by Dostoevsky"
 pubDate: 2026-01-18T06:20:00Z
 author: "Fyodor Dostoevsky"
 publicationYear: 1864
