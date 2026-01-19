@@ -8,15 +8,47 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 <div class="quote-banner">
   <blockquote class="quote-text">
-    "<span set:html={randomQuote.text} />"
+    "<span id="quote-text" set:html={randomQuote.text} />"
   </blockquote>
-  <div class="quote-attribution">
-    <span class="quote-author">— {randomQuote.author}, </span>
-    {randomQuote.source && (
-      <span class="quote-source">{randomQuote.source}</span>
-    )}
+  <div class="quote-footer">
+    <div class="quote-attribution">
+      <span class="quote-author" id="quote-author">— {randomQuote.author}, </span>
+      {randomQuote.source && (
+        <span class="quote-source" id="quote-source">{randomQuote.source}</span>
+      )}
+    </div>
+    <button id="refresh-quote" class="refresh-button" aria-label="Get a new quote">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+      </svg>
+    </button>
   </div>
 </div>
+
+<script define:vars={{ quotes }}>
+  const quoteText = document.getElementById('quote-text');
+  const quoteAuthor = document.getElementById('quote-author');
+  const quoteSource = document.getElementById('quote-source');
+  const refreshButton = document.getElementById('refresh-quote');
+
+  function getRandomQuote() {
+    return quotes[Math.floor(Math.random() * quotes.length)];
+  }
+
+  refreshButton?.addEventListener('click', () => {
+    const newQuote = getRandomQuote();
+    
+    if (quoteText) quoteText.innerHTML = newQuote.text;
+    if (quoteAuthor) quoteAuthor.textContent = `— ${newQuote.author}, `;
+    if (quoteSource) {
+      quoteSource.textContent = newQuote.source || '';
+    }
+    
+    const banner = document.querySelector('.quote-banner');
+    banner?.classList.add('quote-refresh');
+    setTimeout(() => banner?.classList.remove('quote-refresh'), 300);
+  });
+</script>
 
 <style>
   
@@ -28,6 +60,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     border-radius: var(--radius-lg);
     transition: var(--transition-colors);
     transition-delay: var(--transition-delay-none);
+    position: relative;
   }
 
   .quote-banner:hover {
@@ -42,18 +75,70 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     margin-bottom: var(--spacing-4);
   }
 
-  .quote-attribution {
+  .quote-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-4);
     margin-top: var(--spacing-4);
+  }
+
+  .quote-attribution {
     font-size: var(--font-size-sm);
     color: var(--color-text-on-dark);
+    flex: 1;
   }
 
   .quote-author {
     font-weight: var(--font-weight-semibold);
-    color: var(--color-text-on-dark); /* White text */
+    color: var(--color-text-on-dark);
   }
 
   .quote-source {
-    color: var(--color-text-muted); /* Muted gray for source */
+    color: var(--color-text-muted);
+  }
+
+  .refresh-button {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    background-color: transparent;
+    color: var(--color-text-on-dark);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .refresh-button:hover {
+    background-color: var(--color-interactive);
+    border-color: var(--color-interactive);
+    color: var(--color-bg-primary);
+  }
+
+  .refresh-button:active {
+    transform: scale(0.95);
+  }
+
+  .refresh-button svg {
+    transition: transform 0.3s ease;
+  }
+
+  .refresh-button:hover svg {
+    transform: rotate(180deg);
+  }
+
+  .quote-refresh {
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
   }
 </style>
