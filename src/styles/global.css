@@ -159,6 +159,11 @@ body {
   border-radius: var(--radius-lg);
 }
 
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* ============================================================================
    PROSE CONTENT STYLES (Blog Posts & Portfolio)
    ============================================================================ */

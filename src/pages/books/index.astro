@@ -23,7 +23,7 @@ const sortedBooks = allBooks.sort((a, b) => {
 >
   <Header slot="header" />
   
-  <div class="books-container">
+  <div class="main-container">
     <QuoteBanner />
     
     <hr style="border: none; border-top: 0.5px solid rgba(255, 255, 255, 0.2); margin-bottom: 3rem;" />
@@ -99,12 +99,7 @@ const sortedBooks = allBooks.sort((a, b) => {
 </BaseLayout>
 
 <style>
-  
-  .books-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
+
   .books-count {
     color: var(--color-text-on-dark);
     font-size: var(--font-size-lg);

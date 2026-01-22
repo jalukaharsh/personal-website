@@ -20,7 +20,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 >
   <Header slot="header" />
 
-  <div class="travel-container space-y-8">
+  <div class="main-container">
     <div class="page-intro" style="margin-bottom: 4rem;">
       <p>I've been lucky to have had lots of opportunity to travel in my life, and I've plotted out the cities I've been to in map below. I prefer tracking cities over countries because countries is just an objectively bad metric. For example, travelling through Europe will give you a boost by 30 countries while travelling through India just one despite India arguably being just as culturally diverse a region. </p>
       <br>
@@ -33,7 +33,7 @@ const sortedPosts = allPosts.sort((a, b) => {
     <WorldMapWithCities />
   </div>
 
-  <div class="travel-container space-y-8">
+  <div class="main-container">
       
     <div class="mb-8">
       <div class="flex justify-between items-center mb-8">
@@ -93,11 +93,6 @@ const sortedPosts = allPosts.sort((a, b) => {
 </BaseLayout>
 
 <style>
-
-  .travel-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
 
   .travel-count {
     color: var(--color-text-on-dark);
