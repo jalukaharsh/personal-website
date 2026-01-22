@@ -21,36 +21,38 @@ const sortedPosts = allPosts.sort((a, b) => {
   <Header slot="header" />
   
   <div class="main-container space-y-8">
-    <div class="page-intro" style="margin-bottom: 4rem;">
-      <p>These are some projects I've spent a lot of my time on, spanning scientific research, software development, writing and more. </p>
-    </div>
-    
-    <div class="mb-8">
-      <p class="projects-count">
-        {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
-      </p>
-    </div>
-
-    <ul class="space-y-4">
-      {sortedPosts.map(post => (
-        <ContentListItem
-          title={post.data.title}
-          slug={post.slug}
-          collection="projects"
-          metadata={post.data.pubDate.toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          })}
-        />
-      ))}
-    </ul>
-
-    {sortedPosts.length === 0 && (
-      <div class="text-center py-12">
-        <p class="empty-message">No projects yet. Check back soon!</p>
+    <section class="section">
+      <div class="page-intro" style="margin-bottom: 4rem;">
+        <p>These are some projects I've spent a lot of my time on, spanning scientific research, software development, writing and more. </p>
       </div>
-    )}
+      
+      <div class="mb-8">
+        <p class="projects-count">
+          {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
+        </p>
+      </div>
+
+      <ul class="space-y-4">
+        {sortedPosts.map(post => (
+          <ContentListItem
+            title={post.data.title}
+            slug={post.slug}
+            collection="projects"
+            metadata={post.data.pubDate.toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}
+          />
+        ))}
+      </ul>
+
+      {sortedPosts.length === 0 && (
+        <div class="text-center py-12">
+          <p class="empty-message">No projects yet. Check back soon!</p>
+        </div>
+      )}
+    </section>
   </div>
 
   <Footer slot="footer" />
@@ -59,20 +61,14 @@ const sortedPosts = allPosts.sort((a, b) => {
 <style>
     
   .projects-count {
-    color: var(--color-text-on-dark); /* White text on dark background */
+    color: var(--color-text-on-dark);
     font-size: var(--font-size-lg);
     margin-bottom: var(--spacing-6);
   }
 
   .empty-message {
-    color: var(--color-text-muted); /* Muted gray */
+    color: var(--color-text-muted);
     font-size: var(--font-size-lg);
   }
 
-  .page-intro {
-    margin-top: var(--spacing-12);
-    color: var(--color-text-on-dark);
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-  }
 </style>

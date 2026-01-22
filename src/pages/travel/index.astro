@@ -21,12 +21,15 @@ const sortedPosts = allPosts.sort((a, b) => {
   <Header slot="header" />
 
   <div class="main-container">
-    <div class="page-intro" style="margin-bottom: 4rem;">
-      <p>I've been lucky to have had lots of opportunity to travel in my life, and I've plotted out the cities I've been to in map below. I prefer tracking cities over countries because countries is just an objectively bad metric. For example, travelling through Europe will give you a boost by 30 countries while travelling through India just one despite India arguably being just as culturally diverse a region. </p>
-      <br>
-      <p> I've also written articles, listed below, where I share stories, insights, and practical tips from my travels. One 
-      day, clicking on the city dots will take you to the articles directly, but not today. </p>
-    </div>
+    <section class="section">
+      <p class="page-intro">
+        I've been lucky to have had lots of opportunity to travel in my life, and I've plotted out the cities I've been to in map below. I prefer tracking cities over countries because countries is just an objectively bad metric. For example, travelling through Europe will give you a boost by 30 countries while travelling through India just one despite India arguably being just as culturally diverse a region. 
+      </p>
+
+      <p class="page-intro"> 
+        I've also written articles, listed below, where I share stories, insights, and practical tips from my travels. One day, clicking on the city dots will take you to the articles directly, but not today. 
+      </p>
+    </section>
   </div>
   
   <div class="world-map-container-full" style="margin-bottom: 3rem;">
@@ -105,13 +108,6 @@ const sortedPosts = allPosts.sort((a, b) => {
     font-size: var(--font-size-lg);
     margin-top: var(--spacing-24);
     margin-bottom: var(--spacing-24);
-  }
-
-  .page-intro {
-    margin-top: var(--spacing-12);
-    color: var(--color-text-on-dark);
-    font-size: var(--font-size-base);
-    line-height: 1.6;
   }
 
   .world-map-container-full {

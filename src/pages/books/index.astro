@@ -6,12 +6,10 @@ import Footer from '../../components/Footer.astro';
 import QuoteBanner from '../../components/QuoteBanner.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
 
-// Fetch all published books (draft: false)
 const allBooks = await getCollection('books', ({ data }) => {
   return data.draft === false;
 });
 
-// Sort books alphabetically by title by default
 const sortedBooks = allBooks.sort((a, b) => {
   return a.data.title.localeCompare(b.data.title);
 });
@@ -24,21 +22,20 @@ const sortedBooks = allBooks.sort((a, b) => {
   <Header slot="header" />
   
   <div class="main-container">
-    <QuoteBanner />
-    
-    <hr style="border: none; border-top: 0.5px solid rgba(255, 255, 255, 0.2); margin-bottom: 3rem;" />
-    
-    <div class="page-intro" style="margin-bottom: 4rem;">
-      <p>
+    <section class="section">
+      <QuoteBanner />
+      
+      <hr style="border: none; border-top: 0.5px solid rgba(255, 255, 255, 0.2); margin-bottom: 3rem;" />
+      
+      <p class="page-intro">
         I enjoy reading a lot. I try to maintain a record of books I've read <a href="https://docs.google.com/spreadsheets/d/1KBcC6kPlFMojaJ0qsyxlT6AmEO_JHay75Rf9d5mzLcY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">here</a> or on my <a href="https://www.goodreads.com/user/show/94888357-harsh" target="_blank" rel="noopener noreferrer">Goodreads</a> account (feel free to add me). I've created this page to share my thoughts on those books.
       </p>
-      <br>
 
-      <p> 
+      <p class="page-intro"> 
         The quotes above are all hand-compiled from my own years of reading. I've tried to make the sources as accurate as possible but if you spot any errors, let me know. The cool thing is that you can refresh the page and it'll show a new quote.
       </p>
-    </div>
-    
+    </section>
+
     <div class="mb-8">
       <div class="flex justify-between items-center mb-8">
         <p class="books-count">
@@ -138,22 +135,6 @@ const sortedBooks = allBooks.sort((a, b) => {
     font-size: var(--font-size-lg);
   }
 
-  .page-intro {
-    color: var(--color-text-on-dark);
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-  }
-
-  .page-intro a {
-    color: var(--color-interactive);
-    text-decoration: none;
-    transition: var(--transition-colors);
-  }
-
-  .page-intro a:hover {
-    color: var(--color-interactive);
-    text-decoration: underline;
-  }
 </style>
 
 <script is:inline>
