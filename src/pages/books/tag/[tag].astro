@@ -9,7 +9,6 @@ export async function getStaticPaths() {
   const allPosts = await getCollection('books');
   const publishedPosts = allPosts.filter(post => !post.data.draft);
   
-  // Get all unique tags
   const uniqueTags = [...new Set(publishedPosts.flatMap(post => post.data.tags || []))];
   
   return uniqueTags.map(tag => {
@@ -100,8 +99,4 @@ const { posts, tag } = Astro.props;
     border-radius: var(--radius-lg);
   }
 
-  .empty-message {
-    color: var(--color-text-on-light);
-    font-size: var(--font-size-lg);
-  }
 </style>
