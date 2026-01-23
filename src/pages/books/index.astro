@@ -36,60 +36,61 @@ const sortedBooks = allBooks.sort((a, b) => {
       </p>
     </section>
 
-    <div class="mb-8">
-      <div class="flex justify-between items-center mb-8">
-        <p class="books-count">
-          {sortedBooks.length} {sortedBooks.length === 1 ? 'review' : 'reviews'}
-        </p>
-        
-        <!-- Sort Controls -->
-        <div class="flex gap-2 flex-wrap items-center">
-        <span class="sort-label">Sort by:</span>
-        <button 
-          id="sort-title" 
-          class="sort-btn sort-btn-active"
-        >
-          Title
-        </button>
-        <span class="sort-separator">|</span>
-        <button 
-          id="sort-author" 
-          class="sort-btn"
-        >
-          Author
-        </button>
-        <span class="sort-separator">|</span>
-        <button 
-          id="sort-year" 
-          class="sort-btn"
-        >
-          Year
-        </button>
+    <section class="section">
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-8">
+          <p class="books-count">
+            {sortedBooks.length} {sortedBooks.length === 1 ? 'review' : 'reviews'}
+          </p>
+          
+          <div class="flex gap-2 flex-wrap items-center">
+          <span class="sort-label">Sort by:</span>
+          <button 
+            id="sort-title" 
+            class="sort-btn sort-btn-active"
+          >
+            Title
+          </button>
+          <span class="sort-separator">|</span>
+          <button 
+            id="sort-author" 
+            class="sort-btn"
+          >
+            Author
+          </button>
+          <span class="sort-separator">|</span>
+          <button 
+            id="sort-year" 
+            class="sort-btn"
+          >
+            Year
+          </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <ul id="books-list" class="space-y-4" style="margin-top: 3rem; margin-bottom: 8rem;">
-      {sortedBooks.map(book => (
-        <ContentListItem
-          title={book.data.title}
-          slug={book.slug}
-          collection="books"
-          metadata={`by ${book.data.author} (${book.data.publicationYear})`}
-          sortData={{
-            title: book.data.title,
-            author: book.data.author,
-            year: book.data.publicationYear
-          }}
-        />
-      ))}
-    </ul>
+      <ul id="books-list" class="content-list space-y-4">
+        {sortedBooks.map(book => (
+          <ContentListItem
+            title={book.data.title}
+            slug={book.slug}
+            collection="books"
+            metadata={`by ${book.data.author} (${book.data.publicationYear})`}
+            sortData={{
+              title: book.data.title,
+              author: book.data.author,
+              year: book.data.publicationYear
+            }}
+          />
+        ))}
+      </ul>
 
-    {sortedBooks.length === 0 && (
-      <div class="text-center py-12">
-        <p class="empty-message">No books yet. Check back soon!</p>
-      </div>
-    )}
+      {sortedBooks.length === 0 && (
+        <div class="text-center py-12">
+          <p class="empty-message">No books yet. Check back soon!</p>
+        </div>
+      )}
+    </section>
   </div>
 
   <Footer slot="footer" />

@@ -164,6 +164,11 @@ body {
   text-decoration: underline;
 }
 
+.content-list {
+  margin-top: var(--spacing-12);
+  margin-bottom: var(--spacing-20);
+}
+
 .prose-content {
   max-width: var(--content-max-width);
   margin: 0 auto;

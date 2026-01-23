@@ -32,64 +32,65 @@ const sortedPosts = allPosts.sort((a, b) => {
     </section>
   </div>
   
-  <div class="world-map-container-full" style="margin-bottom: 3rem;">
+  <div class="world-map-container-full">
     <WorldMapWithCities />
   </div>
 
   <div class="main-container">
-      
-    <div class="mb-8">
-      <div class="flex justify-between items-center mb-8">
-        <p class="travel-count">
-          {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
-        </p>
+    <section class="section">
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-8">
+          <p class="travel-count">
+            {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
+          </p>
 
-        <div class="flex gap-2 flex-wrap items-center">
-        <span class="sort-label">Sort by:</span>
-        <button 
-          id="sort-title" 
-          class="sort-btn sort-btn-active"
-        >
-          Name
-        </button>
-        <span class="sort-separator">|</span>
-        <button 
-          id="sort-author" 
-          class="sort-btn"
-        >
-          Length of Stay
-        </button>
-        <span class="sort-separator">|</span>
-        <button 
-          id="sort-year" 
-          class="sort-btn"
-        >
-          Last Updated
-        </button>
+          <div class="flex gap-2 flex-wrap items-center">
+          <span class="sort-label">Sort by:</span>
+          <button 
+            id="sort-title" 
+            class="sort-btn sort-btn-active"
+          >
+            Name
+          </button>
+          <span class="sort-separator">|</span>
+          <button 
+            id="sort-author" 
+            class="sort-btn"
+          >
+            Length of Stay
+          </button>
+          <span class="sort-separator">|</span>
+          <button 
+            id="sort-year" 
+            class="sort-btn"
+          >
+            Last Updated
+          </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <ul class="space-y-4">
-      {sortedPosts.map(post => (
-        <ContentListItem
-          title={post.data.title}
-          slug={post.slug}
-          collection="travel"
-          metadata={post.data.pubDate.toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          })}
-        />
-      ))}
-    </ul>
+      <ul class="content-list space-y-4">
+        {sortedPosts.map(post => (
+          <ContentListItem
+            title={post.data.title}
+            slug={post.slug}
+            collection="travel"
+            metadata={post.data.pubDate.toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}
+          />
+        ))}
+      </ul>
 
-    {sortedPosts.length === 0 && (
-      <div class="text-center py-12">
-        <p class="empty-message">No travel posts yet. Check back soon!</p>
-      </div>
-    )}
+      {sortedPosts.length === 0 && (
+        <div class="text-center py-12">
+          <p class="empty-message">No travel posts yet. Check back soon!</p>
+        </div>
+      )}
+    </section>
   </div>
 
   <Footer slot="footer" />
@@ -105,7 +106,6 @@ const sortedPosts = allPosts.sort((a, b) => {
 
   .world-map-container-full {
     width: 100%;
-    margin: var(--spacing-8) auto 0;
     display: flex;
     justify-content: center;
     align-items: center;

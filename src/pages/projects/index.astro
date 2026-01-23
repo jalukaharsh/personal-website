@@ -22,17 +22,21 @@ const sortedPosts = allPosts.sort((a, b) => {
   
   <div class="main-container space-y-8">
     <section class="section">
-      <div class="page-intro" style="margin-bottom: 4rem;">
-        <p>These are some projects I've spent a lot of my time on, spanning scientific research, software development, writing and more. </p>
+      <div class="page-intro">
+        <p>
+          These are some projects I've spent a lot of my time on, spanning scientific research, software development, writing and more. 
+        </p>
       </div>
-      
+    </section>
+    
+    <section class="section">
       <div class="mb-8">
         <p class="projects-count">
           {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
         </p>
       </div>
 
-      <ul class="space-y-4">
+      <ul class="content-list space-y-4">
         {sortedPosts.map(post => (
           <ContentListItem
             title={post.data.title}
