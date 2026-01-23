@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import ContentPost from '../../layouts/ContentPost.astro';
+
+type ValidCollection = 'books' | 'projects' | 'travel';
+
+export async function getStaticPaths() {
+  const collections: ValidCollection[] = ['books', 'projects', 'travel'];
+  
+  const paths = await Promise.all(
+    collections.map(async (collection) => {
+      const entries = await getCollection(collection, ({ data }) => data.draft !== true);
+      return entries.map(entry => ({
+        params: { collection, slug: entry.slug },
+        props: { entry, collection },
+      }));
+    })
+  );
+  
+  return paths.flat();
+}
+
+interface Props {
+  entry: CollectionEntry<ValidCollection>;
+  collection: ValidCollection;
+}
+
+const { entry, collection } = Astro.props;
+const { Content } = await entry.render();
+
+// Extract collection-specific props
+const baseProps = {
+  title: entry.data.title,
+  pubDate: entry.data.pubDate,
+  tags: entry.data.tags,
+  collection,
+};
+
+const contentProps = collection === 'books' 
+  ? {
+      ...baseProps,
+      author: (entry.data as any).author,
+      publicationYear: (entry.data as any).publicationYear,
+    }
+  : baseProps;
+---
+
+<ContentPost {...contentProps}>
+  <Content />
+</ContentPost>
