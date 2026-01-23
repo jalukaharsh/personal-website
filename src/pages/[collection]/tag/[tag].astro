@@ -1,0 +1,110 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import BlogPostCard from '../../../components/BlogPostCard.astro';
+
+export async function getStaticPaths() {
+  const collections = ['books', 'projects', 'travel'];
+  const paths = [];
+
+  for (const collection of collections) {
+    const allPosts = await getCollection(collection);
+    const publishedPosts = allPosts.filter(post => !post.data.draft);
+    
+    const uniqueTags = [...new Set(publishedPosts.flatMap(post => post.data.tags || []))];
+    
+    uniqueTags.forEach(tag => {
+      const filteredPosts = publishedPosts
+        .filter(post => post.data.tags?.includes(tag))
+        .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+      
+      paths.push({
+        params: { collection, tag },
+        props: { posts: filteredPosts, tag, collection }
+      });
+    });
+  }
+
+  return paths;
+}
+
+const { posts, tag, collection } = Astro.props;
+const collectionTitle = collection.charAt(0).toUpperCase() + collection.slice(1);
+---
+
+<BaseLayout 
+  title={`${collectionTitle} tagged with "${tag}"`}
+  description={`All ${collection} tagged with ${tag}`}
+>
+  <Header slot="header" />
+  
+  <div class="space-y-8">
+    <div class="mb-8">
+      <a 
+        href={`/${collection}`}
+        class="back-link"
+      >
+        ← Back to {collectionTitle}
+      </a>
+    </div>
+
+    <section>
+      <h1 class="text-4xl font-bold text-white mb-6">
+        {collectionTitle} tagged with "{tag}"
+      </h1>
+
+      {posts.length > 0 ? (
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          {posts.map(post => (
+            <BlogPostCard
+              title={post.data.title}
+              pubDate={post.data.pubDate}
+              slug={post.slug}
+              tags={post.data.tags}
+              collection={collection}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p class="empty-message">No {collection} found with this tag.</p>
+        </div>
+      )}
+    </section>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .back-link {
+    color: var(--color-interactive);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: var(--transition-colors);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .back-link:hover {
+    color: var(--color-text-on-dark);
+    text-decoration: none;
+  }
+
+  .back-link:focus-visible {
+    outline: 2px solid var(--color-interactive);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+    transition-delay: var(--transition-delay-none);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: var(--spacing-12) 0;
+    background-color: var(--color-bg-content);
+    border-radius: var(--radius-lg);
+  }
+
+</style>
