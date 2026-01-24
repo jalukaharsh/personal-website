@@ -43,28 +43,12 @@ const sortedBooks = allBooks.sort((a, b) => {
             {sortedBooks.length} {sortedBooks.length === 1 ? 'review' : 'reviews'}
           </p>
           
-          <div class="flex gap-2 flex-wrap items-center">
-          <span class="sort-label">Sort by:</span>
-          <button 
-            id="sort-title" 
-            class="sort-btn sort-btn-active"
-          >
-            Title
-          </button>
-          <span class="sort-separator">|</span>
-          <button 
-            id="sort-author" 
-            class="sort-btn"
-          >
-            Author
-          </button>
-          <span class="sort-separator">|</span>
-          <button 
-            id="sort-year" 
-            class="sort-btn"
-          >
-            Year
-          </button>
+          <div class="flex gap-2 items-center">
+            <select id="sort-select" class="sort-dropdown">
+              <option value="title" selected>Title</option>
+              <option value="author">Author</option>
+              <option value="year">Year</option>
+            </select>
           </div>
         </div>
       </div>
@@ -117,14 +101,6 @@ const sortedBooks = allBooks.sort((a, b) => {
     });
 
     items.forEach(item => list.appendChild(item));
-
-    document.querySelectorAll('.sort-btn').forEach(btn => {
-      btn.classList.remove('sort-btn-active');
-    });
-    const activeBtn = document.getElementById('sort-' + sortBy);
-    if (activeBtn) {
-      activeBtn.classList.add('sort-btn-active');
-    }
   }
 
   if (document.readyState === 'loading') {
@@ -134,12 +110,9 @@ const sortedBooks = allBooks.sort((a, b) => {
   }
 
   function initSorting() {
-    const titleBtn = document.getElementById('sort-title');
-    const authorBtn = document.getElementById('sort-author');
-    const yearBtn = document.getElementById('sort-year');
-
-    if (titleBtn) titleBtn.addEventListener('click', () => sortBooks('title'));
-    if (authorBtn) authorBtn.addEventListener('click', () => sortBooks('author'));
-    if (yearBtn) yearBtn.addEventListener('click', () => sortBooks('year'));
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => sortBooks(e.target.value));
+    }
   }
 </script>

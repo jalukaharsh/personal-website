@@ -44,28 +44,12 @@ const sortedPosts = allPosts.sort((a, b) => {
             {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
           </p>
 
-          <div class="flex gap-2 flex-wrap items-center">
-          <span class="sort-label">Sort by:</span>
-          <button 
-            id="sort-title" 
-            class="sort-btn sort-btn-active"
-          >
-            Name
-          </button>
-          <span class="sort-separator">|</span>
-          <button 
-            id="sort-author" 
-            class="sort-btn"
-          >
-            Length of Stay
-          </button>
-          <span class="sort-separator">|</span>
-          <button 
-            id="sort-year" 
-            class="sort-btn"
-          >
-            Last Updated
-          </button>
+          <div class="flex gap-2 items-center">
+            <select id="sort-select" class="sort-dropdown">
+              <option value="title" selected>Name</option>
+              <option value="days">Length of Stay</option>
+              <option value="date">Last Updated</option>
+            </select>
           </div>
         </div>
       </div>
@@ -81,6 +65,11 @@ const sortedPosts = allPosts.sort((a, b) => {
               month: 'long', 
               day: 'numeric' 
             })}
+            sortData={{
+              title: post.data.title,
+              days: post.data.daysSpent || 0,
+              date: post.data.pubDate.valueOf()
+            }}
           />
         ))}
       </ul>
@@ -95,6 +84,43 @@ const sortedPosts = allPosts.sort((a, b) => {
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script is:inline>
+  function sortTravel(sortBy) {
+    const list = document.querySelector('.content-list');
+    if (!list) {
+      console.error('content-list not found');
+      return;
+    }
+
+    const items = Array.from(list.querySelectorAll('.content-item'));
+    
+    items.sort((a, b) => {
+      const aValue = a.getAttribute('data-' + sortBy) || '';
+      const bValue = b.getAttribute('data-' + sortBy) || '';
+      
+      if (sortBy === 'days' || sortBy === 'date') {
+        return parseInt(bValue) - parseInt(aValue);
+      }
+      return aValue.localeCompare(bValue);
+    });
+
+    items.forEach(item => list.appendChild(item));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSorting);
+  } else {
+    initSorting();
+  }
+
+  function initSorting() {
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => sortTravel(e.target.value));
+    }
+  }
+</script>
 
 <style>
   .world-map-container-full {
