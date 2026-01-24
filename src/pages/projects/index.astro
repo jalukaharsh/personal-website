@@ -31,7 +31,7 @@ const sortedPosts = allPosts.sort((a, b) => {
     
     <section class="section">
       <div class="mb-8">
-        <p class="projects-count">
+        <p class="count-display">
           {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
         </p>
       </div>
@@ -61,13 +61,3 @@ const sortedPosts = allPosts.sort((a, b) => {
 
   <Footer slot="footer" />
 </BaseLayout>
-
-<style>
-    
-  .projects-count {
-    color: var(--color-text-on-dark);
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-6);
-  }
-
-</style>

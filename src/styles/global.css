@@ -537,6 +537,11 @@ select:focus-visible {
   border-color: var(--color-interactive);
 }
 
+.count-display {
+  color: var(--color-text-on-dark);
+  font-size: var(--font-size-lg);
+}
+
 .sort-label {
   color: var(--color-text-on-dark);
 }

@@ -39,7 +39,7 @@ const sortedBooks = allBooks.sort((a, b) => {
     <section class="section">
       <div class="mb-8">
         <div class="flex justify-between items-center mb-8">
-          <p class="books-count">
+          <p class="count-display">
             {sortedBooks.length} {sortedBooks.length === 1 ? 'review' : 'reviews'}
           </p>
           
@@ -95,13 +95,6 @@ const sortedBooks = allBooks.sort((a, b) => {
 
   <Footer slot="footer" />
 </BaseLayout>
-
-<style>
-  .books-count {
-    color: var(--color-text-on-dark);
-    font-size: var(--font-size-lg);
-  }
-</style>
 
 <script is:inline>
   function sortBooks(sortBy) {
