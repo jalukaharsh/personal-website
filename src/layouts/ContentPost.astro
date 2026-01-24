@@ -34,7 +34,7 @@ const collectionLabels = {
     <div class="back-link-container">
       <a 
         href={`/${collection}`}
-        class="back-link"
+        class="link-back"
       >
         ← Back to {collectionLabels[collection]}
       </a>
@@ -98,27 +98,6 @@ const collectionLabels = {
 
   .header-container h1 {
     margin-bottom: var(--spacing-2);
-  }
-
-  .back-link {
-    color: var(--color-interactive);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    text-decoration: none;
-    transition: var(--transition-colors);
-    transition-delay: var(--transition-delay-none);
-  }
-
-  .back-link:hover {
-    color: var(--color-text-on-dark);
-    text-decoration: none;
-  }
-
-  .back-link:focus-visible {
-    outline: 2px solid var(--color-interactive);
-    outline-offset: 2px;
-    border-radius: var(--radius-sm);
-    transition-delay: var(--transition-delay-none);
   }
 
   .author-info {

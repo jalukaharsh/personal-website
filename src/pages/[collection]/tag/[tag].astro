@@ -48,7 +48,7 @@ const collectionTitle = collection.charAt(0).toUpperCase() + collection.slice(1)
     <div class="mb-8">
       <a 
         href={`/${collection}`}
-        class="back-link"
+        class="link-back"
       >
         ← Back to {collectionTitle}
       </a>
@@ -83,32 +83,10 @@ const collectionTitle = collection.charAt(0).toUpperCase() + collection.slice(1)
 </BaseLayout>
 
 <style>
-  .back-link {
-    color: var(--color-interactive);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    text-decoration: none;
-    transition: var(--transition-colors);
-    transition-delay: var(--transition-delay-none);
-  }
-
-  .back-link:hover {
-    color: var(--color-text-on-dark);
-    text-decoration: none;
-  }
-
-  .back-link:focus-visible {
-    outline: 2px solid var(--color-interactive);
-    outline-offset: 2px;
-    border-radius: var(--radius-sm);
-    transition-delay: var(--transition-delay-none);
-  }
-
   .empty-state {
     text-align: center;
     padding: var(--spacing-12) 0;
     background-color: var(--color-bg-content);
     border-radius: var(--radius-lg);
   }
-
 </style>
