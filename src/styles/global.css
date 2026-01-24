@@ -140,6 +140,13 @@ body {
   margin: 0 auto;
 }
 
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-12) 0;
+  background-color: var(--color-bg-content);
+  border-radius: var(--radius-lg);
+}
+
 .empty-message {
   color: var(--color-text-muted);
   font-size: var(--font-size-lg);
