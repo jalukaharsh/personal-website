@@ -60,4 +60,6 @@ All commands are run from the root of the project:
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+This ensures that any derivative works remain open source and freely available to the community.
