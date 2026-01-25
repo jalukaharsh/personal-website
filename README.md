@@ -4,13 +4,12 @@ A modern, fast, and extensible personal blog built with Astro and Tailwind CSS. 
 
 ## Features
 
-- 📝 Write blog posts in Markdown with frontmatter metadata
-- 🏷️ Organize posts with tags and categories
-- 🎨 Responsive design with Tailwind CSS
-- ⚡ Lightning-fast static site generation
-- 🔍 Built-in link validation
-- 🚀 Deploy anywhere
-- 🔧 Fully extensible architecture for future enhancements
+- Markdown-based content authoring with frontmatter metadata
+- Tag-based organization and filtering
+- Draft mode for work-in-progress content
+- Link validation during build process
+- Zero JavaScript by default for fast page loads
+- Fully extensible architecture for future enhancements
 
 ## Prerequisites
 
@@ -39,42 +38,7 @@ npm run dev
 
 The site will be available at `http://localhost:4321`
 
-## Project Structure
-
-```text
-personal-blog-website/
-├── src/
-│   ├── content/
-│   │   ├── config.ts          # Content collection schema
-│   │   └── blog/              # Blog post Markdown files
-│   │       ├── post-1.md
-│   │       └── post-2.md
-│   ├── layouts/
-│   │   ├── BaseLayout.astro   # Base HTML structure
-│   │   └── BlogPost.astro     # Blog post template
-│   ├── pages/
-│   │   ├── index.astro        # Homepage
-│   │   ├── blog/
-│   │   │   ├── index.astro    # Blog listing page
-│   │   │   ├── [slug].astro   # Individual post pages
-│   │   │   └── tag/
-│   │   │       └── [tag].astro # Tag index pages
-│   ├── components/
-│   │   ├── Header.astro       # Site navigation
-│   │   ├── Footer.astro       # Site footer
-│   │   └── BlogPostCard.astro # Blog post preview card
-│   └── styles/
-│       └── global.css         # Global styles
-├── public/                     # Static assets (images, fonts, etc.)
-├── scripts/
-│   └── validate-links.js      # Link validation script
-├── astro.config.mjs           # Astro configuration
-├── tailwind.config.mjs        # Tailwind configuration
-├── package.json
-└── tsconfig.json
-```
-
-## Available Commands
+## Useful Commands
 
 All commands are run from the root of the project:
 
@@ -87,160 +51,6 @@ All commands are run from the root of the project:
 | `npm run preview`              | Preview your build locally before deploying                 |
 | `npm run validate:links`       | Run link validation on built site                           |
 | `npm run astro ...`            | Run CLI commands like `astro add`, `astro check`            |
-
-## Adding New Blog Posts
-
-### Creating a Blog Post
-
-1. Create a new Markdown file in `src/content/blog/`:
-```sh
-touch src/content/blog/my-new-post.md
-```
-
-2. Add frontmatter and content:
-```markdown
----
-title: "My New Blog Post"
-description: "A brief description of the post"
-pubDate: 2024-01-15
-tags: ["javascript", "web-development"]
-draft: false
----
-
-Your blog post content goes here. You can use all standard Markdown features:
-
-## Headings
-
-- Lists
-- **Bold** and *italic* text
-- [Links](https://example.com)
-- Code blocks
-- And more!
-```
-
-### Frontmatter Fields
-
-| Field         | Type       | Required | Description                                    |
-| :------------ | :--------- | :------- | :--------------------------------------------- |
-| `title`       | string     | Yes      | The post title                                 |
-| `description` | string     | Yes      | Brief description for previews and SEO         |
-| `pubDate`     | date       | Yes      | Publication date (YYYY-MM-DD format)           |
-| `tags`        | string[]   | No       | Array of tags for categorization               |
-| `draft`       | boolean    | No       | Set to `true` to hide from production (default: false) |
-
-### Draft Posts
-
-To create a draft post that won't appear in production:
-
-```markdown
----
-title: "Work in Progress"
-description: "This post is not ready yet"
-pubDate: 2024-01-15
-draft: true
----
-```
-
-Draft posts will appear in development mode but will be filtered out in production builds.
-
-## Dependencies
-
-### Core Dependencies
-
-- **astro** (^5.15.4): Static site generator framework
-  - Provides content collections, routing, and build system
-  - Zero JavaScript by default for optimal performance
-  
-- **tailwindcss** (^4.1.17): Utility-first CSS framework
-  - Responsive design system
-  - Customizable theme and components
-  
-- **@tailwindcss/vite** (^4.1.17): Vite integration for Tailwind CSS
-  - Fast development builds with hot module reloading
-  
-- **@tailwindcss/typography** (^0.5.19): Typography plugin for Tailwind
-  - Beautiful typographic defaults for Markdown content
-  - Optimized for readability
-
-## Deployment
-
-This site generates static HTML, CSS, and JavaScript files that can be deployed to any static hosting provider.
-
-## Customization
-
-### Styling
-
-Edit `tailwind.config.mjs` to customize colors, fonts, and other design tokens:
-
-```js
-export default {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#your-color',
-      },
-    },
-  },
-};
-```
-
-### Navigation
-
-Update `src/components/Header.astro` to add or modify navigation links.
-
-### Layout
-
-Modify `src/layouts/BaseLayout.astro` to change the overall page structure, meta tags, or add analytics.
-
-## Extending the Site
-
-This website is designed to be easily extensible with a modular architecture that supports adding new content types and sections.
-
-### Documentation
-
-- **[Extensibility Guide](./EXTENSIBILITY.md)**: Comprehensive guide to adding new content collections, pages, and features
-- **[Navigation Extensibility](./docs/NAVIGATION_EXTENSIBILITY.md)**: How to add new sections to the navigation
-- **[Layout Reusability](./docs/LAYOUT_REUSABILITY.md)**: How to create and reuse layouts for different content types
-
-
-### Adding Interactive Components
-
-Astro supports framework components (React, Vue, Svelte) for interactive features:
-
-```sh
-npx astro add react
-```
-
-Then create `.jsx` or `.tsx` components with client-side interactivity.
-
-## Troubleshooting
-
-### Build Fails with Link Validation Errors
-
-If you have broken internal links, the build will fail. To build without validation:
-
-```sh
-npm run build:skip-validation
-```
-
-Then fix the broken links and run the full build again.
-
-### Development Server Not Updating
-
-Clear the Astro cache and restart:
-
-```sh
-rm -rf .astro
-npm run dev
-```
-
-### TypeScript Errors
-
-Run the Astro type checker:
-
-```sh
-npm run astro check
-```
 
 ## Learn More
 
