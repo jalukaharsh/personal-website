@@ -2,6 +2,9 @@
 import { getEntry } from 'astro:content';
 
 const quotesData = await getEntry('quotes', 'all-quotes');
+if (!quotesData) {
+  throw new Error('Quotes data not found');
+}
 const quotes = quotesData.data.quotes;
 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 ---
