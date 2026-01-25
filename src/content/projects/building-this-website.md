@@ -1,11 +1,13 @@
 ---
-title: "Vibe-coding (this website)"
-pubDate: 2026-01-18T07:15:00Z
-tags: ["vibecoding", "AI", "software", "projects"]
+title: "Building This Website"
+pubDate: 2026-01-24T10:40:00Z
+tags: ["vibecoding", "ai", "software", "projects"]
 draft: false
 ---
 
-Vibe-coding is awesome! I vibe-coded around 60% of this website; it took me 2 months of sporadic work to complete it, and I can safely say that without AI it would've taken me at least 6 months. I think it's great for helping you get started, writing the boilerplate code, and getting you familiarized with the language syntax, if you're writing in a new language. 
+See https://github.com/jalukaharsh/personal-website for the full repository. 
+
+Vibe-coding is awesome! I vibe-coded around 60% of this website and it took me 2 months of sporadic work to complete it. Without AI, it would've probably taken me at least 6 months. I think vibe-coding is great for helping you get started, writing boilerplate code, and getting you familiarized with a new language's syntax. But it's also fairly important to know what you're doing. 
 
 In general, vibe-coding follows the same 'garbage-in, garbage-out' principle that most technical systems follow. This is not a problem, unless you expect the AI to give quality responses to garbage inputs. I like to treat it as an inexperienced but highly capable human being. If you don't give humans the proper context, they will also produce garbage output. 
 
