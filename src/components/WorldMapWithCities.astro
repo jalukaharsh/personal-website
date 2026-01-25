@@ -21,33 +21,34 @@ const visitedCities = getVisitedCities();
     <g class="city-markers">
       {visitedCities.map(city => (
         <g class="city-marker" data-city={city.name} data-country={city.country}>
-
           <circle 
             cx={city.x} 
             cy={city.y} 
             r="8" 
             class="city-glow"
           />
-
           <circle 
             cx={city.x} 
             cy={city.y} 
             r="8" 
             class="city-dot"
           />
-
-          <text 
-            x={city.x} 
-            y={city.y - 15} 
-            class="city-label"
-            text-anchor="middle"
-          >
-            {city.name}
-          </text>
         </g>
       ))}
     </g>
   </svg>
+  
+  <div class="tooltips-container">
+    {visitedCities.map(city => (
+      <div 
+        class="city-tooltip" 
+        data-city={city.name}
+        style={`left: ${(city.x / 2752.77) * 100}%; top: ${(city.y / 1537.63) * 100}%;`}
+      >
+        {city.name}
+      </div>
+    ))}
+  </div>
 </div>
 
 <style>
@@ -78,27 +79,19 @@ const visitedCities = getVisitedCities();
   }
 
   .city-glow {
-    fill: rgba(59, 130, 246, 0.3); /* Blue glow */
+    fill: rgba(59, 130, 246, 0.3);
     stroke: none;
     opacity: 0.6;
     transition: all 0.3s ease;
+    pointer-events: none;
   }
 
   .city-dot {
-    fill: #3b82f6; /* Blue dot */
+    fill: #3b82f6;
     stroke: #ffffff;
     stroke-width: 1.5;
     transition: all 0.3s ease;
-  }
-
-  .city-label {
-    fill: var(--color-text-on-dark);
-    font-size: 40px;
-    font-weight: 500;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    pointer-events: all;
   }
 
   .city-marker:hover .city-glow {
@@ -112,11 +105,32 @@ const visitedCities = getVisitedCities();
     fill: #60a5fa;
   }
 
-  .city-marker:hover .city-label {
-    opacity: 1;
+  .tooltips-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
   }
 
-  /* Responsive adjustments */
+  .city-tooltip {
+    position: absolute;
+    transform: translate(-50%, calc(-100% - 20px));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(59, 130, 246, 0.8);
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 100;
+  }
+
   @media (max-width: 768px) {
     .city-glow {
       r: 6;
@@ -126,8 +140,9 @@ const visitedCities = getVisitedCities();
       r: 3;
     }
     
-    .city-label {
-      font-size: 10px;
+    .city-tooltip {
+      font-size: 12px;
+      padding: 4px 10px;
     }
     
     .city-marker:hover .city-glow {
@@ -141,20 +156,35 @@ const visitedCities = getVisitedCities();
 </style>
 
 <script>
-  // Add click handlers for future interactivity
   document.addEventListener('DOMContentLoaded', () => {
     const cityMarkers = document.querySelectorAll('.city-marker');
+    const tooltips = document.querySelectorAll('.city-tooltip');
+    
+    const tooltipMap = new Map<string, Element>();
+    tooltips.forEach(tooltip => {
+      const cityName = tooltip.getAttribute('data-city');
+      if (cityName) {
+        tooltipMap.set(cityName, tooltip);
+      }
+    });
     
     cityMarkers.forEach(marker => {
-      marker.addEventListener('click', (e) => {
-        const cityName = marker.getAttribute('data-city');
+      const cityName = marker.getAttribute('data-city');
+      const tooltip = cityName ? tooltipMap.get(cityName) : null;
+      
+      if (tooltip) {
+        marker.addEventListener('mouseenter', () => {
+          (tooltip as HTMLElement).style.opacity = '1';
+        });
+        
+        marker.addEventListener('mouseleave', () => {
+          (tooltip as HTMLElement).style.opacity = '0';
+        });
+      }
+      
+      marker.addEventListener('click', () => {
         const countryName = marker.getAttribute('data-country');
-        
-        // For now, just log the click - you can extend this later
         console.log(`Clicked on ${cityName}, ${countryName}`);
-        
-        // Future: Could open a modal, navigate to travel post, etc.
-        // Example: window.location.href = `/travel/${countryName.toLowerCase()}`;
       });
     });
   });
