@@ -7,7 +7,7 @@ interface Props {
   title: string;
   pubDate: Date;
   tags?: string[];
-  collection: 'books' | 'projects' | 'travel';
+  collection: 'reading' | 'projects' | 'travel';
   author?: string;
   publicationYear?: number;
 }
@@ -21,7 +21,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 });
 
 const collectionLabels = {
-  books: 'Books',
+  reading: 'Reading',
   projects: 'Projects',
   travel: 'Travel'
 };

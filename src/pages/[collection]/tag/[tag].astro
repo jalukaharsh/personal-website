@@ -7,10 +7,10 @@ import Footer from '../../../components/Footer.astro';
 import BlogPostCard from '../../../components/BlogPostCard.astro';
 
 export async function getStaticPaths() {
-  const collections = ['books', 'projects', 'travel'] as const;
+  const collections = ['reading', 'projects', 'travel'] as const;
   const paths: Array<{
     params: { collection: string; tag: string };
-    props: { posts: CollectionEntry<'books' | 'projects' | 'travel'>[]; tag: string; collection: string };
+    props: { posts: CollectionEntry<'reading' | 'projects' | 'travel'>[]; tag: string; collection: string };
   }> = [];
 
   for (const collection of collections) {

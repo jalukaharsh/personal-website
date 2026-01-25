@@ -5,11 +5,11 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
 
-const booksEntries = await getCollection('books');
+const readingEntries = await getCollection('reading');
 const projectsEntries = await getCollection('projects');
 const travelEntries = await getCollection('travel');
 
-const allPosts = [...booksEntries, ...projectsEntries, ...travelEntries];
+const allPosts = [...readingEntries, ...projectsEntries, ...travelEntries];
 
 const publishedPosts = allPosts
   .filter(post => !post.data.draft)
@@ -20,7 +20,7 @@ const recentPosts = publishedPosts.slice(0, 5);
 
 <BaseLayout 
   title="Harsh Jaluka - Home" 
-  description="Welcome to my personal website where I share books, projects, and travel experiences."
+  description="Welcome to my personal website where I share notes on my reading, projects, and travel experiences."
 >
   <Header slot="header" />
   
