@@ -31,9 +31,18 @@ const sortedPosts = allPosts.sort((a, b) => {
     
     <section class="section">
       <div class="mb-8">
-        <p class="count-display">
-          {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
-        </p>
+        <div class="flex justify-between items-center mb-8">
+          <p class="count-display">
+            {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
+          </p>
+          
+          <div class="flex gap-2 items-center">
+            <select id="sort-select" class="sort-dropdown">
+              <option value="date" selected>Last Updated</option>
+              <option value="title">Name</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       <ul class="content-list space-y-4">
@@ -47,6 +56,10 @@ const sortedPosts = allPosts.sort((a, b) => {
               month: 'long', 
               day: 'numeric' 
             })}
+            sortData={{
+              title: post.data.title,
+              date: post.data.pubDate.valueOf()
+            }}
           />
         ))}
       </ul>
@@ -61,3 +74,40 @@ const sortedPosts = allPosts.sort((a, b) => {
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script is:inline>
+  function sortProjects(sortBy) {
+    const list = document.querySelector('.content-list');
+    if (!list) {
+      console.error('content-list not found');
+      return;
+    }
+
+    const items = Array.from(list.querySelectorAll('.content-item'));
+    
+    items.sort((a, b) => {
+      const aValue = a.getAttribute('data-' + sortBy) || '';
+      const bValue = b.getAttribute('data-' + sortBy) || '';
+      
+      if (sortBy === 'date') {
+        return parseInt(bValue) - parseInt(aValue);
+      }
+      return aValue.localeCompare(bValue);
+    });
+
+    items.forEach(item => list.appendChild(item));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSorting);
+  } else {
+    initSorting();
+  }
+
+  function initSorting() {
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => sortProjects(e.target.value));
+    }
+  }
+</script>
