@@ -10,8 +10,15 @@ export const cities: City[] = [
   { 
     name: "Niagara", 
     country: "Canada", 
-    x: 770, 
-    y: 360, 
+    x: 720, 
+    y: 390, 
+    visited: true,
+  },
+  { 
+    name: "Banff", 
+    country: "Canada", 
+    x: 520, 
+    y: 320, 
     visited: true,
   },
   { 
@@ -22,7 +29,21 @@ export const cities: City[] = [
     visited: true,
   },
   { 
+    name: "Yosemite", 
+    country: "USA", 
+    x: 420, 
+    y: 420, 
+    visited: true,
+  },
+  { 
     name: "Toronto", 
+    country: "Canada", 
+    x: 725, 
+    y: 385, 
+    visited: true,
+  },
+  { 
+    name: "Montreal", 
     country: "Canada", 
     x: 780, 
     y: 350, 
@@ -178,8 +199,8 @@ export const cities: City[] = [
   { 
     name: "Shanghai", 
     country: "China", 
-    x: 2170, 
-    y: 500, 
+    x: 2160, 
+    y: 490, 
     visited: true,
   },
   { 
@@ -280,20 +301,41 @@ export const cities: City[] = [
     y: 530, 
     visited: true,
   },
-  { 
+  {
     name: "Singapore", 
     country: "Singapore", 
     x: 2075, 
-    y: 810, 
+    y: 750, 
     visited: true,
   },
   { 
     name: "Langkawi", 
     country: "Malaysia", 
-    x: 1980, 
-    y: 630, 
+    x: 2030, 
+    y: 700, 
     visited: true,
   },
+  {
+    name: "Bangkok", 
+    country: "Thailand", 
+    x: 2035,
+    y: 650,
+    visited: true
+  }, 
+  {
+    name: "Pattaya", 
+    country: "Thailand", 
+    x: 2055,
+    y: 670,
+    visited: true
+  }, 
+  {
+    name: "Bali", 
+    country: "Indonesia", 
+    x: 2150,
+    y: 830,
+    visited: true
+  }, 
   { 
     name: "Cairo", 
     country: "Egypt", 
