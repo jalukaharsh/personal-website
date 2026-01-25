@@ -68,7 +68,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   }
 
   .quote-text {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     font-style: italic;
     color: var(--color-text-on-dark);
     line-height: var(--line-height-relaxed);
@@ -112,9 +112,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   }
 
   .refresh-button:hover {
-    background-color: var(--color-interactive);
-    border-color: var(--color-interactive);
-    color: var(--color-bg-primary);
+    color: var(--color-text-on-dark);
   }
 
   .refresh-button:active {
