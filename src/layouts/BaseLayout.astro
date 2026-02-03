@@ -19,9 +19,9 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
   </head>
-  <body class="min-h-screen flex flex-col bg-[var(--color-bg-primary)] text-[var(--color-text-on-dark)]">
+  <body class="min-h-screen flex flex-col" style="background-color: var(--color-bg-primary); color: var(--color-text-on-dark);">
     <slot name="header" />
-    <main class="flex-grow w-full flex justify-center">
+    <main class="grow w-full flex justify-center">
       <div class="w-full max-w-6xl" style="padding: 2.0rem;">
         <slot />
       </div>
