@@ -6,11 +6,11 @@ import Footer from '../../components/Footer.astro';
 import QuoteBanner from '../../components/QuoteBanner.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
 
-const allReading = await getCollection('reading', ({ data }) => {
+const allReviews = await getCollection('reviews', ({ data }) => {
   return data.draft === false;
 });
 
-const sortedReading = allReading.sort((a, b) => {
+const sortedReviews = allReviews.sort((a, b) => {
   return a.data.title.localeCompare(b.data.title);
 });
 ---
@@ -39,7 +39,7 @@ const sortedReading = allReading.sort((a, b) => {
       <div class="mb-8">
         <div class="flex justify-between items-center mb-8">
           <p class="count-display">
-            {sortedReading.length} {sortedReading.length === 1 ? 'review' : 'reviews'}
+            {sortedReviews.length} {sortedReviews.length === 1 ? 'review' : 'reviews'}
           </p>
           
           <div class="flex gap-2 items-center">
@@ -52,12 +52,12 @@ const sortedReading = allReading.sort((a, b) => {
         </div>
       </div>
 
-      <ul id="reading-list" class="content-list space-y-4">
-        {sortedReading.map(book => (
+      <ul id="reviews-list" class="content-list space-y-4">
+        {sortedReviews.map(book => (
           <ContentListItem
             title={book.data.title}
             slug={book.slug}
-            collection="reading"
+            collection="reviews"
             metadata={`by ${book.data.author} (${book.data.publicationYear})`}
             sortData={{
               title: book.data.title,
@@ -68,7 +68,7 @@ const sortedReading = allReading.sort((a, b) => {
         ))}
       </ul>
 
-      {sortedReading.length === 0 && (
+      {sortedReviews.length === 0 && (
         <div class="text-center py-12">
           <p class="empty-message">No books yet. Check back soon!</p>
         </div>
@@ -81,9 +81,9 @@ const sortedReading = allReading.sort((a, b) => {
 
 <script is:inline>
   function sortReading(sortBy) {
-    const list = document.getElementById('reading-list');
+    const list = document.getElementById('reviews-list');
     if (!list) {
-      console.error('reading-list not found');
+      console.error('reviews-list not found');
       return;
     }
 

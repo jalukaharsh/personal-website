@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import ContentPost from '../../layouts/ContentPost.astro';
 
-type ValidCollection = 'reading' | 'projects' | 'travel';
+type ValidCollection = 'reviews' | 'projects' | 'travel';
 
 export async function getStaticPaths() {
-  const collections: ValidCollection[] = ['reading', 'projects', 'travel'];
+  const collections: ValidCollection[] = ['reviews', 'projects', 'travel'];
   
   const paths = await Promise.all(
     collections.map(async (collection) => {
@@ -37,7 +37,7 @@ const baseProps = {
   collection,
 };
 
-const contentProps = collection === 'reading' 
+const contentProps = collection === 'reviews' 
   ? {
       ...baseProps,
       author: (entry.data as any).author,

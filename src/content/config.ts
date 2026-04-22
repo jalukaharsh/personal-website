@@ -16,7 +16,7 @@ const travelSchema = z.object({
 });
 
 
-const readingSchema = z.object({
+const reviewsSchema = z.object({
   title: z.string(),
   pubDate: z.coerce.date(),
   author: z.string(),
@@ -25,9 +25,9 @@ const readingSchema = z.object({
   draft: z.boolean().default(false),
 });
 
-const readingCollection = defineCollection({
+const reviewsCollection = defineCollection({
   type: 'content',
-  schema: readingSchema,
+  schema: reviewsSchema,
 });
 
 const projectsCollection = defineCollection({
@@ -54,7 +54,7 @@ const quotesCollection = defineCollection({
 });
 
 export const collections = {
-  reading: readingCollection,
+  reviews: reviewsCollection,
   projects: projectsCollection,
   travel: travelCollection,
   quotes: quotesCollection,
