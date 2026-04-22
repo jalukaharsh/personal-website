@@ -10,21 +10,19 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 ---
 
 <div class="quote-banner">
+  <button id="refresh-quote" class="refresh-button" aria-label="Get a new quote">
+    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+    </svg>
+  </button>
   <blockquote class="quote-text">
     <span id="quote-text" set:html={randomQuote.text} />
   </blockquote>
-  <div class="quote-footer">
-    <div class="quote-attribution">
-      <span class="quote-author" id="quote-author">{randomQuote.author ? `— ${randomQuote.author}` : ''}{randomQuote.author && randomQuote.source ? ', ' : ''}</span>
-      {randomQuote.source && (
-        <span class="quote-source" id="quote-source">{randomQuote.source}</span>
-      )}
-    </div>
-    <button id="refresh-quote" class="refresh-button" aria-label="Get a new quote">
-      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
-      </svg>
-    </button>
+  <div class="quote-attribution">
+    <span class="quote-author" id="quote-author">{randomQuote.author ? `— ${randomQuote.author}` : ''}{randomQuote.author && randomQuote.source ? ', ' : ''}</span>
+    {randomQuote.source && (
+      <span class="quote-source" id="quote-source">{randomQuote.source}</span>
+    )}
   </div>
 </div>
 
@@ -76,20 +74,13 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     color: var(--color-text-on-dark);
     line-height: var(--line-height-relaxed);
     margin-bottom: var(--spacing-4);
-  }
-
-  .quote-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--spacing-4);
-    margin-top: var(--spacing-4);
+    padding-right: var(--spacing-8);
   }
 
   .quote-attribution {
     font-size: var(--font-size-sm);
     color: var(--color-text-on-dark);
-    flex: 1;
+    margin-top: var(--spacing-4);
   }
 
   .quote-author {
@@ -102,6 +93,9 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   }
 
   .refresh-button {
+    position: absolute;
+    top: var(--spacing-4);
+    right: var(--spacing-4);
     display: flex;
     align-items: center;
     gap: 0.25rem;
