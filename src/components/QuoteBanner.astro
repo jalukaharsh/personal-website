@@ -15,7 +15,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   </blockquote>
   <div class="quote-footer">
     <div class="quote-attribution">
-      <span class="quote-author" id="quote-author">— {randomQuote.author}, </span>
+      <span class="quote-author" id="quote-author">{randomQuote.author ? `— ${randomQuote.author}` : ''}{randomQuote.author && randomQuote.source ? ', ' : ''}</span>
       {randomQuote.source && (
         <span class="quote-source" id="quote-source">{randomQuote.source}</span>
       )}
@@ -42,7 +42,7 @@ const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     const newQuote = getRandomQuote();
     
     if (quoteText) quoteText.innerHTML = newQuote.text;
-    if (quoteAuthor) quoteAuthor.textContent = `— ${newQuote.author}, `;
+    if (quoteAuthor) quoteAuthor.textContent = newQuote.author ? `— ${newQuote.author}${newQuote.source ? ', ' : ''}` : '';
     if (quoteSource) {
       quoteSource.textContent = newQuote.source || '';
     }

@@ -46,7 +46,7 @@ const quotesCollection = defineCollection({
     quotes: z.array(
       z.object({
         text: z.string(),
-        author: z.string(),
+        author: z.string().optional(),
         source: z.string().optional(),
       })
     ),

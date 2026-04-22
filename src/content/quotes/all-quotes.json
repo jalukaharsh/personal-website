@@ -16,11 +16,6 @@
       "source": "A Gentleman in Moscow"
     },
     {
-      "text": "Like all misery, it began with apparent happiness.",
-      "author": "Markus Zuzak",
-      "source": "The Book Thief"
-    },
-    {
       "text": "The only way out of the labyrinth of suffering is to forgive.",
       "author": "John Green",
       "source": "Looking for Alaska"
@@ -304,6 +299,31 @@
       "text": "Look for light and freedom and do not ponder too deeply over the evil in life.",
       "author": "Vincent van Gogh",
       "source": "The Complete Letters of Vincent van Gogh"
+    }, 
+    {
+      "text": "I believe that love that is true and real creates a respite from death. All cowardice comes from not loving or not loving well, which is the same thing.",
+      "source": "Midnight in Paris (2011)"
+    }, 
+    {
+      "text": "Yours is the most terrible crime a human being can commit. I accuse you of a wasted life!", 
+      "source": "Papillon (1973)"
+    },
+    {
+      "text": "We don't read and write poetry because it's cute. We read and write poetry because we are members of the human race, and the human race is filled with passion. Medicine, law, business, engineering -- these are noble pursuits, and necessary to sustain life; but poetry, beauty, romance, love -- these are what we stay alive for.",
+      "source": "Dead Poets Society (1989)"
+    },
+    {
+      "text": "You know what a loser is? A real loser is somebody that's so afraid of not winning, they don't even try.",
+      "source": "Little Miss Sunshine (2006)"
+    },
+    {
+      "text": "Out of the night that covers me, black as the Pit from pole to pole, I thank whatever gods may be for my unconquerable soul. In the fell clutch of circumstance I have not winced nor cried aloud. Under the bludgeonings of chance my head is bloody, but unbowed. Beyond this place of wrath and tears looms but the Horror of the shade, and yet the menace of the years finds, and shall find, me unafraid. It matters not how strait the gate, how charged with punishments the scroll, I am the master of my fate, I am the captain of my soul.", 
+      "author": "William Ernest Henley", 
+      "source": "Invictus"
+    },
+    {
+      "text": "I wish there was a way to know you're in the good old days, before you've actually left them.", 
+      "source": "The Office (2005-2013)"
     }
   ]
 }
