@@ -1,11 +1,14 @@
 ---
+import { t, getLocaleFromUrl } from '../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer-elegant mt-auto w-full flex justify-center">
   <div class="w-full max-w-6xl px-4" style="padding-top: 3rem; padding-bottom: 3rem;">
     <div class="text-center footer-text">
-      <p>&copy; {currentYear} Harsh Jaluka. All rights reserved.</p>
+      <p>&copy; {currentYear} {t(locale, 'site.name')}. {t(locale, 'footer.rights')}</p>
     </div>
   </div>
 </footer>

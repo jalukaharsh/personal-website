@@ -1,4 +1,7 @@
 ---
+import { t, getLocaleFromUrl } from '../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
 ---
 
@@ -6,7 +9,7 @@ const currentPath = Astro.url.pathname;
   <nav class="w-full max-w-6xl" style="padding: 2rem 1.5rem;">
     <div class="flex items-center justify-between">
       <a href="/" class="nav-link-logo text-2xl font-bold">
-        Harsh Jaluka
+        {t(locale, 'site.name')}
       </a>
       
       <ul class="hidden md:flex gap-6 text-lg">
@@ -15,7 +18,7 @@ const currentPath = Astro.url.pathname;
             href="/" 
             class={`nav-link ${currentPath === '/' ? 'nav-link-active' : ''}`}
           >
-            Home
+            {t(locale, 'nav.home')}
           </a>
         </li>
         <li>
@@ -23,7 +26,7 @@ const currentPath = Astro.url.pathname;
             href="/reviews" 
             class={`nav-link ${currentPath.startsWith('/reviews') ? 'nav-link-active' : ''}`}
           >
-            Reviews
+            {t(locale, 'nav.reviews')}
           </a>
         </li>
         <li>
@@ -31,7 +34,7 @@ const currentPath = Astro.url.pathname;
             href="/projects" 
             class={`nav-link ${currentPath.startsWith('/projects') ? 'nav-link-active' : ''}`}
           >
-            Projects
+            {t(locale, 'nav.projects')}
           </a>
         </li>
         <li>
@@ -39,14 +42,14 @@ const currentPath = Astro.url.pathname;
             href="/travel" 
             class={`nav-link ${currentPath.startsWith('/travel') ? 'nav-link-active' : ''}`}
           >
-            Travel
+            {t(locale, 'nav.travel')}
           </a>
         </li>
       </ul>
 
       <button 
         class="hamburger-btn flex md:hidden"
-        aria-label="Toggle navigation menu"
+        aria-label={t(locale, 'nav.toggleMenu')}
         aria-expanded="false"
       >
         <span class="hamburger-line"></span>
@@ -63,7 +66,7 @@ const currentPath = Astro.url.pathname;
             href="/" 
             class={`mobile-nav-link ${currentPath === '/' ? 'nav-link-active' : ''}`}
           >
-            Home
+            {t(locale, 'nav.home')}
           </a>
         </li>
         <li>
@@ -71,7 +74,7 @@ const currentPath = Astro.url.pathname;
             href="/reviews" 
             class={`mobile-nav-link ${currentPath.startsWith('/reviews') ? 'nav-link-active' : ''}`}
           >
-            Reviews
+            {t(locale, 'nav.reviews')}
           </a>
         </li>
         <li>
@@ -79,7 +82,7 @@ const currentPath = Astro.url.pathname;
             href="/projects" 
             class={`mobile-nav-link ${currentPath.startsWith('/projects') ? 'nav-link-active' : ''}`}
           >
-            Projects
+            {t(locale, 'nav.projects')}
           </a>
         </li>
         <li>
@@ -87,7 +90,7 @@ const currentPath = Astro.url.pathname;
             href="/travel" 
             class={`mobile-nav-link ${currentPath.startsWith('/travel') ? 'nav-link-active' : ''}`}
           >
-            Travel
+            {t(locale, 'nav.travel')}
           </a>
         </li>
       </ul>

@@ -5,6 +5,9 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import QuoteBanner from '../../components/QuoteBanner.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
+import { t, getLocaleFromUrl } from '../../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
 
 const allReviews = await getCollection('reviews', ({ data }) => {
   return data.draft === false;
@@ -16,8 +19,8 @@ const sortedReviews = allReviews.sort((a, b) => {
 ---
 
 <BaseLayout 
-  title="Reviews - Harsh Jaluka"
-  description="Explore my book reviews and reading recommendations."
+  title={t(locale, 'reviews.title')}
+  description={t(locale, 'reviews.description')}
 >
   <Header slot="header" />
   
@@ -28,11 +31,11 @@ const sortedReviews = allReviews.sort((a, b) => {
   <div class="main-container">
     <section class="section">
       <p class="page-intro">
-        I love books and movies! Here on this page you'll find all my book and movie reviews compiled together. 
+        {t(locale, 'reviews.intro')}
       </p>
 
       <p class="page-intro">
-        I also try to maintain a record of books I've read in <a href="https://docs.google.com/spreadsheets/d/1KBcC6kPlFMojaJ0qsyxlT6AmEO_JHay75Rf9d5mzLcY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">this sheet</a> or on my <a href="https://www.goodreads.com/user/show/94888357-harsh" target="_blank" rel="noopener noreferrer">Goodreads</a> account.
+        {t(locale, 'reviews.intro2.prefix')} <a href="https://docs.google.com/spreadsheets/d/1KBcC6kPlFMojaJ0qsyxlT6AmEO_JHay75Rf9d5mzLcY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">{t(locale, 'reviews.intro2.sheet')}</a> {t(locale, 'reviews.intro2.or')} <a href="https://www.goodreads.com/user/show/94888357-harsh" target="_blank" rel="noopener noreferrer">Goodreads</a> {t(locale, 'reviews.intro2.account')}
       </p>
 
     </section>
@@ -41,14 +44,14 @@ const sortedReviews = allReviews.sort((a, b) => {
       <div class="mb-8">
         <div class="flex justify-between items-center mb-8">
           <p class="count-display">
-            {sortedReviews.length} {sortedReviews.length === 1 ? 'review' : 'reviews'}
+            {sortedReviews.length} {sortedReviews.length === 1 ? t(locale, 'reviews.countSingular') : t(locale, 'reviews.countPlural')}
           </p>
           
           <div class="flex gap-2 items-center">
             <select id="sort-select" class="sort-dropdown">
-              <option value="title" selected>Title</option>
-              <option value="author">Author</option>
-              <option value="year">Year</option>
+              <option value="title" selected>{t(locale, 'sort.title')}</option>
+              <option value="author">{t(locale, 'sort.author')}</option>
+              <option value="year">{t(locale, 'sort.year')}</option>
             </select>
           </div>
         </div>
@@ -60,7 +63,7 @@ const sortedReviews = allReviews.sort((a, b) => {
             title={book.data.title}
             slug={book.slug}
             collection="reviews"
-            metadata={`by ${book.data.author} (${book.data.publicationYear})`}
+            metadata={`${t(locale, 'content.by')} ${book.data.author} (${book.data.publicationYear})`}
             sortData={{
               title: book.data.title,
               author: book.data.author,
@@ -72,7 +75,7 @@ const sortedReviews = allReviews.sort((a, b) => {
 
       {sortedReviews.length === 0 && (
         <div class="text-center py-12">
-          <p class="empty-message">No books yet. Check back soon!</p>
+          <p class="empty-message">{t(locale, 'reviews.empty')}</p>
         </div>
       )}
     </section>

@@ -5,6 +5,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import BlogPostCard from '../../../components/BlogPostCard.astro';
+import { t, getLocaleFromUrl } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
   const collections = ['reviews', 'projects', 'travel'] as const;
@@ -35,12 +36,15 @@ export async function getStaticPaths() {
 }
 
 const { posts, tag, collection } = Astro.props;
-const collectionTitle = collection.charAt(0).toUpperCase() + collection.slice(1);
+const locale = getLocaleFromUrl(Astro.url);
+
+const collectionKey = `collection.${collection}` as keyof typeof import('../../../i18n/ui').ui['en'];
+const collectionTitle = t(locale, collectionKey);
 ---
 
 <BaseLayout 
-  title={`${collectionTitle} tagged with "${tag}"`}
-  description={`All ${collection} tagged with ${tag}`}
+  title={`${collectionTitle} ${t(locale, 'tag.taggedWith')} "${tag}"`}
+  description={`${collectionTitle} ${t(locale, 'tag.taggedWith')} ${tag}`}
 >
   <Header slot="header" />
   
@@ -50,13 +54,13 @@ const collectionTitle = collection.charAt(0).toUpperCase() + collection.slice(1)
         href={`/${collection}`}
         class="link-back"
       >
-        ← Back to {collectionTitle}
+        ← {t(locale, 'content.backTo')} {collectionTitle}
       </a>
     </div>
 
     <section>
       <h1 class="text-4xl font-bold text-white mb-6">
-        {collectionTitle} tagged with "{tag}"
+        {collectionTitle} {t(locale, 'tag.taggedWith')} "{tag}"
       </h1>
 
       {posts.length > 0 ? (
@@ -73,7 +77,7 @@ const collectionTitle = collection.charAt(0).toUpperCase() + collection.slice(1)
         </div>
       ) : (
         <div class="empty-state">
-          <p class="empty-message">No {collection} found with this tag.</p>
+          <p class="empty-message">{t(locale, 'tag.noResults')}</p>
         </div>
       )}
     </section>

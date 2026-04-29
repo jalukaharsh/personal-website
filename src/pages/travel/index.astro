@@ -5,6 +5,9 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
 import WorldMapWithCities from '../../components/WorldMapWithCities.astro';
+import { t, getLocaleFromUrl, getDateLocale } from '../../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
 
 const allPosts = await getCollection('travel', ({ data }) => {
   return data.draft === false;
@@ -16,18 +19,18 @@ const sortedPosts = allPosts.sort((a, b) => {
 ---
 
 <BaseLayout 
-  title="Travel - Harsh Jaluka"
+  title={t(locale, 'travel.title')}
 >
   <Header slot="header" />
 
   <div class="main-container">
     <section class="section">
       <p class="page-intro">
-        I've been lucky to have had lots of opportunity to travel in my life, and I've plotted out the cities I've been to in map below. I prefer tracking cities over countries because countries is just an objectively bad metric. For example, travelling through Europe will give you a boost by 30 countries while travelling through India just one despite India arguably being just as culturally diverse a region. 
+        {t(locale, 'travel.intro1')}
       </p>
 
       <p class="page-intro"> 
-        I've also written articles, listed below, where I share stories, insights, and practical tips from my travels. One day, clicking on the city dots will take you to the articles directly, but not today. 
+        {t(locale, 'travel.intro2')}
       </p>
     </section>
   </div>
@@ -41,14 +44,14 @@ const sortedPosts = allPosts.sort((a, b) => {
       <div class="mb-8">
         <div class="flex justify-between items-center mb-8">
           <p class="count-display">
-            {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
+            {sortedPosts.length} {sortedPosts.length === 1 ? t(locale, 'travel.countSingular') : t(locale, 'travel.countPlural')}
           </p>
 
           <div class="flex gap-2 items-center">
             <select id="sort-select" class="sort-dropdown">
-              <option value="title" selected>Name</option>
-              <option value="days">Length of Stay</option>
-              <option value="date">Last Updated</option>
+              <option value="title" selected>{t(locale, 'sort.name')}</option>
+              <option value="days">{t(locale, 'sort.lengthOfStay')}</option>
+              <option value="date">{t(locale, 'sort.lastUpdated')}</option>
             </select>
           </div>
         </div>
@@ -60,7 +63,7 @@ const sortedPosts = allPosts.sort((a, b) => {
             title={post.data.title}
             slug={post.slug}
             collection="travel"
-            metadata={post.data.pubDate.toLocaleDateString('en-US', { 
+            metadata={post.data.pubDate.toLocaleDateString(getDateLocale(locale), { 
               year: 'numeric', 
               month: 'long', 
               day: 'numeric' 
@@ -76,7 +79,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 
       {sortedPosts.length === 0 && (
         <div class="text-center py-12">
-          <p class="empty-message">No travel posts yet. Check back soon!</p>
+          <p class="empty-message">{t(locale, 'travel.empty')}</p>
         </div>
       )}
     </section>

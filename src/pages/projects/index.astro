@@ -4,6 +4,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
+import { t, getLocaleFromUrl, getDateLocale } from '../../i18n/utils';
+
+const locale = getLocaleFromUrl(Astro.url);
 
 const allPosts = await getCollection('projects', ({ data }) => {
   return data.draft === false;
@@ -15,8 +18,8 @@ const sortedPosts = allPosts.sort((a, b) => {
 ---
 
 <BaseLayout 
-  title="Projects - Harsh Jaluka"
-  description="Check out my latest projects and work."
+  title={t(locale, 'projects.title')}
+  description={t(locale, 'projects.description')}
 >
   <Header slot="header" />
   
@@ -24,7 +27,7 @@ const sortedPosts = allPosts.sort((a, b) => {
     <section class="section">
       <div class="page-intro">
         <p>
-          These are some projects I've spent a lot of my time on, spanning scientific research, software development, writing and more. 
+          {t(locale, 'projects.intro')}
         </p>
       </div>
     </section>
@@ -33,13 +36,13 @@ const sortedPosts = allPosts.sort((a, b) => {
       <div class="mb-8">
         <div class="flex justify-between items-center mb-8">
           <p class="count-display">
-            {sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}
+            {sortedPosts.length} {sortedPosts.length === 1 ? t(locale, 'projects.countSingular') : t(locale, 'projects.countPlural')}
           </p>
           
           <div class="flex gap-2 items-center">
             <select id="sort-select" class="sort-dropdown">
-              <option value="date" selected>Last Updated</option>
-              <option value="title">Name</option>
+              <option value="date" selected>{t(locale, 'sort.lastUpdated')}</option>
+              <option value="title">{t(locale, 'sort.name')}</option>
             </select>
           </div>
         </div>
@@ -51,7 +54,7 @@ const sortedPosts = allPosts.sort((a, b) => {
             title={post.data.title}
             slug={post.slug}
             collection="projects"
-            metadata={post.data.pubDate.toLocaleDateString('en-US', { 
+            metadata={post.data.pubDate.toLocaleDateString(getDateLocale(locale), { 
               year: 'numeric', 
               month: 'long', 
               day: 'numeric' 
@@ -66,7 +69,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 
       {sortedPosts.length === 0 && (
         <div class="text-center py-12">
-          <p class="empty-message">No projects yet. Check back soon!</p>
+          <p class="empty-message">{t(locale, 'projects.empty')}</p>
         </div>
       )}
     </section>
