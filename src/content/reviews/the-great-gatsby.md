@@ -13,4 +13,4 @@ Maybe he was great because he didn't yield to his circumstances, rose to the cha
 
 Open to discussion! This is what makes _The Great Gatsby_ one of my favourite books of all time.
 
-As a side note, I also think the people who say The Great Gatsby is about the American Dream have an exceptionally narrow view of the human experience. The book is about Gatsby, his obsession, his relentless pursuit of it, and where it ultimately led him. Is that really a uniquely American experience?
+As a side note, I also think the people who say _The Great Gatsby_ is about the American Dream have an exceptionally narrow view of the human experience. The book is about Gatsby, his obsession, his relentless pursuit of it, and where it ultimately led him. Is that really a uniquely American experience?
