@@ -9,4 +9,4 @@ draft: false
 
 In Pessoa you will find a sympathetic yet abject soul. He gives an expression to the meaninglessness, irrationality and unjust of life like few others, and that certainly has immense beauty and literary value. 
 
-Unfortunately, however, Pessoa does not transcend his maladies. His reaction to his disquietude is resignatory, destructive, sadistic, and ultimately, uninspiring. 
+Unfortunately, however, Pessoa does not transcend his maladies. His approach to life is destructive, resignatory, sadistic, and ultimately, uninspiring. 
