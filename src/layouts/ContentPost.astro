@@ -29,7 +29,7 @@ const collectionLabel = t(locale, collectionKey);
 <BaseLayout title={`${title} - ${collectionLabel}`}>
   <Header slot="header" />
   
-  <article class="prose prose-lg max-w-none">
+  <article class="prose prose-lg max-w-none article-post">
     <div class="back-link-container">
       <a 
         href={`/${collection}`}
@@ -137,5 +137,17 @@ const collectionLabel = t(locale, collectionKey);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
     transition-delay: var(--transition-delay-none);
+  }
+
+  @media (max-width: 768px) {
+    .back-link-container {
+      border-radius: 0;
+      padding: var(--spacing-4);
+    }
+
+    .header-container {
+      border-radius: 0;
+      padding: var(--spacing-4);
+    }
   }
 </style>

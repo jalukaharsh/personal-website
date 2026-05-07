@@ -357,8 +357,21 @@ body {
 }
 
 @media (max-width: 768px) {
+  .prose {
+    border-radius: 0;
+    padding: var(--spacing-4);
+  }
+
+  .article-post {
+    margin: -2rem;
+    width: calc(100% + 4rem);
+    max-width: none;
+  }
+
   .prose-content {
     font-size: var(--font-size-base);
+    border-radius: 0;
+    padding: var(--spacing-4);
   }
 
   .prose-content h1 {
