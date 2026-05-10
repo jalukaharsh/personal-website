@@ -26,7 +26,7 @@ const collectionKey = `collection.${collection}` as keyof typeof import('../i18n
 const collectionLabel = t(locale, collectionKey);
 ---
 
-<BaseLayout title={`${title} - ${collectionLabel}`}>
+<BaseLayout title={`${title} - ${collectionLabel}`} contentBackground>
   <Header slot="header" />
   
   <article class="prose prose-lg max-w-none article-post">
@@ -71,10 +71,8 @@ const collectionLabel = t(locale, collectionKey);
   .header-container {
     max-width: 800px;
     margin: 0 auto var(--spacing-1) auto;
-    background-color: var(--color-bg-content);
     color: var(--color-text-on-dark);
     padding: var(--spacing-6);
-    border-radius: var(--radius-lg);
   }
 
   .header-container h1 {
@@ -123,7 +121,6 @@ const collectionLabel = t(locale, collectionKey);
 
   @media (max-width: 768px) {
     .header-container {
-      border-radius: 0;
       padding: var(--spacing-4);
     }
   }

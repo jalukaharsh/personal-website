@@ -4,9 +4,10 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  contentBackground?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, contentBackground = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,7 +22,7 @@ const { title, description } = Astro.props;
   </head>
   <body class="min-h-screen flex flex-col" style="background-color: var(--color-bg-primary); color: var(--color-text-on-dark);">
     <slot name="header" />
-    <main class="grow w-full flex justify-center">
+    <main class="grow w-full flex justify-center" style={contentBackground ? `background-color: var(--color-bg-content);` : ''}>
       <div class="w-full max-w-6xl" style="padding: 2.0rem;">
         <slot />
       </div>

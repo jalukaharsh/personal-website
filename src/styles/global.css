@@ -125,9 +125,7 @@ body {
   --tw-prose-td-borders: var(--color-border);
   max-width: var(--content-max-width);
   margin: 0 auto;
-  background-color: var(--color-bg-content);
   padding: var(--spacing-6);
-  border-radius: var(--radius-lg);
 }
 
 .section {
@@ -180,10 +178,8 @@ body {
   margin: 0 auto;
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
-  background-color: var(--color-bg-content);
   color: var(--color-text-on-dark);
   padding: var(--spacing-6);
-  border-radius: var(--radius-lg);
 }
 
 .prose-content h1 {
@@ -358,19 +354,11 @@ body {
 
 @media (max-width: 768px) {
   .prose {
-    border-radius: 0;
     padding: var(--spacing-4);
-  }
-
-  .article-post {
-    margin: -2rem;
-    width: calc(100% + 4rem);
-    max-width: none;
   }
 
   .prose-content {
     font-size: var(--font-size-base);
-    border-radius: 0;
     padding: var(--spacing-4);
   }
 
