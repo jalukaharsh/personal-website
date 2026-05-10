@@ -30,15 +30,6 @@ const collectionLabel = t(locale, collectionKey);
   <Header slot="header" />
   
   <article class="prose prose-lg max-w-none article-post">
-    <div class="back-link-container">
-      <a 
-        href={`/${collection}`}
-        class="link-back"
-      >
-        ← {t(locale, 'content.backTo')} {collectionLabel}
-      </a>
-    </div>
-
     <header class="header-container">
       <h1 class="text-4xl font-bold mb-4">{title}</h1>
       
@@ -77,15 +68,6 @@ const collectionLabel = t(locale, collectionKey);
 </BaseLayout>
 
 <style>
-  
-  .back-link-container {
-    max-width: 800px;
-    margin: 0 auto 0 auto;
-    background-color: var(--color-bg-content);
-    padding: var(--spacing-6);
-    border-radius: var(--radius-lg);
-  }
-
   .header-container {
     max-width: 800px;
     margin: 0 auto var(--spacing-1) auto;
@@ -140,11 +122,6 @@ const collectionLabel = t(locale, collectionKey);
   }
 
   @media (max-width: 768px) {
-    .back-link-container {
-      border-radius: 0;
-      padding: var(--spacing-4);
-    }
-
     .header-container {
       border-radius: 0;
       padding: var(--spacing-4);
