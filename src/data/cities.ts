@@ -60,7 +60,11 @@ export const cities: City[] = [
   { name: "Sydney", country: "Australia", x: 2505, y: 1080 },
   { name: "Melbourne", country: "Australia", x: 2420, y: 1130 },
   { name: "Hamilton Island", country: "Australia", x: 2503, y: 970 },
-  { name: "Cairns", country: "Australia", x: 2492, y: 920 }
+  { name: "Cairns", country: "Australia", x: 2492, y: 920 },
+  { name: "Tokyo", country: "Japan", x: 2390, y: 430 }, 
+  { name: "Hakone", country: "Japan", x: 2380, y: 435 }, 
+  { name: "Kyoto", country: "Japan", x: 2360, y: 438 }, 
+  { name: "Hiroshima", country: "Japan", x: 2340, y: 440 }
 ];
 
 export const getAllCities = () => cities;
