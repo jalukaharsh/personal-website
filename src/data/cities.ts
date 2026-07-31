@@ -57,8 +57,10 @@ export const cities: City[] = [
   { name: "Luxor", country: "Egypt", x: 1500, y: 550 },
   { name: "Hurghada", country: "Egypt", x: 1540, y: 550 },
   { name: "Suez", country: "Egypt", x: 1525, y: 520 },
-  { name: "Sydney", country: "Australia", x: 2370, y: 1050 },
-  { name: "Melbourne", country: "Australia", x: 2300, y: 1090 },
+  { name: "Sydney", country: "Australia", x: 2505, y: 1080 },
+  { name: "Melbourne", country: "Australia", x: 2420, y: 1130 },
+  { name: "Hamilton Island", country: "Australia", x: 2503, y: 970 },
+  { name: "Cairns", country: "Australia", x: 2492, y: 920 }
 ];
 
 export const getAllCities = () => cities;
