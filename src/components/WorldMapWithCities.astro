@@ -1,8 +1,12 @@
 ---
 
+import { getCollection } from 'astro:content';
 import { getAllCities } from '../data/cities';
 
 const visitedCities = getAllCities();
+
+const publishedTravel = await getCollection('travel', ({ data }) => data.draft === false);
+const publishedSlugs = new Set(publishedTravel.map(post => post.slug));
 ---
 
 <div class="world-map-container">
@@ -19,24 +23,25 @@ const visitedCities = getAllCities();
     />
     
     <g class="city-markers">
-      {visitedCities.map(city => (
-        <a href={`/travel/${city.country.toLowerCase().replaceAll(' ', '-')}#${city.name.toLowerCase().replaceAll(' ', '-')}`} class="city-link">
+      {visitedCities.map(city => {
+        const countrySlug = city.country.toLowerCase().replaceAll(' ', '-');
+        const cityAnchor = city.name.toLowerCase().replaceAll(' ', '-');
+        const isPublished = publishedSlugs.has(countrySlug);
+        
+        return isPublished ? (
+          <a href={`/travel/${countrySlug}#${cityAnchor}`} class="city-link">
+            <g class="city-marker" data-city={city.name} data-country={city.country}>
+              <circle cx={city.x} cy={city.y} r="8" class="city-glow" />
+              <circle cx={city.x} cy={city.y} r="8" class="city-dot" />
+            </g>
+          </a>
+        ) : (
           <g class="city-marker" data-city={city.name} data-country={city.country}>
-            <circle 
-              cx={city.x} 
-              cy={city.y} 
-              r="8" 
-              class="city-glow"
-            />
-            <circle 
-              cx={city.x} 
-              cy={city.y} 
-              r="8" 
-              class="city-dot"
-            />
+            <circle cx={city.x} cy={city.y} r="8" class="city-glow" />
+            <circle cx={city.x} cy={city.y} r="8" class="city-dot" />
           </g>
-        </a>
-      ))}
+        );
+      })}
     </g>
   </svg>
   
