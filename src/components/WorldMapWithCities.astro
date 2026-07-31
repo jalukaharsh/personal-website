@@ -20,20 +20,22 @@ const visitedCities = getAllCities();
     
     <g class="city-markers">
       {visitedCities.map(city => (
-        <g class="city-marker" data-city={city.name} data-country={city.country}>
-          <circle 
-            cx={city.x} 
-            cy={city.y} 
-            r="8" 
-            class="city-glow"
-          />
-          <circle 
-            cx={city.x} 
-            cy={city.y} 
-            r="8" 
-            class="city-dot"
-          />
-        </g>
+        <a href={`/travel/${city.country.toLowerCase().replaceAll(' ', '-')}#${city.name.toLowerCase().replaceAll(' ', '-')}`} class="city-link">
+          <g class="city-marker" data-city={city.name} data-country={city.country}>
+            <circle 
+              cx={city.x} 
+              cy={city.y} 
+              r="8" 
+              class="city-glow"
+            />
+            <circle 
+              cx={city.x} 
+              cy={city.y} 
+              r="8" 
+              class="city-dot"
+            />
+          </g>
+        </a>
       ))}
     </g>
   </svg>
@@ -71,6 +73,10 @@ const visitedCities = getAllCities();
 
   .city-markers {
     pointer-events: all;
+  }
+
+  .city-link {
+    text-decoration: none;
   }
 
   .city-marker {
@@ -181,11 +187,6 @@ const visitedCities = getAllCities();
           (tooltip as HTMLElement).style.opacity = '0';
         });
       }
-      
-      marker.addEventListener('click', () => {
-        const countryName = marker.getAttribute('data-country');
-        console.log(`Clicked on ${cityName}, ${countryName}`);
-      });
     });
   });
 </script>
