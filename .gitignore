@@ -26,3 +26,5 @@ pnpm-debug.log*
 .kiro/
 .vscode/
 venv/
+
+build.log
