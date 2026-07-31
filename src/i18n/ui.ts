@@ -40,8 +40,7 @@ export const ui = {
     'projects.empty': 'No projects yet. Check back soon!',
 
     'travel.title': 'Travel - Harsh Jaluka',
-    'travel.intro1': "I've been lucky to have had lots of opportunity to travel in my life, and I've plotted out the cities I've been to in map below. I prefer tracking cities over countries because countries is just an objectively bad metric. For example, travelling through Europe will give you a boost by 30 countries while travelling through India just one despite India arguably being just as culturally diverse a region.",
-    'travel.intro2': "I've also written articles, listed below, where I share stories, insights, and practical tips from my travels. One day, clicking on the city dots will take you to the articles directly, but not today.",
+    'travel.intro1': "I've been lucky to have had lots of opportunity to travel in my life, and I've plotted out the cities I've been to in map below. A few of them are linked to my blogs on them as well!",
     'travel.countSingular': 'post',
     'travel.countPlural': 'posts',
     'travel.empty': 'No travel posts yet. Check back soon!',
