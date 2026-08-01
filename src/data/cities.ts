@@ -6,14 +6,14 @@ export interface City {
 }
 
 export const cities: City[] = [
-  { name: "Niagara", country: "Canada", x: 720, y: 390 },
-  { name: "Banff", country: "Canada", x: 520, y: 320 },
-  { name: "San Francisco", country: "USA", x: 400, y: 420 },
-  { name: "Yosemite", country: "USA", x: 420, y: 420 },
-  { name: "Toronto", country: "Canada", x: 725, y: 385 },
-  { name: "Montreal", country: "Canada", x: 780, y: 350 },
-  { name: "Vancouver", country: "Canada", x: 450, y: 340 },
-  { name: "Miami", country: "USA", x: 670, y: 540 },
+  { name: "Niagara", country: "Canada", x: 690, y: 370 },
+  { name: "Banff", country: "Canada", x: 440, y: 280 },
+  { name: "Toronto", country: "Canada", x: 680, y: 365 },
+  { name: "Montreal", country: "Canada", x: 740, y: 330 },
+  { name: "Vancouver", country: "Canada", x: 370, y: 310 },
+  { name: "San Francisco", country: "USA", x: 320, y: 410 },
+  { name: "Miami", country: "USA", x: 630, y: 530 },
+  { name: "Yosemite", country: "USA", x: 330, y: 410 },
   { name: "Paris", country: "France", x: 1280, y: 340 },
   { name: "Munich", country: "Germany", x: 1350, y: 310 },
   { name: "Vienna", country: "Austria", x: 1380, y: 340 },
