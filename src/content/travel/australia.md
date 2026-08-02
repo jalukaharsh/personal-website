@@ -13,7 +13,7 @@ My overall impression of Australia was that it's basically exactly like Canada, 
 That being said, I would still visit Australia as a Canadian and vice versa! The type of natural beauty there is in each country differs a lot, and I thoroughly enjoyed both of my trips!
 
 ## Melbourne
-Melbourne is a beautiful city and it might be my favourite one in Australia!
+Melbourne is beautiful, and it might be my favourite city in Australia!
 
 Two non-negotiables in Melbourne are Philip Island and the Great Ocean Road. I've seen each of them twice, and I'd still go again.
 
