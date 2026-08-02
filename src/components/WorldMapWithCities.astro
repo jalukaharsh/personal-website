@@ -36,7 +36,7 @@ const publishedSlugs = new Set(publishedTravel.map(post => post.slug));
             </g>
           </a>
         ) : (
-          <g class="city-marker" data-city={city.name} data-country={city.country}>
+          <g class="city-marker city-marker-unlinked" data-city={city.name} data-country={city.country}>
             <circle cx={city.x} cy={city.y} r="8" class="city-glow" />
             <circle cx={city.x} cy={city.y} r="8" class="city-dot" />
           </g>
@@ -105,13 +105,37 @@ const publishedSlugs = new Set(publishedTravel.map(post => post.slug));
     pointer-events: all;
   }
 
-  .city-marker:hover .city-glow {
+  .city-marker-unlinked .city-glow {
+    fill: rgba(255, 255, 255, 0.3);
+  }
+
+  .city-marker-unlinked .city-dot {
+    fill: #ffffff;
+    stroke: #ffffff;
+  }
+
+  .city-marker-unlinked {
+    cursor: default;
+  }
+
+  .city-marker-unlinked:hover .city-glow {
+    r: 12;
+    opacity: 0.8;
+    fill: rgba(255, 255, 255, 0.5);
+  }
+
+  .city-marker-unlinked:hover .city-dot {
+    r: 6;
+    fill: #e5e7eb;
+  }
+
+  .city-marker:not(.city-marker-unlinked):hover .city-glow {
     r: 12;
     opacity: 0.8;
     fill: rgba(59, 130, 246, 0.5);
   }
 
-  .city-marker:hover .city-dot {
+  .city-marker:not(.city-marker-unlinked):hover .city-dot {
     r: 6;
     fill: #60a5fa;
   }

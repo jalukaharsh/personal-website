@@ -48,7 +48,7 @@ export const ui = {
     'thoughts.empty': 'Head empty, no thoughts.',
 
     'travel.title': 'Travel - Harsh Jaluka',
-    'travel.intro1': "I've been lucky to have had lots of opportunity to travel in my life, and I've plotted out the cities I've been to in map below. A few of them are linked to my blogs on them as well!",
+    'travel.intro1': "I've been lucky to have had lots of opportunity to travel in my life, and I try to note down my experiences in case they're useful/interesting to others!",
     'travel.countSingular': 'post',
     'travel.countPlural': 'posts',
     'travel.empty': 'No travel posts yet. Check back soon!',
