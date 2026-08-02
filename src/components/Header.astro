@@ -45,6 +45,14 @@ const currentPath = Astro.url.pathname;
             {t(locale, 'nav.travel')}
           </a>
         </li>
+        <li>
+          <a 
+            href="/thoughts" 
+            class={`nav-link ${currentPath.startsWith('/thoughts') ? 'nav-link-active' : ''}`}
+          >
+            {t(locale, 'nav.thoughts')}
+          </a>
+        </li>
       </ul>
 
       <button 
@@ -91,6 +99,14 @@ const currentPath = Astro.url.pathname;
             class={`mobile-nav-link ${currentPath.startsWith('/travel') ? 'nav-link-active' : ''}`}
           >
             {t(locale, 'nav.travel')}
+          </a>
+        </li>
+        <li>
+          <a 
+            href="/thoughts" 
+            class={`mobile-nav-link ${currentPath.startsWith('/thoughts') ? 'nav-link-active' : ''}`}
+          >
+            {t(locale, 'nav.thoughts')}
           </a>
         </li>
       </ul>

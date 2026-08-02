@@ -7,6 +7,13 @@ const projectsSchema = z.object({
   draft: z.boolean().default(false),
 });
 
+const thoughtsSchema = z.object({
+  title: z.string(),
+  pubDate: z.coerce.date(),
+  tags: z.array(z.string()).optional(),
+  draft: z.boolean().default(false),
+});
+
 const travelSchema = z.object({
   title: z.string(),
   pubDate: z.coerce.date(),
@@ -35,6 +42,11 @@ const projectsCollection = defineCollection({
   schema: projectsSchema,
 });
 
+const thoughtsCollection = defineCollection({
+  type: 'content',
+  schema: thoughtsSchema,
+});
+
 const travelCollection = defineCollection({
   type: 'content',
   schema: travelSchema,
@@ -56,6 +68,7 @@ const quotesCollection = defineCollection({
 export const collections = {
   reviews: reviewsCollection,
   projects: projectsCollection,
+  thoughts: thoughtsCollection,
   travel: travelCollection,
   quotes: quotesCollection,
 };

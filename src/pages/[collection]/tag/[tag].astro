@@ -8,10 +8,10 @@ import BlogPostCard from '../../../components/BlogPostCard.astro';
 import { t, getLocaleFromUrl } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
-  const collections = ['reviews', 'projects', 'travel'] as const;
+  const collections = ['reviews', 'projects', 'thoughts', 'travel'] as const;
   const paths: Array<{
     params: { collection: string; tag: string };
-    props: { posts: CollectionEntry<'reviews' | 'projects' | 'travel'>[]; tag: string; collection: string };
+    props: { posts: CollectionEntry<'reviews' | 'projects' | 'thoughts' | 'travel'>[]; tag: string; collection: string };
   }> = [];
 
   for (const collection of collections) {
