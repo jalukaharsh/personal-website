@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ContentListItem from '../../components/ContentListItem.astro';
+import { t, getLocaleFromUrl, getDateLocale } from '../../i18n/utils';
+
+type TaggedCollection = 'reviews' | 'projects' | 'thoughts' | 'travel';
+type TaggedPost = CollectionEntry<TaggedCollection>;
+
+export async function getStaticPaths() {
+  const collections = ['reviews', 'projects', 'thoughts', 'travel'] as const;
+
+  const posts = (
+    await Promise.all(collections.map((collection) => getCollection(collection)))
+  )
+    .flat()
+    .filter((post) => !post.data.draft);
+
+  const uniqueTags = [...new Set(posts.flatMap((post) => post.data.tags || []))];
+
+  return uniqueTags.map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: posts
+        .filter((post) => post.data.tags?.includes(tag))
+        .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()),
+    },
+  }));
+}
+
+interface Props {
+  tag: string;
+  posts: TaggedPost[];
+}
+
+const { tag, posts } = Astro.props as Props;
+const locale = getLocaleFromUrl(Astro.url);
+
+const heading = `${t(locale, 'tag.pages')} ${t(locale, 'tag.taggedWith')} "${tag}"`;
+---
+
+<BaseLayout
+  title={heading}
+  description={`${t(locale, 'tag.pages')} ${t(locale, 'tag.taggedWith')} ${tag}`}
+>
+  <Header slot="header" />
+
+  <div class="main-container space-y-8">
+    <div class="mb-8">
+      <a href="/" class="link-back">
+        ← {t(locale, 'content.backTo')} {t(locale, 'nav.home')}
+      </a>
+    </div>
+
+    <section>
+      <h1 class="text-4xl font-bold text-white mb-6">
+        {heading}
+      </h1>
+
+      {posts.length > 0 ? (
+        <ul class="content-list">
+          {posts.map(post => (
+            <ContentListItem
+              title={post.data.title}
+              slug={post.slug}
+              collection={post.collection}
+              metadata={`${t(locale, 'card.in')} ${post.collection} · ${post.data.pubDate.toLocaleDateString(getDateLocale(locale), {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}`}
+            />
+          ))}
+        </ul>
+      ) : (
+        <div class="empty-state">
+          <p class="empty-message">{t(locale, 'tag.noResults')}</p>
+        </div>
+      )}
+    </section>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

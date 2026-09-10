@@ -70,6 +70,7 @@ export const ui = {
 
     'card.in': 'in',
 
+    'tag.pages': 'Pages',
     'tag.taggedWith': 'tagged with',
     'tag.noResults': 'found with this tag.',
 

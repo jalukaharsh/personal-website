@@ -8,8 +8,8 @@ src/
 ├── layouts/           # Page layout templates
 ├── pages/             # File-based routing
 │   ├── [collection]/  # Dynamic collection routes
-│   │   ├── [...slug].astro      # Individual content pages
-│   │   └── tag/[tag].astro      # Tag filtering pages
+│   │   └── [...slug].astro      # Individual content pages
+│   ├── tag/[tag].astro          # Tag pages (across all collections)
 │   ├── books/index.astro        # Books listing
 │   ├── projects/index.astro     # Projects listing
 │   ├── travel/index.astro       # Travel listing
@@ -31,7 +31,7 @@ scripts/               # Build and validation scripts
 
 - **Static routes**: `/`, `/books`, `/projects`, `/travel`
 - **Dynamic collection routes**: `/[collection]/[slug]` (e.g., `/books/fahrenheit-451`)
-- **Tag filtering**: `/[collection]/tag/[tag]` (e.g., `/books/tag/fiction`)
+- **Tag filtering**: `/tag/[tag]` (e.g., `/tag/physics`) — spans every collection
 
 ## Component Conventions
 
