@@ -5,7 +5,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import QuoteBanner from '../../components/QuoteBanner.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
-import { t, getLocaleFromUrl } from '../../i18n/utils';
+import { t, getLocaleFromUrl, getDateLocale } from '../../i18n/utils';
 
 const locale = getLocaleFromUrl(Astro.url);
 
@@ -63,7 +63,11 @@ const sortedReviews = allReviews.sort((a, b) => {
             title={book.data.title}
             slug={book.slug}
             collection="reviews"
-            metadata={`${t(locale, 'content.by')} ${book.data.author} (${book.data.publicationYear})`}
+            metadata={`${t(locale, 'content.by')} ${book.data.author} (${book.data.publicationYear}) · ${book.data.pubDate.toLocaleDateString(getDateLocale(locale), {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}`}
             sortData={{
               title: book.data.title,
               author: book.data.author,
