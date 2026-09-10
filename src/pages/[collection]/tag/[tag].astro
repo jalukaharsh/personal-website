@@ -4,8 +4,8 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
-import BlogPostCard from '../../../components/BlogPostCard.astro';
-import { t, getLocaleFromUrl } from '../../../i18n/utils';
+import ContentListItem from '../../../components/ContentListItem.astro';
+import { t, getLocaleFromUrl, getDateLocale } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
   const collections = ['reviews', 'projects', 'thoughts', 'travel'] as const;
@@ -64,17 +64,20 @@ const collectionTitle = t(locale, collectionKey);
       </h1>
 
       {posts.length > 0 ? (
-        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <ul class="content-list">
           {posts.map(post => (
-            <BlogPostCard
+            <ContentListItem
               title={post.data.title}
-              pubDate={post.data.pubDate}
               slug={post.slug}
-              tags={post.data.tags}
               collection={collection}
+              metadata={post.data.pubDate.toLocaleDateString(getDateLocale(locale), {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
             />
           ))}
-        </div>
+        </ul>
       ) : (
         <div class="empty-state">
           <p class="empty-message">{t(locale, 'tag.noResults')}</p>
