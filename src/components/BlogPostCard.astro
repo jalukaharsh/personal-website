@@ -20,7 +20,7 @@ const formattedDate = pubDate.toLocaleDateString(getDateLocale(locale), {
 ---
 
 <article class="card-tron rounded-lg">
-  <h2 class="text-2xl font-bold mb-3">
+  <h2 class="text-2xl font-bold">
     <a href={`/${collection}/${slug}`} class="link-card">
       {title}
     </a>
@@ -28,7 +28,7 @@ const formattedDate = pubDate.toLocaleDateString(getDateLocale(locale), {
 
   <p class="card-category"> {t(locale, 'card.in')} {collection} </p>
   
-  <time datetime={pubDate.toISOString()} class="text-sm block mb-4">
+  <time datetime={pubDate.toISOString()} class="text-sm block">
     {formattedDate}
   </time>
   

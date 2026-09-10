@@ -57,7 +57,7 @@ const sortedReviews = allReviews.sort((a, b) => {
         </div>
       </div>
 
-      <ul id="reviews-list" class="content-list space-y-4">
+      <ul id="reviews-list" class="content-list">
         {sortedReviews.map(book => (
           <ContentListItem
             title={book.data.title}
