@@ -68,8 +68,8 @@ const sortedReviews = allReviews.sort((a, b) => {
             })}`}
             sortData={{
               title: book.data.title,
-              author: book.data.author,
-              year: book.data.publicationYear
+              author: book.data.author ?? '',
+              year: book.data.publicationYear ?? 0
             }}
           />
         ))}
