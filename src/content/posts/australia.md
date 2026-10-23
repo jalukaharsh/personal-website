@@ -1,5 +1,6 @@
 ---
 title: "Australia"
+category: travel
 pubDate: 2026-07-31T08:12:00Z
 tags: ["travel", "oceania"]
 draft: false

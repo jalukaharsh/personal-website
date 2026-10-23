@@ -1,5 +1,6 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import type { CategoryId } from '../data/categories';
 
 export type Post = CollectionEntry<'posts'>;
 
@@ -7,6 +8,11 @@ export type Post = CollectionEntry<'posts'>;
 export async function getPublishedPosts(): Promise<Post[]> {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
   return posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+}
+
+/** Published posts in `category`, newest first. */
+export async function getPostsByCategory(category: CategoryId): Promise<Post[]> {
+  return (await getPublishedPosts()).filter((post) => post.data.category === category);
 }
 
 /** Published posts carrying `tag`, newest first. */
@@ -26,25 +32,21 @@ export function getTagCounts(posts: Post[]): { tag: string; count: number }[] {
 }
 
 /**
- * TEMPORARY (removed in phase 3): the old section URLs (/reviews, /projects, /travel)
- * still exist while the new /blog page is built. Each maps a section to the tag it filters on.
+ * TEMPORARY (removed in phase 3/4): the old section URLs (/reviews, /projects, /travel)
+ * still exist while the new /blog page is built.
+ * reviews = category book-review, travel = category travel, projects = tag "project".
  */
-export const LEGACY_SECTIONS = {
-  reviews: 'review',
-  projects: 'project',
-  travel: 'travel',
-} as const;
-
-export type LegacySection = keyof typeof LEGACY_SECTIONS;
+export type LegacySection = 'reviews' | 'projects' | 'travel';
 
 export function legacySectionOf(post: Post): LegacySection {
-  const section = (Object.keys(LEGACY_SECTIONS) as LegacySection[]).find((s) =>
-    post.data.tags.includes(LEGACY_SECTIONS[s])
-  );
-  if (!section) {
-    throw new Error(`Post "${post.slug}" has none of the tags: ${Object.values(LEGACY_SECTIONS).join(', ')}`);
-  }
-  return section;
+  if (post.data.category === 'book-review') return 'reviews';
+  if (post.data.category === 'travel') return 'travel';
+  if (post.data.tags.includes('project')) return 'projects';
+  throw new Error(`Post "${post.slug}" has no category and no "project" tag, so it has no legacy section URL`);
+}
+
+export async function getPostsByLegacySection(section: LegacySection): Promise<Post[]> {
+  return (await getPublishedPosts()).filter((post) => legacySectionOf(post) === section);
 }
 
 /** Single place that decides a post's URL. */

@@ -1,5 +1,6 @@
 ---
 title: "Egypt"
+category: travel
 pubDate: 2025-12-30T01:28:00Z
 tags: ["travel", "africa"]
 draft: true

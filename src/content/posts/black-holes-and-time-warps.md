@@ -1,5 +1,6 @@
 ---
 title: "Black Holes and Time Warps"
+category: book-review
 pubDate: 2026-05-06T18:37:00Z
 author: "Kip Thorne"
 publicationYear: 1994

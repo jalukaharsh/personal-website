@@ -1,5 +1,6 @@
 ---
 title: "The Hour of the Star"
+category: book-review
 pubDate: 2026-05-06T21:17:00Z
 author: "Clarice Lispector"
 publicationYear: 1977

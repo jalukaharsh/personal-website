@@ -1,5 +1,6 @@
 ---
 title: "The Great Gatsby"
+category: book-review
 pubDate: 2026-05-01T02:18:00Z
 author: "F. Scott Fitzgerald"
 publicationYear: 1952

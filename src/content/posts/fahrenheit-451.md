@@ -1,5 +1,6 @@
 ---
 title: "Fahrenheit 451"
+category: book-review
 pubDate: 2026-01-18T06:02:00Z
 author: "Ray Bradbury"
 publicationYear: 1953

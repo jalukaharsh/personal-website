@@ -1,5 +1,6 @@
 ---
 title: "Midnight's Children"
+category: book-review
 pubDate: 2026-08-16T23:26:00Z
 author: "Salman Rushdie"
 publicationYear: 1981

@@ -1,11 +1,11 @@
 ---
 
-import { getPostsByTag } from '../lib/posts';
+import { getPostsByCategory } from '../lib/posts';
 import { getAllCities } from '../data/cities';
 
 const visitedCities = getAllCities();
 
-const publishedTravel = await getPostsByTag('travel');
+const publishedTravel = await getPostsByCategory('travel');
 const publishedSlugs = new Set(publishedTravel.map(post => post.slug));
 ---
 

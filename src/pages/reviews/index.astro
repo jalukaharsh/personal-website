@@ -5,11 +5,11 @@ import Footer from '../../components/Footer.astro';
 import QuoteBanner from '../../components/QuoteBanner.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
 import { t, getLocaleFromUrl, getDateLocale } from '../../i18n/utils';
-import { getPostsByTag, LEGACY_SECTIONS } from '../../lib/posts';
+import { getPostsByCategory } from '../../lib/posts';
 
 const locale = getLocaleFromUrl(Astro.url);
 
-const allReviews = await getPostsByTag(LEGACY_SECTIONS.reviews);
+const allReviews = await getPostsByCategory('book-review');
 
 const sortedReviews = allReviews.sort((a, b) => {
   return a.data.title.localeCompare(b.data.title);
