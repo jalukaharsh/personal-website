@@ -1,7 +1,7 @@
 ---
 title: "Building This Website"
 pubDate: 2026-01-24T10:40:00Z
-tags: ["vibecoding", "ai", "software", "projects"]
+tags: ["project", "vibecoding", "ai", "software"]
 draft: false
 ---
 

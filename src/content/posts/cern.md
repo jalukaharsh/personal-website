@@ -1,7 +1,7 @@
 ---
 title: "CERN"
 pubDate: 2026-01-17T12:00:00Z
-tags: ["university", "europe", "science"]
+tags: ["project", "university", "europe", "science"]
 draft: true
 ---
 

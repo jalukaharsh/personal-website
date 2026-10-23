@@ -3,7 +3,7 @@ title: "The Book of Disquiet"
 pubDate: 2026-01-17T22:05:00Z
 author: "Fernando Pessoa"
 publicationYear: 1982
-tags: ["literature"]
+tags: ["review", "literature"]
 draft: false
 ---
 

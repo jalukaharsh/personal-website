@@ -1,17 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import QuoteBanner from '../../components/QuoteBanner.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
 import { t, getLocaleFromUrl, getDateLocale } from '../../i18n/utils';
+import { getPostsByTag, LEGACY_SECTIONS } from '../../lib/posts';
 
 const locale = getLocaleFromUrl(Astro.url);
 
-const allReviews = await getCollection('reviews', ({ data }) => {
-  return data.draft === false;
-});
+const allReviews = await getPostsByTag(LEGACY_SECTIONS.reviews);
 
 const sortedReviews = allReviews.sort((a, b) => {
   return a.data.title.localeCompare(b.data.title);

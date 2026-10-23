@@ -1,17 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ContentListItem from '../../components/ContentListItem.astro';
 import WorldMapWithCities from '../../components/WorldMapWithCities.astro';
 import { t, getLocaleFromUrl, getDateLocale } from '../../i18n/utils';
+import { getPostsByTag, LEGACY_SECTIONS } from '../../lib/posts';
 
 const locale = getLocaleFromUrl(Astro.url);
 
-const allPosts = await getCollection('travel', ({ data }) => {
-  return data.draft === false;
-});
+const allPosts = await getPostsByTag(LEGACY_SECTIONS.travel);
 
 const sortedPosts = allPosts.sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();

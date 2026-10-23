@@ -2,8 +2,8 @@
 title: "Book Name"
 pubDate: 2025-11-29T20:02:00Z
 author: "Author"
-publicationYear: 0000
-tags: ["literature", "existentialism"]
+publicationYear: 2000
+tags: ["review", "literature"]
 draft: true
 ---
 

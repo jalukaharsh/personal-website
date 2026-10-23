@@ -1,55 +1,25 @@
 import { z, defineCollection } from 'astro:content';
 
-const projectsSchema = z.object({
+// Every post lives in src/content/posts/<kebab-case-title>.md and the filename is the URL slug.
+// What a post "is" (review, project, travel...) is expressed purely through `tags`.
+// Optional fields are only rendered when present.
+const postsSchema = z.object({
   title: z.string(),
   pubDate: z.coerce.date(),
-  tags: z.array(z.string()).optional(),
+  tags: z.array(z.string()).default([]),
   draft: z.boolean().default(false),
+  description: z.string().optional(),
+  pinned: z.boolean().default(false),
+  // book / media reviews
+  author: z.string().optional(),
+  publicationYear: z.number().optional(),
+  // travel
+  daysSpent: z.number().optional(),
 });
 
-const thoughtsSchema = z.object({
-  title: z.string(),
-  pubDate: z.coerce.date(),
-  tags: z.array(z.string()).optional(),
-  draft: z.boolean().default(false),
-});
-
-const travelSchema = z.object({
-  title: z.string(),
-  pubDate: z.coerce.date(),
-  tags: z.array(z.string()).optional(),
-  draft: z.boolean().default(false),
-  daysSpent: z.number()
-});
-
-
-const reviewsSchema = z.object({
-  title: z.string(),
-  pubDate: z.coerce.date(),
-  author: z.string(),
-  publicationYear: z.number(),
-  tags: z.array(z.string()).optional(),
-  draft: z.boolean().default(false),
-});
-
-const reviewsCollection = defineCollection({
+const postsCollection = defineCollection({
   type: 'content',
-  schema: reviewsSchema,
-});
-
-const projectsCollection = defineCollection({
-  type: 'content',
-  schema: projectsSchema,
-});
-
-const thoughtsCollection = defineCollection({
-  type: 'content',
-  schema: thoughtsSchema,
-});
-
-const travelCollection = defineCollection({
-  type: 'content',
-  schema: travelSchema,
+  schema: postsSchema,
 });
 
 const quotesCollection = defineCollection({
@@ -66,9 +36,6 @@ const quotesCollection = defineCollection({
 });
 
 export const collections = {
-  reviews: reviewsCollection,
-  projects: projectsCollection,
-  thoughts: thoughtsCollection,
-  travel: travelCollection,
+  posts: postsCollection,
   quotes: quotesCollection,
 };

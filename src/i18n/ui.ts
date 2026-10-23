@@ -5,7 +5,6 @@ export const ui = {
     'nav.home': 'Home',
     'nav.reviews': 'Reviews',
     'nav.projects': 'Projects',
-    'nav.thoughts': 'Thoughts',
     'nav.travel': 'Travel',
     'nav.toggleMenu': 'Toggle navigation menu',
 
@@ -40,13 +39,6 @@ export const ui = {
     'projects.countPlural': 'posts',
     'projects.empty': 'No projects yet. Check back soon!',
 
-    'thoughts.title': 'Thoughts - Harsh Jaluka',
-    'thoughts.description': 'Personal reflections and opinions on various topics.',
-    'thoughts.intro': "Longer-form pieces where I think through topics that interest me.",
-    'thoughts.countSingular': 'post',
-    'thoughts.countPlural': 'posts',
-    'thoughts.empty': 'Head empty, no thoughts.',
-
     'travel.title': 'Travel - Harsh Jaluka',
     'travel.intro1': "I've been lucky to have had lots of opportunity to travel in my life, and I try to note down my experiences in case they're useful/interesting to others!",
     'travel.countSingular': 'post',
@@ -65,7 +57,6 @@ export const ui = {
 
     'collection.reviews': 'Reviews',
     'collection.projects': 'Projects',
-    'collection.thoughts': 'Thoughts',
     'collection.travel': 'Travel',
 
     'card.in': 'in',

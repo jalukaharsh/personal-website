@@ -1,24 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContentListItem from '../components/ContentListItem.astro';
 import { t, getLocaleFromUrl, getDateLocale } from '../i18n/utils';
+import { getPublishedPosts, legacySectionOf } from '../lib/posts';
 
 const locale = getLocaleFromUrl(Astro.url);
 
-const reviewsEntries = await getCollection('reviews');
-const projectsEntries = await getCollection('projects');
-const travelEntries = await getCollection('travel');
-
-const allPosts = [...reviewsEntries, ...projectsEntries, ...travelEntries];
-
-const publishedPosts = allPosts
-  .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
-
-const recentPosts = publishedPosts.slice(0, 5);
+const recentPosts = (await getPublishedPosts()).slice(0, 5);
 ---
 
 <BaseLayout 
@@ -54,7 +44,7 @@ const recentPosts = publishedPosts.slice(0, 5);
       {recentPosts.length > 0 ? (
         <ul class="content-list">
           {recentPosts.map(post => {
-            const collection = post.collection;
+            const collection = legacySectionOf(post);
             const formattedDate = post.data.pubDate.toLocaleDateString(getDateLocale(locale), {
               year: 'numeric',
               month: 'long',

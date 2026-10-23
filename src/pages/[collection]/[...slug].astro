@@ -1,51 +1,33 @@
 ---
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
 import ContentPost from '../../layouts/ContentPost.astro';
+import { getPublishedPosts, legacySectionOf, LEGACY_SECTIONS } from '../../lib/posts';
+import type { Post } from '../../lib/posts';
 
-type ValidCollection = 'reviews' | 'projects' | 'thoughts' | 'travel';
-
+// TEMPORARY (phase 3 replaces this with /blog/[...slug]): posts are still served under their old section URL.
 export async function getStaticPaths() {
-  const collections: ValidCollection[] = ['reviews', 'projects', 'thoughts', 'travel'];
-  
-  const paths = await Promise.all(
-    collections.map(async (collection) => {
-      const entries = await getCollection(collection, ({ data }) => data.draft !== true);
-      return entries.map(entry => ({
-        params: { collection, slug: entry.slug },
-        props: { entry, collection },
-      }));
-    })
-  );
-  
-  return paths.flat();
+  const posts = await getPublishedPosts();
+  return posts.map((entry) => ({
+    params: { collection: legacySectionOf(entry), slug: entry.slug },
+    props: { entry },
+  }));
 }
 
 interface Props {
-  entry: CollectionEntry<ValidCollection>;
-  collection: ValidCollection;
+  entry: Post;
 }
 
-const { entry, collection } = Astro.props;
+const { entry } = Astro.props;
 const { Content } = await entry.render();
-
-// Extract collection-specific props
-const baseProps = {
-  title: entry.data.title,
-  pubDate: entry.data.pubDate,
-  tags: entry.data.tags,
-  collection,
-};
-
-const contentProps = collection === 'reviews' 
-  ? {
-      ...baseProps,
-      author: (entry.data as any).author,
-      publicationYear: (entry.data as any).publicationYear,
-    }
-  : baseProps;
+const { title, pubDate, tags, author, publicationYear } = entry.data;
 ---
 
-<ContentPost {...contentProps}>
+<ContentPost
+  title={title}
+  pubDate={pubDate}
+  tags={tags}
+  collection={legacySectionOf(entry)}
+  author={author}
+  publicationYear={publicationYear}
+>
   <Content />
 </ContentPost>

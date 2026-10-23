@@ -3,7 +3,7 @@ title: "The Hour of the Star"
 pubDate: 2026-05-06T21:17:00Z
 author: "Clarice Lispector"
 publicationYear: 1977
-tags: ["literature", "brazil", "philosophical fiction", "portuguese"]
+tags: ["review", "literature", "brazil", "philosophical-fiction", "portuguese"]
 draft: false
 ---
 

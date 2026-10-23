@@ -1,11 +1,11 @@
 ---
 
-import { getCollection } from 'astro:content';
+import { getPostsByTag } from '../lib/posts';
 import { getAllCities } from '../data/cities';
 
 const visitedCities = getAllCities();
 
-const publishedTravel = await getCollection('travel', ({ data }) => data.draft === false);
+const publishedTravel = await getPostsByTag('travel');
 const publishedSlugs = new Set(publishedTravel.map(post => post.slug));
 ---
 

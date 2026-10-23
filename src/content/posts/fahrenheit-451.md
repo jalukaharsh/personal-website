@@ -3,7 +3,7 @@ title: "Fahrenheit 451"
 pubDate: 2026-01-18T06:02:00Z
 author: "Ray Bradbury"
 publicationYear: 1953
-tags: ["literature", "american", "dystopian"]
+tags: ["review", "literature", "american", "dystopian"]
 draft: false
 ---
 

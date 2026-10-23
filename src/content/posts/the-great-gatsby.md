@@ -3,7 +3,7 @@ title: "The Great Gatsby"
 pubDate: 2026-05-01T02:18:00Z
 author: "F. Scott Fitzgerald"
 publicationYear: 1952
-tags: ["literature", "american"]
+tags: ["review", "literature", "american"]
 draft: false
 ---
 

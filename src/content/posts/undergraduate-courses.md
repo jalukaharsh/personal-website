@@ -1,7 +1,7 @@
 ---
 title: "Undergraduate Courses"
 pubDate: 2026-01-24T10:36:00Z
-tags: ["university", "undergrad", "physics", "computer-science", "mathematics"]
+tags: ["project", "university", "undergrad", "physics", "computer-science", "mathematics"]
 draft: false
 ---
 

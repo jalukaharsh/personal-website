@@ -3,7 +3,7 @@ title: "Black Holes and Time Warps"
 pubDate: 2026-05-06T18:37:00Z
 author: "Kip Thorne"
 publicationYear: 1994
-tags: ["science", "physics", "black holes", "general relativity"]
+tags: ["review", "science", "physics", "black-holes", "general-relativity"]
 draft: false
 ---
 

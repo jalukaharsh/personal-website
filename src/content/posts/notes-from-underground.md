@@ -3,7 +3,7 @@ title: "Notes from Underground"
 pubDate: 2026-01-18T06:20:00Z
 author: "Fyodor Dostoevsky"
 publicationYear: 1864
-tags: ["russian", "dostoevsky", "existentialism"]
+tags: ["review", "russian", "dostoevsky", "existentialism"]
 draft: false
 ---
 
