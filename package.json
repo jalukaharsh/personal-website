@@ -4,10 +4,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && npm run validate:links",
+    "build": "npm run validate:slugs && astro build && npm run validate:links",
     "build:skip-validation": "astro build",
     "preview": "astro preview",
     "validate:links": "node scripts/validate-links.js",
+    "validate:slugs": "node scripts/validate-slugs.js",
     "astro": "astro"
   },
   "dependencies": {
